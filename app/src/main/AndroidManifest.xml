@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.smartpesa.smartpesa"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".SmartPesaApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/SmartPesaTheme"
+        tools:replace="android:name">
+        <service android:name=".helpers.SignatureUploadService" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_geo_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ForgotIdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryViewerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.payment.AllPaymentsProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OperatorEditActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:label="@string/title_activity_web_view"
+            android:screenOrientation="portrait"
+            android:theme="@style/SmartPesaTheme" />
+        <activity
+            android:name=".activity.TipsAndTaxesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SmartPesaPaymentProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LeadActivity"
+            android:label="@string/sign_up"
+            android:screenOrientation="portrait"
+            android:theme="@style/SmartPesaLead" />
+        <activity
+            android:name=".activity.LocateOperators"
+            android:label="Operators near me" />
+        <activity
+            android:name=".activity.AliPayQRScanActivity"
+            android:label="@string/title_alipay"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AliPayActivity"
+            android:label="@string/title_alipay"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OTAProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.payment.AliPayPaymentProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.payment.GoCoinPaymentProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.payment.IntentPaymentProgressActivity"
+            android:screenOrientation="portrait">
+
+            <!-- filter for receiving Transaction data -->
+            <intent-filter>
+                <action android:name="com.smartpesa.intent.action.TRANSACT" />
+
+                <data android:mimeType="text/plain" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="@string/fabric_api_key" />
+
+        <activity android:name=".activity.payment.AliPayReceiptActivity" />
+        <activity android:name=".activity.CryptoReceiptActivity"></activity>
+    </application>
+
+</manifest>

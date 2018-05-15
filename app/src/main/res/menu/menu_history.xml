@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/history_email"
+        android:icon="@drawable/ic_send_white_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/send_history" />
+
+    <item
+        android:id="@+id/history_print"
+        android:orderInCategory="90"
+        android:icon="@drawable/ic_action_action_print"
+        app:showAsAction="always"
+        android:title="@string/print_journal" />
+
+    <item
+        android:id="@+id/historyCB"
+        android:actionViewClass="android.widget.CheckBox"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_unchecked"
+        android:title="@string/include_all_transactions" />
+</menu>

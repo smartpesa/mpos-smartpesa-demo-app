@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/deviceIDTV"
+        style="@style/SmartPesa.Title.Accented"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Large Text" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hardwareVersionTV"
+            style="@style/SmartPesa.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            tools:text="Medium Text" />
+
+        <TextView
+            android:id="@+id/firmwareVersionTV"
+            style="@style/SmartPesa.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:gravity="right|end"
+            tools:text="Medium Tezt" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lastUsedDateTV"
+        style="@style/SmartPesa.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Medium Text" />
+
+</LinearLayout>

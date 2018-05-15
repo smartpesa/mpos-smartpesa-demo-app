@@ -1,0 +1,73 @@
+<resources>
+
+    <style name="SmartPesaTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:textColorPrimary">@color/text_color_primary</item>
+        <item name="android:textColorHint">@color/text_color_primary_hint</item>
+        <item name="android:textColorPrimaryInverse">@color/text_color_primary_inverse</item>
+        <item name="android:textColorHintInverse">@color/text_color_primary_hint_inverse</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/text_color_primary_disabled</item>
+        <item name="android:textColorSecondary">@color/text_color_secondary</item>
+        <item name="android:textColorSecondaryInverse">@color/text_color_secondary_inverse</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">
+            @color/text_color_secondary_disabled
+        </item>
+        <item name="android:textColorHighlight">@color/text_primary_accented</item>
+        <item name="android:textColorHighlightInverse">@color/text_secondary_accented</item>
+        <item name="android:windowBackground">@color/window_background</item>
+
+        <item name="defaultFontPath">fonts/SmartPesa-Regular.ttf</item>
+    </style>
+
+    <style name="SmartPesaTheme" parent="SmartPesaTheme.Base">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="SmartPesaLead" parent="SmartPesaTheme.Base">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimaryDark">@color/lead_accent</item>
+    </style>
+
+    <style name="ThemeOverlay.AppCompat.Dark.ActionBar.SmartPesa" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="SmartPesa.Base.ActionBar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar.SmartPesa</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="SmartPesa.ActionBar" parent="SmartPesa.Base.ActionBar">
+        <item name="elevation">4dp</item>
+    </style>
+
+    <style name="SmartPesaTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="SmartPesaTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">false</item>
+    </style>
+
+    <style name="Theme.Default.Dialog" parent="@android:style/Theme.Dialog"></style>
+
+    <style name="Theme.CustomDialog" parent="Theme.Default.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="AppTheme.Dialog.NoTitle" parent="@style/Theme.AppCompat.Light.Dialog.MinWidth">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+</resources>

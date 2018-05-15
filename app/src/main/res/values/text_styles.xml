@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Text Styles -->
+    <style name="SmartPesa.Display4" parent="TextAppearance.AppCompat.Display4">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Display3" parent="TextAppearance.AppCompat.Display3">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Display2" parent="TextAppearance.AppCompat.Display2">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Display1" parent="TextAppearance.AppCompat.Display1">
+        <item name="fontPath">?attr/defaultFontPath</item>
+        <item name="android:textColor">@color/text_color_primary_inverse</item>
+    </style>
+
+    <style name="SmartPesa.Headline" parent="TextAppearance.AppCompat.Headline">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Subhead" parent="TextAppearance.AppCompat.Subhead">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Caption" parent="TextAppearance.AppCompat.Caption">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Body1" parent="TextAppearance.AppCompat.Body1">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Body2" parent="TextAppearance.AppCompat.Body2">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Menu" parent="TextAppearance.AppCompat.Menu">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Button" parent="TextAppearance.AppCompat.Button">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">120dp</item>
+    </style>
+
+    <style name="SmartPesa.Button.Small" parent="SmartPesa.Button">
+        <item name="android:minWidth">80dp</item>
+        <item name="android:textSize">@dimen/text_caption</item>
+    </style>
+
+    <!-- Inverses -->
+    <style name="SmartPesa.Display4.Inverse" parent="SmartPesa.Display4">
+        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Display3.Inverse" parent="SmartPesa.Display3">
+        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Display2.Inverse" parent="SmartPesa.Display2">
+        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Display1.Inverse" parent="SmartPesa.Display1">
+        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Headline.Inverse" parent="SmartPesa.Headline">
+        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Title.Inverse" parent="TextAppearance.AppCompat.Title.Inverse">
+    </style>
+
+    <style name="SmartPesa.Subhead.Inverse" parent="TextAppearance.AppCompat.Subhead.Inverse">
+    </style>
+
+    <style name="SmartPesa.Caption.Inverse" parent="SmartPesa.Caption">
+        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Body1.Inverse" parent="SmartPesa.Body1">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColorHint">?android:textColorHintInverse</item>
+    </style>
+
+    <style name="SmartPesa.Body2.Inverse" parent="SmartPesa.Body2">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColorHint">?android:textColorHintInverse</item>
+    </style>
+
+    <style name="SmartPesa.Menu.Inverse" parent="SmartPesa.Menu">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColorHint">?android:textColorHintInverse</item>
+    </style>
+
+    <style name="SmartPesa.Button.Inverse" parent="SmartPesa.Button">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
+    <style name="SmartPesa.Button.Inverse.Small" parent="SmartPesa.Button.Small">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
+    <!-- Accented Styles -->
+    <style name="SmartPesa.Display4.Accented" parent="SmartPesa.Display4">
+        <item name="android:textColor">?android:textColorHighlightInverse</item>
+    </style>
+
+    <style name="SmartPesa.Display3.Accented" parent="SmartPesa.Display3">
+        <item name="android:textColor">?android:textColorHighlightInverse</item>
+    </style>
+
+    <style name="SmartPesa.Display2.Accented" parent="SmartPesa.Display2">
+        <item name="android:textColor">?android:textColorHighlightInverse</item>
+    </style>
+
+    <style name="SmartPesa.Display1.Accented" parent="SmartPesa.Display1">
+        <item name="android:textColor">?android:textColorHighlightInverse</item>
+    </style>
+
+    <style name="SmartPesa.Headline.Accented" parent="SmartPesa.Headline">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Title.Accented" parent="SmartPesa.Title">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Subhead.Accented" parent="SmartPesa.Subhead">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Caption.Accented" parent="SmartPesa.Caption">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Body1.Accented" parent="SmartPesa.Body1">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Menu.Accented" parent="SmartPesa.Menu">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Button.Accented" parent="SmartPesa.Button">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+
+    <style name="SmartPesa.Button.Small.Accented" parent="SmartPesa.Button.Small">
+        <item name="android:textColor">?android:textColorHighlight</item>
+    </style>
+</resources>

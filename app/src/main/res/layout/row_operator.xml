@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/row_operator_nameTV"
+        style="@style/SmartPesa.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/row_operator_initial_TV"
+        android:layout_toRightOf="@+id/row_operator_initial_TV"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="Shaik" />
+
+    <TextView
+        android:id="@+id/row_operator_initial_TV"
+        style="@style/SmartPesa.Headline"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_blue_circle"
+        android:gravity="center"
+        android:src="@drawable/ic_person_black_24dp"
+        tools:text="S" />
+
+    <TextView
+        android:id="@+id/row_operatorCode_TV"
+        style="@style/SmartPesa.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/row_operator_initial_TV"
+        android:layout_alignLeft="@+id/row_operator_nameTV"
+        android:layout_alignStart="@+id/row_operator_nameTV"
+        android:layout_below="@+id/row_operator_nameTV"
+        android:gravity="center_vertical"
+        tools:text="Code: 30" />
+
+    <ImageView
+        android:id="@+id/edit_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_edit_black_24dp" />
+
+</RelativeLayout>

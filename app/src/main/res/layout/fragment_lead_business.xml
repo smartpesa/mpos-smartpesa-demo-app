@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Display1"
+            android:text="And, your business ?"
+            android:id="@+id/titleNameTv"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/md_white_1000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Body1"
+            android:layout_marginTop="32dp"
+            android:id="@+id/merchantNameLabelTv"
+            android:textColor="@color/md_white_1000"
+            android:text="MERCHANT NAME" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/merchantNameEt"
+            android:textColor="@color/md_white_1000"
+            android:hint="Merchant Name"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:inputType="textPersonName"
+            android:lines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Body1"
+            android:layout_marginTop="16dp"
+            android:id="@+id/descriptionLabelTv"
+            android:textColor="@color/md_white_1000"
+            android:text="DESCRIBE YOUR BUSINESS" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/descriptionEt"
+            android:textColor="@color/md_white_1000"
+            android:hint="I need mPOS to..."
+            android:textSize="22sp"
+            android:inputType="text|textMultiLine"
+            android:gravity="top"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextBtn"
+        style="@style/SmartPesa.Subhead"
+        android:background="@drawable/secondary_button"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:textColor="@drawable/text_general"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT" />
+
+</RelativeLayout>
+

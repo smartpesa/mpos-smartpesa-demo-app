@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary">
+
+    <TextView
+        android:id="@+id/progress_TV"
+        style="@style/SmartPesa.Headline.Inverse"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        tools:text="Show Progress" />
+
+    <TextView
+        android:id="@+id/amount_Process_TV"
+        style="@style/SmartPesa.Display2.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        tools:text="$10.00" />
+
+    <TextView
+        android:id="@+id/transationTypeTV"
+        style="@style/SmartPesa.Title.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount_Process_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        tools:text="Goods &amp; Services" />
+
+    <ImageView
+        android:id="@+id/aliPaylogo"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logo_alipay"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/transationTypeTV"
+        android:layout_centerHorizontal="true" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aliPaylogo"
+        android:layout_marginTop="8dp"
+        android:id="@+id/transactionFL"
+        android:layout_marginBottom="8dp"
+        android:layout_above="@+id/progress_TV">
+
+        <ImageView
+            android:id="@+id/qrImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/transactionAnimation"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="56dp"
+            app:indicatorColor="@color/md_white_1000"
+            app:indicatorName="BallSpinFadeLoaderIndicator" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/creditcard_CV"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_bg"
+    android:padding="16dp"
+    tools:showIn="@layout/fragment_last_transaction">
+
+    <TextView
+        android:id="@+id/amount_label_tv"
+        style="@style/SmartPesa.Caption.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="@string/amount" />
+
+    <TextView
+        android:id="@+id/amount_value_tv"
+        style="@style/SmartPesa.Subhead.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount_label_tv"
+        android:typeface="monospace"
+        tools:text="USD 100.00" />
+
+    <ImageView
+        android:id="@+id/cardTypeIV"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_brand_logo" />
+
+    <TextView
+        android:id="@+id/cardNumber_RECEIPT_TV"
+        style="@style/SmartPesa.Subhead.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="64dp"
+        android:layout_marginTop="64dp"
+        android:typeface="monospace"
+        tools:text="XXXX XXXX XXXX 1111" />
+
+    <TextView
+        android:id="@+id/cardHolderLabel_RECEIPT_TV"
+        style="@style/SmartPesa.Caption.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardNumber_RECEIPT_TV"
+        android:text="@string/card_holder" />
+
+    <TextView
+        android:id="@+id/card_holder_name"
+        style="@style/SmartPesa.Subhead.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardHolderLabel_RECEIPT_TV"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:typeface="monospace"
+        tools:text="JOHN SMITH" />
+
+
+    <TextView
+        android:id="@+id/expiryLabel_RECEIPT_TV"
+        style="@style/SmartPesa.Caption.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/cardNumber_RECEIPT_TV"
+        android:text="@string/expiry" />
+
+    <TextView
+        android:id="@+id/expiry_value_tv"
+        style="@style/SmartPesa.Subhead.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/expiryLabel_RECEIPT_TV"
+        android:text="**/**"
+        android:typeface="monospace" />
+
+
+</RelativeLayout>

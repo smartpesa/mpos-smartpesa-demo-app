@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Display1"
+            android:text="How to contact you ?"
+            android:id="@+id/titleNameTv"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/md_white_1000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Body1"
+            android:layout_marginTop="32dp"
+            android:id="@+id/emailLabelTv"
+            android:textColor="@color/md_white_1000"
+            android:text="EMAIL ADDRESS" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailEt"
+            android:textColor="@color/md_white_1000"
+            android:hint="johndoe@gmail.com"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:inputType="textEmailAddress"
+            android:lines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Body1"
+            android:layout_marginTop="16dp"
+            android:id="@+id/mobileNumberLabelTv"
+            android:textColor="@color/md_white_1000"
+            android:text="MOBILE PHONE" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mobilePhoneEt"
+            android:textColor="@color/md_white_1000"
+            android:hint="+65640XXXX"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:linksClickable="false"
+            android:lines="1"
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Body1"
+            android:layout_marginTop="16dp"
+            android:id="@+id/workPhoneLabelTv"
+            android:textColor="@color/md_white_1000"
+            android:text="WORK PHONE" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/workPhoneEt"
+            android:textColor="@color/md_white_1000"
+            android:hint="+65345XXXX"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmartPesa.Body1"
+            android:layout_marginTop="16dp"
+            android:id="@+id/websiteLabeltv"
+            android:textColor="@color/md_white_1000"
+            android:text="WEBSITE" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/websiteEt"
+            android:textColor="@color/md_white_1000"
+            android:hint="www.john-doe.com"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:inputType="text"
+            android:lines="1" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextBtn"
+        style="@style/SmartPesa.Subhead"
+        android:background="@drawable/secondary_button"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:textColor="@drawable/text_general"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT" />
+
+</RelativeLayout>
+

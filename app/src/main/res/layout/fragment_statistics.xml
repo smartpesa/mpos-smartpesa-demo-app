@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/loading_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:spb_color="@color/progress_color"
+        app:spb_mirror_mode="false"
+        app:spb_progressiveStart_activated="true"
+        app:spb_progressiveStart_speed="2"
+        app:spb_progressiveStop_speed="3.4"
+        app:spb_reversed="false"
+        app:spb_sections_count="4"
+        app:spb_speed="1.0"
+        app:spb_stroke_separator_length="2dp"
+        app:spb_stroke_width="4dp" />
+
+    <com.smartpesa.smartpesa.helpers.CustomMaterialSpinner
+        android:id="@+id/filter_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loading_progress"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/filter_by"
+        app:met_floatingLabel="normal" />
+
+    <TextView
+        android:id="@+id/statistics_prompt"
+        style="@style/SmartPesa.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/statistics_prompt" />
+
+    <GridView
+        android:id="@+id/statistics_grid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:layout_below="@+id/date_range_tv" />
+
+    <LinearLayout
+        android:id="@+id/no_transaction_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_no_transaction_icon" />
+
+        <TextView
+            android:id="@+id/no_transaction_tv"
+            style="@style/SmartPesa.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/no_statistics" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SmartPesa.Subhead"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:text="Large Text"
+        android:id="@+id/date_range_tv"
+        android:layout_below="@+id/filter_spinner"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_alignLeft="@+id/filter_spinner"
+        android:layout_alignStart="@+id/filter_spinner"
+        android:layout_alignRight="@+id/filter_spinner"
+        android:layout_alignEnd="@+id/filter_spinner" />
+
+</RelativeLayout>

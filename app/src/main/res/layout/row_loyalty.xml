@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp"
+    android:layout_margin="8dp"
+    app:cardPreventCornerOverlap="false"
+    app:contentPaddingBottom="8dp"
+    app:contentPaddingLeft="8dp"
+    app:contentPaddingTop="8dp"
+    android:background="@color/pesa_grey"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loyaltyLL"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:id="@+id/loyaltyCB"
+            android:layout_gravity="center_vertical" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loyaltyName"
+                style="@style/SmartPesa.Headline"
+                tools:text="Loyalty Name" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/loyaltyBalance"
+                    style="@style/SmartPesa.Title"
+                    tools:text="12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/loyaltyUnit"
+                    style="@style/SmartPesa.Title"
+                    android:layout_marginLeft="8dp"
+                    tools:text="PTS" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loyaltyAmount"
+                style="@style/SmartPesa.Title"
+                tools:text="12" />
+
+        </LinearLayout>
+
+        <com.smartpesa.smartpesa.helpers.VerticalTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/loyaltyType"
+            style="@style/SmartPesa.Body1"
+            android:textColor="@color/color_primary"
+            android:textAllCaps="true"
+            android:gravity="center"
+            tools:text="Loyalty" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

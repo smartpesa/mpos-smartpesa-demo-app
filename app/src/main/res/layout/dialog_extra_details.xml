@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/extraDetailsProgessBar"
+        android:layout_centerInParent="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/okBtn">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transaction Details"
+                android:gravity="left"
+                android:id="@+id/title"
+                android:layout_margin="8dp"
+                style="@style/SmartPesa.Title" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/title"
+                android:id="@+id/lineView"
+                android:layout_marginBottom="4dp"
+                android:background="@color/pesa_grey" />
+
+
+            <TextView
+                android:id="@+id/cardLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionCardNameTV"
+                style="@style/SmartPesa.Caption"
+                android:text="CARD"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/cardTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="MasterCard - Debit"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/merchantIdLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="Merchant ID"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/merchantIdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0536272819738292"
+                        android:typeface="normal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/terminalIdLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="Terminal ID"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/terminalIdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0536272819738292"
+                        android:typeface="normal"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fromAccountLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="From Acc Type"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/fromAccountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="SAVINGS"
+                        android:typeface="normal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/toAccountLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="To Acc Type"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/toAccountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="DEFAULT"
+                        android:typeface="normal"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/taxLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="TAX"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/taxTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$10.00"
+                        android:typeface="normal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tipLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="Tip"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tipTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$ 10.00"
+                        android:typeface="normal"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/operatorNameLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionCardNameTV"
+                style="@style/SmartPesa.Caption"
+                android:text="Operator Name"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/operatorNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Jun Azulo"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+            <TextView
+                android:id="@+id/deviceSerialNumberLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionCardNameTV"
+                style="@style/SmartPesa.Caption"
+                android:text="Device Serial Number"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/deviceSerialNumberTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="200309384091890218390"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cvmResultLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="CVM Result"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/cvmResultTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="641383"
+                        android:typeface="normal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appIdLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="APP ID"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/appIdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="A00000121212"
+                        android:typeface="normal"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvrLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="TVR"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tvrTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="641383"
+                        android:typeface="normal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appCryptLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="APP CRYPT"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/appCryptTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="23232"
+                        android:typeface="normal"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/destinationBankLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionCardNameTV"
+                style="@style/SmartPesa.Caption"
+                android:text="Destination Bank"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/destinationBankTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="RCBC"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+            <TextView
+                android:id="@+id/destinationAccountNumberLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionCardNameTV"
+                style="@style/SmartPesa.Caption"
+                android:text="Destination Acc Number"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/destinationAccountNumberTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="RCBC"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/billerNameLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="Biller Name"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/billerNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Singtel"
+                        android:typeface="normal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/billerCodeLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/transactionCardNameTV"
+                        style="@style/SmartPesa.Caption"
+                        android:text="Biller Code"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/billerCodeTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="23232"
+                        android:typeface="normal"
+                        android:layout_gravity="right"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp"
+                        tools:visibility="visible"
+                        style="@style/SmartPesa.Subhead" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ipAddressLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transactionCardNameTV"
+                style="@style/SmartPesa.Caption"
+                android:text="IP Address"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/ipAddressTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="192.108.0.1"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+            <TextView
+                android:id="@+id/mapsLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SmartPesa.Caption"
+                android:text="Transaction Location"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/signatureLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SmartPesa.Caption"
+                android:text="Signature"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/signatureNotAvailableTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bitmap_null"
+                android:typeface="normal"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible"
+                style="@style/SmartPesa.Subhead" />
+
+            <ImageView
+                android:id="@+id/signatureIv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/primary_button"
+        android:text="@string/ok"
+        android:textColor="@drawable/text_general" />
+
+</RelativeLayout>

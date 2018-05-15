@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartPesa</string>
+
+    <!--Menu titles-->
+    <string name="title_merchant_info">Información de Comercio</string>
+    <string name="title_history">Historial</string>
+    <string name="title_payment">Venta</string>
+    <string name="title_inquiry">Consulta de Saldo</string>
+    <string name="title_withdrawal">Avance de Efectivo</string>
+    <string name="title_services">Pagos</string>
+    <string name="title_settings">Dispositivo</string>
+    <string name="title_about">Acerca de</string>
+    <string name="title_logout">Salir</string>
+    <string name="title_login">Ingresar</string>
+    <string name="title_activity_about_us">Acerca de Nosotros</string>
+    <string name="title_activity_forgot">¿Olvidó su ID?</string>
+    <string name="title_operators">Operadores</string>
+    <string name="title_refund">Reembolsos</string>
+    <string name="title_cashback">Cashback</string>
+    <string name="title_transfer_funds">Transferencias</string>
+    <string name="title_activity_payment_progress">Progreso de Pagos</string>
+    <string name="title_reversal">Reversiones</string>
+
+    <!--ForgotIDs strings-->
+    <string name="forgot_header_text"> No puede iniciar sesión? Está bien, a veces sucede.</string>
+    <string name="forgot_merchant_id_text">Por favor contactar a su administrador de cuenta.</string>
+    <string name="forgot_operator_text">Por favor contactar al administrador de la cuenta.</string>
+    <string name="forgot_pin_request_text">Introduzca su ID de operador y recibirá su nuevo PIN en su número de móvil registrado.</string>
+    <string name="enter_valid_id">Por favor ingrese un Id de comercio y el código de operador válidos.</string>
+    <string name="pin_success">PIN solicitado con éxito.</string>
+    <string name="pin_request_inprogress">Por favor espere, su solicitud de PIN está en proceso.</string>
+    <string name="forgot_merchant">¿Olvidó su Id de comercio?</string>
+    <string name="forgot_operator">¿Olvidó su Id de operador?</string>
+    <string name="forgot_pin">¿Olvidó PIN?</string>
+
+    <!--payment strings-->
+    <string-array name="account_array">
+        <item>Cuenta default</item>
+        <item>Cuenta de ahorros</item>
+        <item>Cuenta corriente</item>
+        <item>Tarjeta de crédito</item>
+    </string-array>
+
+    <string-array name="installment_array">
+        <item>Straight</item>
+        <item>Opción 2</item>
+        <item>Opción 3</item>
+    </string-array>
+
+    <!--AboutUs strings-->
+    <string name="about_copyright">\u00a9 Copyright Transaction Technologies Pte.Ltd. 2015. SmartPesa is a trademark of Transaction Technologies Pte.Ltd. This application has been designed by SmartPesa, a global leader in mobile payment solutions, and is provided under license. All rights are reserved. </string>
+    <string name="up_to_date">SmartPesa está actualizado</string>
+    <string name="title_activity_history_viewer">Visor de Historial</string>
+    <string name="update">UPDATE</string>
+    <string name="customer_support"> Para atención al cliente marque </string>
+    <string name="customer_support_number">555-1234</string>
+    <string name="licensing_info"><u> Información de licencias</u></string>
+    <string name="privacy_policy"><u> Política de privacidad</u></string>
+    <string name="send_log">Enviar Log</string>
+    <string name="app_version">Versión de la Aplicación: %1$s</string>
+    <string name="server_version">Versión de Servidor: %1$s</string>
+    <string name="sdk_version">Versión de SDK: %1$s</string>
+    <string name="sending_log">Enviando log</string>
+    <string name="log_sent">Envío de Log realizado</string>
+    <string name="error_sending_log"> Error al enviar el Log, por favor, inténtalo de nuevo</string>
+
+    <!--Login Strings-->
+    <string name="merchant_code">Código de Comercio</string>
+    <string name="login_title"> Iniciar sesión</string>
+    <string name="forgot_id">¿Olvidó sus Ids?</string>
+    <string name="operator_code">Código de Operador</string>
+    <string name="operator_pin">PIN de operador</string>
+    <string name="enter_merchant_id"> Por favor ingrese el Id de comercio </string>
+    <string name="enter_operator_code">Por favor ingrese el código de operador</string>
+    <string name="enter_login_pin">Por favor ingrese el PIN de sesión</string>
+
+    <!--Operator edit-->
+    <string name="operator_name">Nombre de operador</string>
+    <string name="enter_operator_name">Ingrese el nombre de operador</string>
+    <string name="enter_op_code">Ingrese el código de operador</string>
+    <string name="title_notification">Notificaciones</string>
+    <string name="notification_phone">Notificación de teléfono</string>
+    <string name="enter_phone_number">Ingrese número de teléfono</string>
+    <string name="notification_email">Notificación de email</string>
+    <string name="enter_email">Ingrese dirección de email</string>
+    <string name="title_permissions">Permisos</string>
+    <string name="view_all_history">Ver todo el histórico</string>
+    <string name="manage_operators"> Administrar pperadores</string>
+    <string name="print_receipt"> Imprimir el recibo</string>
+    <string name="save">Guardar</string>
+    <string name="title_edit_operator">Modificar operador</string>
+    <string name="adding_operator">Agregando operador</string>
+    <string name="please_wait">Por favor espere...</string>
+    <string name="operator_added"> Operador agregado con éxito</string>
+    <string name="updating_operator">Actualizando operador</string>
+    <string name="operator_updated">Operador actualizado con éxito</string>
+
+    <!--splash strings-->
+    <string name="update_app"> Por favor, actualice la aplicación para continuar </string>
+    <string name="cancel">CANCELAR</string>
+    <string name="server_error"> Error conectando con el servidor, inténtalo más tarde </string>
+    <string name="ok">Ok</string>
+    <string name="mandatory_update"> Actualización obligatoria</string>
+    <string name="optional_upgrade"> Actualización opcional</string>
+
+    <!--devices adapter strings-->
+    <string name="device_name">Nombre : </string>
+    <string name="device_hardware">Hardware : %1$s</string>
+    <string name="device_firmware">Firmware : %1$s</string>
+    <string name="device_last_used">Último uso : %1$s</string>
+
+    <!--PaymentProgress strings-->
+    <string name="processing_payment">" Procesando pago.."</string>
+    <string name="device_not_found">Dispositivo de bluetooth no encontrado</string>
+
+    <!--display signature strings-->
+    <string name="title_signature">Firma</string>
+    <string name="bitmap_null">Imagen de Bitmap es nulo</string>
+
+    <!--History adapter strings/Last Transaction-->
+    <string name="approved">Aprobado</string>
+    <string name="sending_receipt"> Enviando recibo, por favor espere..</string>
+    <string name="sending_success"> Enviado con éxito</string>
+    <string name="enter_valid_number"> Por favor, ingrese un número válido y vuelva a intentarlo</string>
+    <string name="enter_valid_email"> Por favor, introduzca un ID de email válido y vuelva a intentarlo </string>
+    <string name="select_one_option"> Por favor, seleccione al menos una opción </string>
+    <string name="amount">MONTO</string>
+    <string name="card_holder"> TITULAR DE LA TARJETA</string>
+    <string name="expiry">VENCIMIENTO</string>
+    <string name="date_time">FECHA/HORA</string>
+    <string name="method">METODO</string>
+    <string name="transaction_type">TIPO DE TRANSACCIÓN</string>
+    <string name="verification">VERIFICACIÓN</string>
+    <string name="signature">FIRMA</string>
+    <string name="transaction_reference">REFERENCIA DE TRANSACCIÓN</string>
+    <string name="details">DETALLES</string>
+    <string name="transaction_details">DETALLE DE TRANSACCIÓN</string>
+    <string name="operator_name_caps">NOMBRE DE OPERADOR</string>
+    <string name="card_name">NOMBRE DE TARJETA</string>
+    <string name="aid">AID</string>
+    <string name="tc_hash">TC HASH</string>
+    <string name="from_account">CUENTA ORIGEN</string>
+    <string name="to_account">CUENTA DESTINO</string>
+    <string name="reversed">REVERSADO</string>
+    <string name="notifications">NOTIFICACIONES</string>
+    <string name="sms">SMS</string>
+    <string name="email">EMAIL</string>
+    <string name="send">ENVIAR</string>
+    <string name="manual_reverse">REVERSA MANUAL</string>
+    <string name="print">IMPRIMIR</string>
+    <string name="true_label">CORRECTO</string>
+
+    <!--Email History dialog strings-->
+    <string name="send_history">Enviar historial</string>
+    <string name="from_and_to_date"> Por favor seleccione el rango de fechas</string>
+    <string name="history_sent"> Historial enviado con éxito</string>
+    <string name="select_valid_date"> Por favor, seleccione una fecha válida</string>
+    <string name="history_please_wait"> Por favor espere, se está enviando el historial</string>
+    <string name="from_date">Fechas desde</string>
+    <string name="to_date">Fecha hasta</string>
+    <string name="email_id">Email ID</string>
+
+    <!--get signature strings-->
+    <string name="please_sign_below"> Por favor firmar abajo...</string>
+    <string name="clear">Limpiar</string>
+
+    <!--more dialog-->
+    <string name="more_title">Mas</string>
+    <string name="account_type">Tipo de cuenta</string>
+    <string name="invoice_info">Información de factura</string>
+    <string name="enter_description">Ingrese descripción</string>
+    <string name="done">Hecho</string>
+
+    <!--approved fragment strings-->
+    <string name="transaction_successful">Transacción\nExitosa</string>
+    <string name="date">FECHA</string>
+    <string name="time">HORA</string>
+    <string name="card_number">NÚMERO DE TARJETA</string>
+    <string name="reference_number">NÚMERO DE REFERENCIA</string>
+    <string name="receipt">RECIBO</string>
+    <string name="help">AYUDA</string>
+    <string name="inquiry_failed">Consulta\nNo exitosa</string>
+    <string name="transaction_failed">Transacción\nNo exitosa</string>
+    <string name="try_again"> Intentar nuevamente</string>
+    <string name="inquiry_success">Consulta\nExitosa</string>
+    <string name="continue_label">CONTINUAR</string>
+
+    <!--history fragment strings-->
+    <string name="last_transaction">Última Transacción</string>
+    <string name="history">Historial</string>
+    <string name="statistics">Estadísticas</string>
+
+    <!--merchant info fragment-->
+    <string name="currency">Moneda: %1$s</string>
+    <string name="merchant_code_label">Código de comercio: %1$s</string>
+    <string name="email_label">Email: </string>
+    <string name="phone_label">Teléfono: %1$s</string>
+    <string name="region_label">región: %1$s</string>
+    <string name="merchant_info">Información de comercio</string>
+    <string name="address">Dirección:</string>
+    <string name="permissions">Permisos</string>
+
+    <!--services strings-->
+    <string name="category">Categoría</string>
+    <string name="billing_organisation"> Organismo de facturación</string>
+    <string name="subscriber_number"> Número de suscriptor</string>
+    <string name="service_please_wait">Por favor espere</string>
+    <string name="choose_billing_organisation"> Elija un organismo de facturación</string>
+    <string name="choose_category"> Por favor elija una categoría</string>
+    <string name="enter_subscriber_number"> Por favor, introduzca un número de suscriptor</string>
+    <string name="choose_category_first"> Por favor, primero elija una categoría</string>
+
+    <!--transfer fund strings-->
+    <string name="destination_bank">Banco destino</string>
+    <string name="from_account_type">Tipo de cuenta origen</string>
+    <string name="to_account_type">Tipo de cuenta destino</string>
+    <string name="select_bank"> Por favor, seleccione un banco</string>
+
+    <!--others-->
+    <string name="internet_not_connected"> Sin conexión a Internet. Por favor, compruebe la configuración de conexión y vuelva a intentarlo.</string>
+    <string name="title_activity_advanced_settings"> Ajustes Avanzados</string>
+    <string name="title_activity_operator_edit">Modificación de Operador</string>
+    <string name="logout_prompt">¿Ud. desea cerrar sesión?</string>
+    <string name="logout_yes">Si</string>
+    <string name="logout_no">No</string>
+    <string name="double_back">Por favor volver hacer clic en “Atras” para salir</string>
+    <string name="code">Código: %1$s</string>
+    <string name="bluetooth_devices">Dispositivos de Bluetooth</string>
+    <string name="device">Dispositivo: %1$s</string>
+    <string name="cash_back">CASHBACK</string>
+    <string name="select_account"> Seleccione la cuenta para la consulta de saldo</string>
+    <string name="please_enter_amount"> Por favor introduzca el monto</string>
+    <string name="no_devices_found"> No se encontraron dispositivos</string>
+    <string name="signature_success"> Firma cargada con éxito</string>
+    <string name="signature_failed">Falló la carga de firma porque su sesión a expirado</string>
+
+</resources>
+

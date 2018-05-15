@@ -1,0 +1,375 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    xmlns:htext="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/progress_TV"
+        style="@style/SmartPesa.Headline.Inverse"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/failBtnLl"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        tools:text="Show Progress" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:orientation="horizontal"
+        tools:visibility="visible"
+        android:id="@+id/failBtnLl">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/try_again"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/secondary_button"
+            android:text="@string/try_again"
+            android:textColor="@drawable/text_general" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/goBackBtn"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/secondary_button"
+            android:text="@string/goBack"
+            android:textColor="@drawable/text_general" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/amount_Process_TV"
+        style="@style/SmartPesa.Display2.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        tools:text="$10.00" />
+
+    <ImageView
+        android:id="@+id/progress_IV"
+        android:layout_width="152dp"
+        android:layout_height="152dp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/transationTypeTV"
+        style="@style/SmartPesa.Title.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount_Process_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        tools:text="Goods &amp; Services" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transationTypeTV"
+        android:layout_marginTop="8dp"
+        android:id="@+id/bluetoothConnection"
+        android:layout_marginBottom="5dp"
+        tools:visibility="invisible"
+        android:layout_above="@+id/progress_TV">
+
+        <com.skyfishjy.library.RippleBackground android:id="@+id/rippleBG"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            app:rb_color="@color/ripple_color"
+            app:rb_duration="3000"
+            app:rb_radius="32dp"
+            app:rb_rippleAmount="4"
+            app:rb_scale="6">
+
+            <ImageView
+                android:id="@+id/bluetoothImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_bluetooth_icon" />
+
+        </com.skyfishjy.library.RippleBackground>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/pesapodClip"
+            android:src="@drawable/pesapod_ready"
+            android:scaleType="fitEnd"
+            android:layout_gravity="right" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/nexus_phone"
+            android:scaleType="fitStart"
+            android:layout_gravity="left" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transationTypeTV"
+        android:layout_marginTop="8dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/swipeOrInsert"
+        android:layout_marginBottom="5dp"
+        android:visibility="invisible"
+        android:layout_above="@+id/progress_TV">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/creditCardIV"
+            android:src="@drawable/credit_card" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:layout_gravity="bottom|center_horizontal"
+            android:id="@+id/bottomCreditCardIv"
+            android:src="@drawable/credit_card_bottom" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/pesapod" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transationTypeTV"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/confirmInputFl"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:layout_above="@+id/progress_TV">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@drawable/pesapod" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="57dp"
+            android:layout_marginRight="20dp"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transationTypeTV"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/inputFl"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:layout_above="@+id/progress_TV">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@drawable/pesapod" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/indicator1"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="37dp"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/indicator5"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="37dp"
+            android:layout_marginTop="85dp"
+            android:visibility="invisible"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/indicator6"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="80dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="73dp"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/indicator2"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="40dp"
+            android:visibility="invisible"
+            android:layout_marginTop="20dp"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/indicator3"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="82dp"
+            android:layout_marginTop="52dp"
+            android:visibility="invisible"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/indicator4"
+            app:indicatorColor="@color/pesa_green"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="85dp"
+            android:visibility="invisible"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transationTypeTV"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/transactionProcessingFl"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:layout_above="@+id/progress_TV">
+
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="230dp"
+            android:layout_height="170dp"
+            android:id="@+id/sendToBankIndicator"
+            app:indicatorColor="@color/md_white_1000"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:padding="4dp"
+            app:indicatorName="com.smartpesa.smartpesa.helpers.SendToBankIndicator" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="230dp"
+            android:layout_height="170dp"
+            android:id="@+id/receiveFromBankIndicator"
+            app:indicatorColor="@color/md_white_1000"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:visibility="invisible"
+            app:indicatorName="com.smartpesa.smartpesa.helpers.ReceiveFromBankIndicator" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="230dp"
+            android:layout_height="170dp"
+            android:id="@+id/receiveFromBankSlowIndicator"
+            app:indicatorColor="@color/md_white_1000"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:visibility="invisible"
+            app:indicatorName="com.smartpesa.smartpesa.helpers.ReceiveFromBankSlowIndicator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/pesa_grey"
+            android:id="@+id/timerLabel"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            tools:visibility="visible"
+            android:visibility="invisible"
+            android:text="Please Standby" />
+
+        <com.hanks.htextview.HTextView
+            android:id="@+id/timerText"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            tools:text="Sample"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="50dp"
+            style="@style/SmartPesa.Display2"
+            htext:animateType="evaporate" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/nexus_phone"
+            android:scaleType="fitStart"
+            android:layout_gravity="left" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bank"
+            android:scaleType="fitEnd"
+            android:layout_gravity="right" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground"
+        android:visibility="gone" />
+
+</RelativeLayout>

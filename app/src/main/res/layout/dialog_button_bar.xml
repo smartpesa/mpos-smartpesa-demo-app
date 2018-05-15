@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="?attr/buttonBarStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:minHeight="48dp"
+    tools:showIn="@layout/dialog_fragment_bluetooth_list">
+
+    <Button
+        android:id="@+id/negative_button"
+        style="?attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@string/cancel"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/positive_button"
+        style="?attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@string/ok"
+        tools:visibility="visible" />
+
+</LinearLayout>

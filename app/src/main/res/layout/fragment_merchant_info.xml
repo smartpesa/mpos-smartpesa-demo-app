@@ -1,0 +1,332 @@
+<com.github.florent37.parallax.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d6d6d6"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.github.florent37.parallax.ParallaxView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:parallaxVertical="0.3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_primary_dark">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:alpha=".5"
+                    android:src="@drawable/credit_card_bg"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/merchantInitial_TV"
+                        style="@style/SmartPesa.Display2.Inverse"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_circle_primary"
+                        android:gravity="center"
+                        tools:text="A" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/merchantNameTV"
+                            android:layout_width="wrap_content"
+                            android:textSize="24sp"
+                            android:textColor="@color/md_white_1000"
+                            android:layout_height="wrap_content"
+                            tools:text="Impact Massive Technologies" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </com.github.florent37.parallax.ParallaxView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="160dp">
+
+            <LinearLayout
+                android:id="@+id/detailsRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg_light_blue"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:elevation="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/merchant_info" />
+
+                <TextView
+                    android:id="@+id/code_MERCHANT_TV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="Merchant Code: 10012" />
+
+                <TextView
+                    android:id="@+id/currency_MERCHANT_TV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="Currency: SGD" />
+
+                <TextView
+                    android:id="@+id/email_MERCHANT_TV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="Email: felix@beefburger.com" />
+
+                <TextView
+                    android:id="@+id/addressLabelTV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/address" />
+
+                <TextView
+                    android:id="@+id/addressTV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    tools:text="MEGASYSTEMS INC, SUITE 5A-1204, 799 E DRAGRAM, TUCSON AZ 85705, USA" />
+
+                <TextView
+                    android:id="@+id/merchantInfophoneTV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="Phone: +6999999999" />
+
+                <TextView
+                    android:id="@+id/regionTV"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="Region: Burger Land" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/operator_details_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_bg_light_blue"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:elevation="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    style="@style/SmartPesa.Title"
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/operator_info" />
+
+                <TextView
+                    style="@style/SmartPesa.Body1"
+                    tools:text="Operator Name: Shaik Ashiq"
+                    android:id="@+id/operator_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    style="@style/SmartPesa.Body1"
+                    tools:text="Operator Code: 100"
+                    android:id="@+id/operator_code_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg_light_blue"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:elevation="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/permissions_TV"
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_done_all_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:text="@string/permissions" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_perm_all_history"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="@string/view_all_history"
+                    tools:checked="true" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_perm_manage_operators"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="@string/manage_operators"
+                    tools:checked="true" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_perm_print_receipt"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="@string/print_receipt"
+                    tools:checked="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/default_terminal_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg_light_blue"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:padding="8dp"
+                android:elevation="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/default_device_label" />
+
+                <TextView
+                    style="@style/SmartPesa.Body1"
+                    tools:text="Terminal Name: W0023091"
+                    android:id="@+id/default_terminal_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remove_default"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/primary_button"
+                    android:padding="8dp"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/remove_default_btn" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pinLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_bg_light_blue"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:elevation="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_pin"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/primary_button"
+                    android:padding="8dp"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/changPinBtn" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</com.github.florent37.parallax.ScrollView>

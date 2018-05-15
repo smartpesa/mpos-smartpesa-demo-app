@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/receipt_APPROVED_BTN"
+    style="@style/SmartPesa.Button.Inverse"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:layout_weight="1"
+    android:background="@drawable/primary_button"
+    android:text="@string/receipt"
+    android:textColor="@drawable/text_general" />

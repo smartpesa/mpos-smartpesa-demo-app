@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/forgotProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:spb_color="@color/progress_color"
+        app:spb_mirror_mode="false"
+        app:spb_progressiveStart_activated="true"
+        app:spb_progressiveStart_speed="1.5"
+        app:spb_progressiveStop_speed="3.4"
+        app:spb_reversed="false"
+        app:spb_sections_count="4"
+        app:spb_speed="1.0"
+        app:spb_stroke_separator_length="2dp"
+        app:spb_stroke_width="4dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/forgot_buttons_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/brand_logo_iv"
+                android:layout_width="@dimen/main_logo_width"
+                android:layout_height="@dimen/main_logo_height"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_brand_logo" />
+
+            <TextView
+                android:id="@+id/forget_hint_tv"
+                style="@style/SmartPesa.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_logo_iv"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/forgot_header_text" />
+
+            <Button
+                android:id="@+id/forgot_merchant_id_btn"
+                style="@style/SmartPesa.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forget_hint_tv"
+                android:background="@drawable/primary_button"
+                android:text="@string/forgot_merchant"
+                android:textColor="@drawable/text_general"/>
+
+            <TextView
+                android:id="@+id/forgot_merchant_id_tv"
+                style="@style/SmartPesa.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forgot_merchant_id_btn"
+                android:text="@string/forgot_merchant_id_text"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/forgot_operator_btn"
+                style="@style/SmartPesa.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forgot_merchant_id_tv"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/primary_button"
+                android:text="@string/forgot_operator"
+                android:textColor="@drawable/text_general" />
+
+            <TextView
+                android:id="@+id/forgot_operator_tv"
+                style="@style/SmartPesa.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forgot_operator_btn"
+                android:text="@string/forgot_operator_text"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/forgot_pin_btn"
+                style="@style/SmartPesa.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forgot_operator_tv"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/primary_button"
+                android:text="@string/forgot_pin"
+                android:textColor="@drawable/text_general"/>
+
+            <RelativeLayout
+                android:id="@+id/forgot_pin_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forgot_pin_btn"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/forgot_pin_tv"
+                    style="@style/SmartPesa.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_pin_request_text" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/operator_til"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/forgot_pin_tv"
+                    android:layout_marginLeft="4dp">
+
+                    <EditText
+                        android:id="@+id/operator_code_tv"
+                        style="@style/SmartPesa.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/operator_code"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:maxLength="3"
+                        android:minWidth="120dp"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/forgot_pin_tv"
+                    android:layout_toLeftOf="@+id/operator_til">
+
+                    <EditText
+                        android:id="@+id/merchant_id_tv"
+                        style="@style/SmartPesa.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/merchant_code"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:maxLength="16"
+                        android:nextFocusDown="@+id/operator_code_tv"
+                        android:singleLine="true">
+
+                        <requestFocus />
+                    </EditText>
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/request_new_pin_btn"
+                    style="@style/SmartPesa.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/operator_til"
+                    android:background="@drawable/primary_button"
+                    android:text="@string/request_new_pin"
+                    android:textColor="@drawable/text_general" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

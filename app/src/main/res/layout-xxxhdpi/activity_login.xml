@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary_dark"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha=".8"
+        android:src="@drawable/login_bg_2" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="16dp"
+        android:id="@+id/aboutIv"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_about" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="@dimen/main_logo_width"
+            android:layout_height="@dimen/main_logo_height"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_brand_logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blur_bg"
+            android:id="@+id/welcomeLl"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/SmartPesa.Display1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome back"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:layout_marginBottom="4dp"
+                android:textColor="@color/color_primary_dark"
+                android:nextFocusDown="@+id/operator_code_tv"
+                android:singleLine="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/md_grey_400"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_account_balance_black_48dp"
+                    android:scaleType="centerInside" />
+
+                <TextView
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Shaik Mohamood Ashiq"
+                    android:textSize="22sp"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/merchantNameTV"
+                    android:textColor="@color/md_grey_800"
+                    android:nextFocusDown="@+id/operator_code_tv"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_person_black_48dp" />
+
+                <TextView
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Shaik Mohamood Ashiq"
+                    android:textSize="22sp"
+                    android:textColor="@color/md_grey_800"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/operatorNameTv"
+                    android:nextFocusDown="@+id/operator_code_tv"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextll"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blur_bg"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_account_balance_black_48dp"
+                    android:scaleType="centerInside" />
+
+                <EditText
+                    android:id="@+id/merchant_id_tv"
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/merchant_code"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="16"
+                    android:nextFocusDown="@+id/operator_code_tv"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blur_bg"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_person_black_48dp" />
+
+                <EditText
+                    android:id="@+id/operator_code_tv"
+                    style="@style/SmartPesa.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/operator_code"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="3"
+                    android:nextFocusDown="@+id/login_pin_tv"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blur_bg"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="4dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_vpn_key_black_48dp" />
+
+            <EditText
+                android:id="@+id/login_pin_tv"
+                style="@style/SmartPesa.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/operator_pin"
+                android:inputType="numberPassword"
+                android:lines="1"
+                android:maxLength="8"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/forget_id_btn"
+                style="@style/SmartPesa.Button.Accented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/text_general"
+                android:background="@drawable/primary_button"
+                android:text="@string/forgot_id" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/login_btn"
+                style="@style/SmartPesa.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/secondary_button"
+                android:text="@string/login_title"
+                android:textColor="@drawable/text_general" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/signUpBtn"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_underlined"
+            android:textColor="@color/md_grey_700" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

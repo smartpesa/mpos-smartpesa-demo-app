@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/merchant_code" />
+
+    <EditText
+        android:id="@+id/merchant_id_tv"
+        style="@style/SmartPesa.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/merchant_code"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLength="16"
+        android:nextFocusDown="@+id/operator_code_tv"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/operator_code" />
+
+    <EditText
+        android:id="@+id/operator_code_tv"
+        style="@style/SmartPesa.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/operator_code"
+        android:inputType="number"
+        android:lines="1"
+        android:maxLength="3"
+        android:nextFocusDown="@+id/login_pin_tv"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/operator_pin" />
+
+    <EditText
+        android:id="@+id/login_pin_tv"
+        style="@style/SmartPesa.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/operator_pin"
+        android:inputType="numberPassword"
+        android:lines="1"
+        android:maxLength="8"
+        android:singleLine="true" />
+
+</LinearLayout>

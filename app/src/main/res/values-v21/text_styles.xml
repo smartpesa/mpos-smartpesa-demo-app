@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Text Styles -->
+    <style name="SmartPesa.Display4" parent="android:TextAppearance.Material.Display4">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Display3" parent="android:TextAppearance.Material.Display3">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Display2" parent="android:TextAppearance.Material.Display2">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Display1" parent="android:TextAppearance.Material.Display1">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Headline" parent="android:TextAppearance.Material.Headline">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Title" parent="android:TextAppearance.Material.Title">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Subhead" parent="android:TextAppearance.Material.Subhead">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Caption" parent="android:TextAppearance.Material.Caption">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Body1" parent="android:TextAppearance.Material.Body1">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Body2" parent="android:TextAppearance.Material.Body2">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Menu" parent="android:TextAppearance.Material.Menu">
+        <item name="fontPath">?attr/defaultFontPath</item>
+    </style>
+
+    <style name="SmartPesa.Button" parent="android:TextAppearance.Material.Button">
+        <item name="android:padding">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">120dp</item>
+    </style>
+
+</resources>

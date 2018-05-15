@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--Primary colors-->
+    <color name="color_accent">#2F5973</color>
+    <color name="color_primary">#ffe79e1f</color>
+    <color name="color_primary_dark">#F57C00</color>
+    <color name="lead_accent">#1f3b4d</color>
+
+
+    <!-- Hack for library -->
+    <color name="colorAccent">@color/color_accent</color>
+    <color name="colorPrimary">@color/color_primary</color>
+
+    <!--Background color-->
+    <color name="window_background">#F2F2F2</color>
+
+    <color name="pesa_grey">#e3e3e3</color>
+    <color name="lead_bg">#00A69A</color>
+
+    <!--Text colors-->
+    <color name="text_color_primary">#212121</color>
+    <color name="text_color_secondary">#616161</color>
+    <color name="text_color_primary_hint">#616161</color>
+    <color name="text_color_primary_hint_inverse">#bdbdbd</color>
+    <color name="text_color_primary_inverse">#FAFAFA</color>
+    <color name="text_color_secondary_inverse">#eeeeee</color>
+    <color name="text_color_primary_pressed">#424242</color>
+    <color name="text_color_secondary_pressed">#757575</color>
+    <color name="text_color_primary_disabled">#b49e9e9e</color>
+    <color name="text_color_secondary_disabled">#b49e9e9e</color>
+
+    <color name="text_primary_accented">@color/color_primary</color>
+    <color name="text_secondary_accented">#be8119</color>
+
+    <!--Primary button colors-->
+    <color name="button_pressed">#FDDA82</color>
+
+    <!--Secondary button colors-->
+    <color name="secondary_light">#A5BBC9</color>
+    <color name="secondary_dark">#2F5973</color>
+
+    <!--Payment success/fail-->
+    <color name="pesa_green">#70C889</color>
+    <color name="pesa_red">#ffdc7676</color>
+    <color name="pesa_yellow">#e1cf57</color>
+
+    <!--Bluetooth ripple color-->
+    <color name="ripple_color">#0099CC</color>
+
+    <color name="progress_color">#70C889</color>
+    <color name="light_grey">#88ffffff</color>
+    <color name="blur_bg">#65ffffff</color>
+
+    <color name="white">#ffffff</color>
+
+</resources>
