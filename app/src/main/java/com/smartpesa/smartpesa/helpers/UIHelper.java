@@ -231,7 +231,7 @@ public class UIHelper {
             case CASH_ADVANCE:
                 return mContext.getResources().getString(R.string.title_cash_advance);
             case CASH_BACK:
-                return mContext.getResources().getString(R.string.cash_back);
+                return mContext.getResources().getString(R.string.title_cashback);
             case CASH_DEPOSIT:
                 return mContext.getResources().getString(R.string.title_cash_in);
             case WITHDRAWAL:
