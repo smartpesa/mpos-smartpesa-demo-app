@@ -152,7 +152,7 @@ dependencies {
         transitive = true
     }
 
-    compile('com.smartpesa:sdk:4.0.0-SNAPSHOT-4') {
+    compile('com.smartpesa:sdk:4.0.0-SNAPSHOT-5') {
         transitive = true
         changing = true
     }
