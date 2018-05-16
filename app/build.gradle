@@ -84,6 +84,7 @@ android {
         maven { url "https://bitbucket.org/smartpesa/smartpesa-maven/raw/master" }
         maven { url "https://bitbucket.org/smartpesa/maven/raw/master" }
         maven { url "https://maven.google.com" }
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     packagingOptions {
@@ -188,7 +189,7 @@ dependencies {
     apt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
     apt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
 
-    compile('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
         transitive = true;
     }
     compile 'javax.annotation:javax.annotation-api:1.2'
