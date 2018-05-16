@@ -1,6 +1,7 @@
 package com.smartpesa.smartpesa.persistence;
 
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.smartpesa.smartpesa.helpers.MenuItem;
 import com.smartpesa.smartpesa.util.MoneyUtils;
 
 import android.content.Context;
@@ -24,11 +25,7 @@ public interface MerchantComponent {
     @Nullable
     VerifiedMerchantInfo provideMerchant();
 
-    @MainMenuItems
-    List<IDrawerItem> provideMainMenuItems();
-
-    @AllMenuItems
-    List<IDrawerItem> provideAllDrawerItems();
+    List<MenuItem> getMenuItems();
 
     @DefaultFromAccount
     int provideDefaultFromAccount();

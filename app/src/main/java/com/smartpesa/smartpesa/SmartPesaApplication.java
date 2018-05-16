@@ -1,6 +1,7 @@
 package com.smartpesa.smartpesa;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.smartpesa.smartpesa.flavour.DaggerFlavourComponent;
 import com.smartpesa.smartpesa.flavour.FlavourComponent;
 import com.smartpesa.smartpesa.flavour.FlavourModule;
@@ -50,7 +51,11 @@ public class SmartPesaApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
 
-        Fabric.with(this, new Crashlytics());
+        // Set up Crashlytics, disabled for debug builds
+        Crashlytics crashlyticsKit = new Crashlytics.Builder()
+                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
+                .build();
+        Fabric.with(this, crashlyticsKit);
 
         mComponent = DaggerSmartPesaApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))

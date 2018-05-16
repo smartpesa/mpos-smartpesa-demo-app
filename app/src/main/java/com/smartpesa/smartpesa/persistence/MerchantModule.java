@@ -6,6 +6,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.SmartPesaApplication;
 import com.smartpesa.smartpesa.flavour.FlavourComponent;
+import com.smartpesa.smartpesa.helpers.MenuItem;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.util.MoneyUtils;
 
@@ -36,15 +37,15 @@ public class MerchantModule {
     public static final int MENU_ID_ABOUT = 10;
     public static final int MENU_ID_LOGOUT = 11;
     public static final int MENU_ID_DUMMY_MERCHANT_INFO = 12;
-    public static final int MENU_ID_LAST_TRANSACTION = 22;
-    public static final int MENU_ID_STATISTICS = 212;
-    public static final int MENU_ID_HOME = 202;
-    public static final int MENU_ID_LOYALTY_INQUIRY = 999;
-    public static final int MENU_ID_REPORTS = 21212;
-    public static final int MENU_ID_MASTERPASS = 23;
-    public static final int MENU_ID_ALIPAY = 24;
-    public static final int MENU_ID_WECHAT = 1111;
-    public static final int MENU_ID_CRYPTO = 1101;
+    public static final int MENU_ID_LAST_TRANSACTION = 13;
+    public static final int MENU_ID_STATISTICS = 14;
+    public static final int MENU_ID_HOME = 15;
+    public static final int MENU_ID_LOYALTY_INQUIRY = 16;
+    public static final int MENU_ID_REPORTS = 17;
+    public static final int MENU_ID_MASTERPASS = 18;
+    public static final int MENU_ID_ALIPAY = 19;
+    public static final int MENU_ID_WECHAT = 20;
+    public static final int MENU_ID_CRYPTO = 21;
 
     public MerchantModule() {
     }
@@ -57,28 +58,21 @@ public class MerchantModule {
     }
 
     @Provides
-    @MainMenuItems
-    @MerchantScope
-    List<IDrawerItem> providesMainDrawerItem(@Nullable VerifiedMerchantInfo currentMerchant, Context context) {
-        UIHelper font = new UIHelper(context);
+    public List<MenuItem> provideMenuList(@Nullable VerifiedMerchantInfo currentMerchant) {
+        ArrayList<MenuItem> list = new ArrayList<>();
 
-        PrimaryDrawerItem home = new PrimaryDrawerItem().withName(R.string.title_home).withIcon(R.drawable.ic_payment_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_HOME);
-
-        PrimaryDrawerItem sale = new PrimaryDrawerItem().withName(R.string.title_payment).withIcon(R.drawable.ic_payment_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_SALE);
-        PrimaryDrawerItem refund = new PrimaryDrawerItem().withName(R.string.title_refund).withIcon(R.drawable.ic_attach_money_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_REFUND);
-        PrimaryDrawerItem cashBack = new PrimaryDrawerItem().withName(R.string.title_cashback).withIcon(R.drawable.ic_local_atm_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_CASH_BACK);
-        PrimaryDrawerItem queryLoyalty = new PrimaryDrawerItem().withName(R.string.title_loyalty_inquiry).withIcon(R.drawable.ic_info_outline_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_LOYALTY_INQUIRY);
-        PrimaryDrawerItem balanceInquiry = new PrimaryDrawerItem().withName(R.string.title_inquiry).withIcon(R.drawable.ic_info_outline_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_BALANCE_INQUIRY);
-        PrimaryDrawerItem withdrawal = new PrimaryDrawerItem().withName(R.string.title_withdrawal).withIcon(R.drawable.ic_attach_money_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_WITHDRAWAL);
-        PrimaryDrawerItem transferFunds = new PrimaryDrawerItem().withName(R.string.title_transfer_funds).withIcon(R.drawable.ic_transfer_funds).withTypeface(font.boldFont).withIdentifier(MENU_ID_FUND_TRANSFER);
-        PrimaryDrawerItem billPayment = new PrimaryDrawerItem().withName(R.string.title_services).withIcon(R.drawable.ic_directions_subway_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_BILL_PAYMENT);
-        PrimaryDrawerItem reports = new PrimaryDrawerItem().withName(R.string.title_reports).withIcon(R.drawable.ic_attach_money_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_REPORTS);
-        PrimaryDrawerItem masterPassQR = new PrimaryDrawerItem().withName(R.string.title_masterpass).withIcon(R.drawable.ic_attach_money_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_MASTERPASS);
-        PrimaryDrawerItem alipay = new PrimaryDrawerItem().withName(R.string.title_alipay).withIcon(R.drawable.ic_alipay).withTypeface(font.boldFont).withIdentifier(MENU_ID_ALIPAY);
-        PrimaryDrawerItem weChat = new PrimaryDrawerItem().withName(R.string.title_wechat).withIcon(R.drawable.ic_wechat).withTypeface(font.boldFont).withIdentifier(MENU_ID_WECHAT);
-        PrimaryDrawerItem crypto = new PrimaryDrawerItem().withName(R.string.title_crypto).withIcon(R.drawable.ic_crypto_menu).withTypeface(font.boldFont).withIdentifier(MENU_ID_CRYPTO);
-
-        ArrayList<IDrawerItem> drawerItemList = new ArrayList<>();
+        MenuItem sale = new MenuItem(MENU_ID_SALE, R.drawable.ic_payment_black_24dp, R.string.title_payment);
+        MenuItem refund = new MenuItem(MENU_ID_REFUND, R.drawable.ic_attach_money_black_24dp, R.string.title_refund);
+        MenuItem cashBack = new MenuItem(MENU_ID_CASH_BACK, R.drawable.ic_local_atm_black_24dp, R.string.title_cashback);
+        MenuItem queryLoyalty = new MenuItem(MENU_ID_LOYALTY_INQUIRY, R.drawable.ic_info_outline_black_24dp, R.string.title_loyalty_inquiry);
+        MenuItem balanceInquiry = new MenuItem(MENU_ID_BALANCE_INQUIRY, R.drawable.ic_info_outline_black_24dp, R.string.title_inquiry);
+        MenuItem withdrawal = new MenuItem(MENU_ID_WITHDRAWAL, R.drawable.ic_attach_money_black_24dp, R.string.title_withdrawal);
+        MenuItem transferFunds = new MenuItem(MENU_ID_FUND_TRANSFER, R.drawable.ic_transfer_funds, R.string.title_transfer_funds);
+        MenuItem billPayment = new MenuItem(MENU_ID_BILL_PAYMENT, R.drawable.ic_directions_subway_black_24dp, R.string.title_services);
+        MenuItem reports = new MenuItem(MENU_ID_REPORTS, R.drawable.ic_attach_money_black_24dp, R.string.title_reports);
+        MenuItem alipay = new MenuItem(MENU_ID_ALIPAY, R.drawable.ic_alipay, R.string.title_alipay);
+        MenuItem weChat = new MenuItem(MENU_ID_WECHAT, R.drawable.ic_wechat, R.string.title_wechat);
+        MenuItem crypto = new MenuItem(MENU_ID_CRYPTO, R.drawable.ic_crypto_menu, R.string.title_crypto);
 
         int[] permissions = currentMerchant.getMenuControl();
 
@@ -86,74 +80,32 @@ public class MerchantModule {
             for (int i = 0; i < permissions.length; i++) {
                 int permission = permissions[i];
                 if (permission == 1) {
-                    drawerItemList.add(sale);
+                    list.add(sale);
                 } else if (permission == 2) {
-                    drawerItemList.add(queryLoyalty);
+                    list.add(queryLoyalty);
                 } else if (permission == 3) {
-                    drawerItemList.add(refund);
+                    list.add(refund);
                 } else if (permission == 4) {
-                    drawerItemList.add(billPayment);
+                    list.add(billPayment);
                 } else if (permission == 5) {
-                    drawerItemList.add(cashBack);
+                    list.add(cashBack);
                 } else if (permission == 6) {
-                    drawerItemList.add(balanceInquiry);
+                    list.add(balanceInquiry);
                 } else if (permission == 7) {
-                    drawerItemList.add(withdrawal);
+                    list.add(withdrawal);
                 } else if (permission == 8) {
-                    drawerItemList.add(transferFunds);
-                } else if (permission == 9) {
-                    drawerItemList.add(masterPassQR);
+                    list.add(transferFunds);
+                }  else if (permission == 9) {
+                    list.add(alipay);
                 } else if (permission == 10) {
-                    drawerItemList.add(alipay);
+                    list.add(crypto);
                 } else if (permission == 11) {
-                    drawerItemList.add(crypto);
-                } else if (permission == 12) {
-                    drawerItemList.add(weChat);
+                    list.add(weChat);
                 }
             }
         }
 
-        FlavourComponent flavourComponent = SmartPesaApplication.flavourComponent(context);
-        if (flavourComponent != null) {
-            drawerItemList.addAll(flavourComponent.provideFlavourSpecificDrawerItem());
-        }
-
-        return drawerItemList;
-    }
-
-    @Provides
-    @AllMenuItems
-    @MerchantScope
-    List<IDrawerItem> providesDrawerItemForCurrentMerchant(@Nullable VerifiedMerchantInfo currentMerchant, Context context, @MainMenuItems List<IDrawerItem> menuItems) {
-        UIHelper font = new UIHelper(context);
-
-        // Initialize array list with max possible values to avoid array resizing.
-        ArrayList<IDrawerItem> drawerItemList = new ArrayList<>(15);
-
-        PrimaryDrawerItem history = new PrimaryDrawerItem().withName(R.string.title_history).withIcon(R.drawable.ic_history_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_HISTORY);
-        PrimaryDrawerItem lastTransaction = new PrimaryDrawerItem().withName(R.string.last_transaction).withIcon(R.drawable.ic_history_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_LAST_TRANSACTION);
-        PrimaryDrawerItem statistics = new PrimaryDrawerItem().withName(R.string.statistics).withIcon(R.drawable.ic_history_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_STATISTICS);
-
-        drawerItemList.add(history);
-
-        drawerItemList.add(new DividerDrawerItem());
-
-        drawerItemList.addAll(menuItems);
-
-        //show operators fragment only if he has permissions to manage operators.
-        PrimaryDrawerItem operators = new PrimaryDrawerItem().withName(R.string.title_operators).withIcon(R.drawable.ic_person_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_OPERATORS);
-        PrimaryDrawerItem settings = new PrimaryDrawerItem().withName(R.string.title_settings).withIcon(R.drawable.ic_settings_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_SETTINGS);
-        PrimaryDrawerItem about = new PrimaryDrawerItem().withName(R.string.title_about).withIcon(R.drawable.ic_chat_bubble_outline_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_ABOUT);
-        PrimaryDrawerItem logout = new PrimaryDrawerItem().withName(R.string.title_logout).withIcon(R.drawable.ic_exit_to_app_black_24dp).withTypeface(font.boldFont).withIdentifier(MENU_ID_LOGOUT);
-
-        drawerItemList.add(new DividerDrawerItem());
-        drawerItemList.add(operators);
-        drawerItemList.add(settings);
-        drawerItemList.add(new DividerDrawerItem());
-        drawerItemList.add(about);
-        drawerItemList.add(logout);
-
-        return drawerItemList;
+        return list;
     }
 
     @Provides

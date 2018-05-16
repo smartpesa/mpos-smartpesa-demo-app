@@ -46,6 +46,7 @@ android {
 
     buildTypes {
         debug {
+            ext.enableCrashlytics = false
             applicationIdSuffix '.dev'
         }
         release {
@@ -216,6 +217,7 @@ dependencies {
     compile 'com.github.kenglxn.QRGen:android:2.3.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     androidTestCompile 'com.google.code.findbugs:jsr305:3.0.1'
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
 }
 
 project.afterEvaluate {

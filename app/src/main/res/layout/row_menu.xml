@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/blur_bg">
+
+    <ImageView
+        android:id="@+id/grid_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        tools:src="@drawable/ic_transfer_funds" />
+
+    <TextView
+        android:id="@+id/grid_text"
+        style="@style/SmartPesa.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        tools:text="Balance Inquiry" />
+
+</LinearLayout>

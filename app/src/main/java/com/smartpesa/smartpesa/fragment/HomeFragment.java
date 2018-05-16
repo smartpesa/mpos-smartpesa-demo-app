@@ -1,37 +1,30 @@
 package com.smartpesa.smartpesa.fragment;
 
-import com.smartpesa.smartpesa.R;
-
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.text.TextUtils;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import smartpesa.sdk.models.merchant.VerifiedMerchantInfo;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.smartpesa.smartpesa.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends BaseFragment {
 
-    @Bind(R.id.merchantInitial_TV) TextView merchantInitialTV;
-    @Bind(R.id.merchantNameTV) TextView merchantNameTV;
-    @Bind(R.id.operator_name_tv) TextView operatorNameTv;
-    @Bind(R.id.historyLabelTv) TextView historyLabelTv;
-    @Bind(R.id.otherLabelTv) TextView otherLabelTv;
+    private SmartTabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-        if (getMerchantComponent(getActivity()) == null) {
-            logoutUser();
-            return;
-        }
     }
 
     @Override
@@ -43,41 +36,67 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+        if (getMerchantComponent(getActivity()) == null) {
+            logoutUser();
+            return;
+        }
 
-        setUpMerchant();
+        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        tabLayout = (SmartTabLayout) view.findViewById(R.id.viewpagertab);
+        tabLayout.setViewPager(viewPager);
     }
 
-    private void setUpMerchant() {
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+        adapter.addFragment(MenuFragment.newInstance(MenuFragment.TRANSACTIONS), getString(R.string.title_transactions));
+        adapter.addFragment(MenuFragment.newInstance(MenuFragment.INFORMATION), getString(R.string.title_information));
+        viewPager.setAdapter(adapter);
+    }
 
-        VerifiedMerchantInfo mVerifyMerchantInfo = getMerchantComponent(getActivity()).provideMerchant();
-        String merchantName = mVerifyMerchantInfo.getMerchantName();
-        String merchantInitial = merchantName.substring(0, 1);
-        String operatorName = mVerifyMerchantInfo.getOperatorName();
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        if (!TextUtils.isEmpty(merchantInitial)) {
-            merchantInitialTV.setText(merchantInitial);
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
         }
 
-        if (!TextUtils.isEmpty(merchantName)) {
-            merchantNameTV.setText(merchantName);
-        } else {
-            merchantNameTV.setVisibility(View.GONE);
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
         }
 
-        if (!TextUtils.isEmpty(operatorName)) {
-            operatorNameTv.setText(operatorName);
-        } else {
-            operatorNameTv.setVisibility(View.GONE);
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
         }
 
-        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-BoldCondensed.ttf");
-        merchantNameTV.setTypeface(font);
-        historyLabelTv.setTypeface(font);
-        otherLabelTv.setTypeface(font);
-//        operatorNameTv.setTypeface();
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        android.support.v7.app.ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(getString(R.string.title_menu));
+        }
+    }
+
+    @Override
+    protected boolean isShowHomeAsUp() {
+        return false;
     }
 }
-
