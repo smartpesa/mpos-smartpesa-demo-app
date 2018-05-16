@@ -150,11 +150,11 @@ public class MenuFragment extends BaseFragment {
         final ArrayList<MenuItem> menuItems = new ArrayList<>();
 
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_LAST_TRANSACTION, R.drawable.ic_history_black_24dp, R.string.last_transaction));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_HISTORY, R.drawable.ic_history_black_24dp, R.string.history));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_STATISTICS, R.drawable.ic_history_black_24dp, R.string.statistics));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_DUMMY_MERCHANT_INFO, R.drawable.ic_about, R.string.merchant_info));
+        menuItems.add(new MenuItem(MerchantModule.MENU_ID_HISTORY, R.drawable.ic_history, R.string.history));
+        menuItems.add(new MenuItem(MerchantModule.MENU_ID_STATISTICS, R.drawable.ic_statistics, R.string.statistics));
+        menuItems.add(new MenuItem(MerchantModule.MENU_ID_DUMMY_MERCHANT_INFO, R.drawable.ic_merchant, R.string.merchant_info));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_OPERATORS, R.drawable.ic_person_black_24dp, R.string.title_operators));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_SETTINGS, R.drawable.ic_settings_black_24dp, R.string.title_settings));
+        menuItems.add(new MenuItem(MerchantModule.MENU_ID_SETTINGS, R.drawable.ic_devices, R.string.title_settings));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_ABOUT, R.drawable.ic_chat_bubble_outline_black_24dp, R.string.title_about));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_LOGOUT, R.drawable.ic_exit_to_app_black_24dp, R.string.title_logout));
 

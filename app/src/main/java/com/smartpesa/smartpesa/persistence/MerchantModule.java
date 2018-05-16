@@ -61,15 +61,14 @@ public class MerchantModule {
     public List<MenuItem> provideMenuList(@Nullable VerifiedMerchantInfo currentMerchant) {
         ArrayList<MenuItem> list = new ArrayList<>();
 
-        MenuItem sale = new MenuItem(MENU_ID_SALE, R.drawable.ic_payment_black_24dp, R.string.title_payment);
-        MenuItem refund = new MenuItem(MENU_ID_REFUND, R.drawable.ic_attach_money_black_24dp, R.string.title_refund);
+        MenuItem sale = new MenuItem(MENU_ID_SALE, R.drawable.ic_sale, R.string.title_payment);
+        MenuItem refund = new MenuItem(MENU_ID_REFUND, R.drawable.ic_refund, R.string.title_refund);
         MenuItem cashBack = new MenuItem(MENU_ID_CASH_BACK, R.drawable.ic_local_atm_black_24dp, R.string.title_cashback);
-        MenuItem queryLoyalty = new MenuItem(MENU_ID_LOYALTY_INQUIRY, R.drawable.ic_info_outline_black_24dp, R.string.title_loyalty_inquiry);
+        MenuItem queryLoyalty = new MenuItem(MENU_ID_LOYALTY_INQUIRY, R.drawable.ic_loyalty, R.string.title_loyalty_inquiry);
         MenuItem balanceInquiry = new MenuItem(MENU_ID_BALANCE_INQUIRY, R.drawable.ic_info_outline_black_24dp, R.string.title_inquiry);
-        MenuItem withdrawal = new MenuItem(MENU_ID_WITHDRAWAL, R.drawable.ic_attach_money_black_24dp, R.string.title_withdrawal);
+        MenuItem withdrawal = new MenuItem(MENU_ID_WITHDRAWAL, R.drawable.ic_cashout, R.string.title_withdrawal);
         MenuItem transferFunds = new MenuItem(MENU_ID_FUND_TRANSFER, R.drawable.ic_transfer_funds, R.string.title_transfer_funds);
         MenuItem billPayment = new MenuItem(MENU_ID_BILL_PAYMENT, R.drawable.ic_directions_subway_black_24dp, R.string.title_services);
-        MenuItem reports = new MenuItem(MENU_ID_REPORTS, R.drawable.ic_attach_money_black_24dp, R.string.title_reports);
         MenuItem alipay = new MenuItem(MENU_ID_ALIPAY, R.drawable.ic_alipay, R.string.title_alipay);
         MenuItem weChat = new MenuItem(MENU_ID_WECHAT, R.drawable.ic_wechat, R.string.title_wechat);
         MenuItem crypto = new MenuItem(MENU_ID_CRYPTO, R.drawable.ic_crypto_menu, R.string.title_crypto);
