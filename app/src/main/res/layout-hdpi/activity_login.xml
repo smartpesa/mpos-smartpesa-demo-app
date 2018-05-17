@@ -37,12 +37,11 @@
         android:padding="16dp">
 
         <ImageView
-            android:layout_width="230dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="16dp"
             android:src="@drawable/ic_brand_logo" />
 
         <LinearLayout
