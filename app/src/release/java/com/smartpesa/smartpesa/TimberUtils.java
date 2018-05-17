@@ -4,6 +4,6 @@ import timber.log.Timber;
 
 public class TimberUtils {
     public static void initTimber() {
-        Timber.plant(new CrittercismTree());
+        Timber.plant(new Timber.DebugTree());
     }
 }
