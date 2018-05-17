@@ -39,6 +39,7 @@
             <ImageView
                 android:layout_width="@dimen/main_logo_width"
                 android:layout_height="@dimen/main_logo_height"
+                android:layout_marginTop="16dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="20dp"
