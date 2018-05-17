@@ -1,8 +1,8 @@
 <resources>
 
-    <string name="app_name">SmartPesa</string>
+    <string name="app_name">SmartPesa Credible</string>
 
-    <string name="app_url" translatable="false">dev.smartpesa.com</string>
+    <string name="app_url" translatable="false">demo.smartpesa.com</string>
     <string name="version_endpoint" translatable="false">http://%1$s/version.txt</string>
 
     <!--Menu titles-->
@@ -11,7 +11,7 @@
     <string name="title_payment">Sale</string>
     <string name="title_inquiry">Balance Inquiry</string>
     <string name="title_withdrawal">Cash-Out</string>
-    <string name="title_services">Bills Payment</string>
+    <string name="title_services">Bill Payment</string>
     <string name="title_settings">Devices</string>
     <string name="title_about">About</string>
     <string name="title_logout">Logout</string>
@@ -374,9 +374,13 @@
     <string name="title_wechat">WeChat Pay</string>
     <string name="title_crypto">Crypto Payment</string>
     <string name="currency_type">Currency Type</string>
+    <string name="title_menu">Home</string>
+    <string name="title_transactions">TRANSACTIONS</string>
+    <string name="title_information">INFORMATION</string>
 
-
-    <string name="google_geo_api_key"></string>
-    <string name="fabric_api_key"></string>
+    <string name="google_geo_api_key">AIzaSyAGevGA3EgSWKtb9a79kY6d1G13e-1A9eI</string>
+    <string name="fabric_api_key">d0e401558323673215cebeb057ca00bab29de93c</string>
+    <string name="title_crypto_atm">Crypto ATM</string>
+    <string name="title_credible">Credible</string>
 
 </resources>

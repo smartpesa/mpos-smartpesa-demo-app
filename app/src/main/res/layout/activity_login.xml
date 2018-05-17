@@ -42,6 +42,7 @@
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="16dp"
                 android:src="@drawable/ic_brand_logo" />
 
             <LinearLayout
