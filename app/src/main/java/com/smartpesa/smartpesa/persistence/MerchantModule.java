@@ -66,12 +66,14 @@ public class MerchantModule {
         MenuItem cashBack = new MenuItem(MENU_ID_CASH_BACK, R.drawable.ic_local_atm_black_24dp, R.string.title_cashback);
         MenuItem queryLoyalty = new MenuItem(MENU_ID_LOYALTY_INQUIRY, R.drawable.ic_loyalty, R.string.title_loyalty_inquiry);
         MenuItem balanceInquiry = new MenuItem(MENU_ID_BALANCE_INQUIRY, R.drawable.ic_info_outline_black_24dp, R.string.title_inquiry);
-        MenuItem withdrawal = new MenuItem(MENU_ID_WITHDRAWAL, R.drawable.ic_cashout, R.string.title_withdrawal);
+        MenuItem cashout = new MenuItem(MENU_ID_WITHDRAWAL, R.drawable.ic_cashout, R.string.title_withdrawal);
         MenuItem transferFunds = new MenuItem(MENU_ID_FUND_TRANSFER, R.drawable.ic_transfer_funds, R.string.title_transfer_funds);
         MenuItem billPayment = new MenuItem(MENU_ID_BILL_PAYMENT, R.drawable.ic_directions_subway_black_24dp, R.string.title_services);
         MenuItem alipay = new MenuItem(MENU_ID_ALIPAY, R.drawable.ic_alipay, R.string.title_alipay);
         MenuItem weChat = new MenuItem(MENU_ID_WECHAT, R.drawable.ic_wechat, R.string.title_wechat);
-        MenuItem crypto = new MenuItem(MENU_ID_CRYPTO, R.drawable.ic_crypto_menu, R.string.title_crypto);
+        MenuItem cryptoPayment = new MenuItem(MENU_ID_CRYPTO, R.drawable.ic_crypto_menu, R.string.title_crypto);
+        MenuItem cryptoATM = new MenuItem(MENU_ID_CRYPTO, R.drawable.ic_crypto_atm, R.string.title_crypto_atm);
+        MenuItem credible = new MenuItem(MENU_ID_DUMMY_MERCHANT_INFO, R.drawable.ic_credible, R.string.title_credible);
 
         int[] permissions = currentMerchant.getMenuControl();
 
@@ -81,25 +83,25 @@ public class MerchantModule {
                 if (permission == 1) {
                     list.add(sale);
                 } else if (permission == 2) {
-                    list.add(queryLoyalty);
+                    list.add(cryptoATM);
                 } else if (permission == 3) {
-                    list.add(refund);
+                    list.add(cashout);
                 } else if (permission == 4) {
-                    list.add(billPayment);
+                    list.add(cryptoPayment);
                 } else if (permission == 5) {
-                    list.add(cashBack);
+                    list.add(billPayment);
                 } else if (permission == 6) {
-                    list.add(balanceInquiry);
+                    list.add(credible);
                 } else if (permission == 7) {
-                    list.add(withdrawal);
+                    list.add(refund);
                 } else if (permission == 8) {
-                    list.add(transferFunds);
-                }  else if (permission == 9) {
                     list.add(alipay);
+                }  else if (permission == 9) {
+                    list.add(cashBack);
                 } else if (permission == 10) {
-                    list.add(crypto);
-                } else if (permission == 11) {
                     list.add(weChat);
+                } else if (permission == 11) {
+                    list.add(balanceInquiry);
                 }
             }
         }
