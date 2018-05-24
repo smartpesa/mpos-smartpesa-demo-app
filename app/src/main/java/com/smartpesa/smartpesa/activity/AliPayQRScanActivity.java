@@ -21,6 +21,8 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.math.BigDecimal;
 
@@ -41,6 +43,11 @@ public class AliPayQRScanActivity extends BaseActivity implements ZXingScannerVi
     public MoneyUtils mMoneyUtils;
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
+    @Bind(R.id.imageView)
+    ImageView aliPayLogoIv;
+    @Bind(R.id.textDisplay)
+    TextView instructionText;
+    boolean crypto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,26 +70,37 @@ public class AliPayQRScanActivity extends BaseActivity implements ZXingScannerVi
 
         Bundle bundle = getIntent().getBundleExtra("bundle");
         amount = new BigDecimal(bundle.getDouble("amount", 0.00));
+        crypto = bundle.getBoolean("crypto");
         serviceManager = SmartPesaApplication.component(AliPayQRScanActivity.this).serviceManager();
         mMoneyUtils = getMerchantComponent().provideMoneyUtils();
+
+        if (crypto) {
+            aliPayLogoIv.setImageResource(R.mipmap.ic_launcher);
+            instructionText.setText(R.string.crypto_scan_instruction);
+            setTitle(R.string.title_crypto_atm);
+        } else {
+            setTitle(R.string.title_alipay);
+        }
     }
 
     @Override
     public void handleResult(Result rawResult) {
 
-        Bundle paymentBundle = new Bundle();
-        paymentBundle.putDouble("amount", amount.doubleValue());
-        paymentBundle.putInt("transactionType", SmartPesaTransactionType.SALE.getEnumId());
-        paymentBundle.putInt("fromAccount", SmartPesa.AccountType.DEFAULT.getEnumId());
-        paymentBundle.putInt("toAccount", SmartPesa.AccountType.DEFAULT.getEnumId());
-        paymentBundle.putString("qrScan", rawResult.getText());
-        paymentBundle.putBoolean("isScan", true);
+        if (!crypto) {
+            Bundle paymentBundle = new Bundle();
+            paymentBundle.putDouble("amount", amount.doubleValue());
+            paymentBundle.putInt("transactionType", SmartPesaTransactionType.SALE.getEnumId());
+            paymentBundle.putInt("fromAccount", SmartPesa.AccountType.DEFAULT.getEnumId());
+            paymentBundle.putInt("toAccount", SmartPesa.AccountType.DEFAULT.getEnumId());
+            paymentBundle.putString("qrScan", rawResult.getText());
+            paymentBundle.putBoolean("isScan", true);
 
-        Intent paymentIntent = new Intent(this, AliPayPaymentProgressActivity.class);
-        paymentIntent.putExtras(paymentBundle);
-        startActivity(paymentIntent);
+            Intent paymentIntent = new Intent(this, AliPayPaymentProgressActivity.class);
+            paymentIntent.putExtras(paymentBundle);
+            startActivity(paymentIntent);
 
-        finish();
+            finish();
+        }
     }
 
     @Override

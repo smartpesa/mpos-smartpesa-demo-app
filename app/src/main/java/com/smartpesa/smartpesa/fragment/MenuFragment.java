@@ -34,7 +34,6 @@ public class MenuFragment extends BaseFragment {
     public static final String KEY_MENU_TYPE = "menuType";
     public static final int TRANSACTIONS = 1;
     public static final int INFORMATION = 2;
-    public static final int CREDIBLE = 3;
     Lazy<ServiceManager> serviceManager;
     Context mContext;
     int menuType;
@@ -95,6 +94,8 @@ public class MenuFragment extends BaseFragment {
             setUpInquiryMenu(view);
         }
     }
+
+
 
     private void setTransactionMenu(View view) {
         final List<MenuItem> menuItems = getMerchantComponent(getActivity()).getMenuItems();

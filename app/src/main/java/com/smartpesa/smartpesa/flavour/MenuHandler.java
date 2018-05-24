@@ -1,9 +1,11 @@
 package com.smartpesa.smartpesa.flavour;
 
 import com.smartpesa.smartpesa.fragment.AboutFragment;
+import com.smartpesa.smartpesa.fragment.CryptoAtmFragment;
 import com.smartpesa.smartpesa.fragment.HomeFragment;
 import com.smartpesa.smartpesa.fragment.InquiryFragment;
 import com.smartpesa.smartpesa.fragment.LoyaltyInquiryFragment;
+import com.smartpesa.smartpesa.fragment.MenuFragment;
 import com.smartpesa.smartpesa.fragment.MerchantInfoFragment;
 import com.smartpesa.smartpesa.fragment.OperatorsFragment;
 import com.smartpesa.smartpesa.fragment.ServicesFragment;
@@ -15,6 +17,7 @@ import com.smartpesa.smartpesa.fragment.history.StatisticsFragment;
 import com.smartpesa.smartpesa.fragment.payment.AliPayPaymentFragment;
 import com.smartpesa.smartpesa.fragment.payment.CashBackPaymentFragment;
 import com.smartpesa.smartpesa.fragment.payment.CashWithdrawalPaymentFragment;
+import com.smartpesa.smartpesa.fragment.payment.CryptoAtmPaymentFragment;
 import com.smartpesa.smartpesa.fragment.payment.GoCoinPaymentFragment;
 import com.smartpesa.smartpesa.fragment.payment.MasterCardPaymentFragment;
 import com.smartpesa.smartpesa.fragment.payment.RefundPaymentFragment;
@@ -121,6 +124,14 @@ public class MenuHandler {
             case MerchantModule.MENU_ID_CRYPTO:
                 Timber.i("User clicks on Crypto");
                 fragment = GoCoinPaymentFragment.newInstance(SmartPesaTransactionType.PAYMENT, mDefFromAccount, mDefToAccount);
+                break;
+            case MerchantModule.MENU_ID_CRYPTO_ATM:
+                Timber.i("User clicks on Crypto ATM");
+                fragment = new CryptoAtmFragment();
+                break;
+            case MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT:
+                Timber.i("User clicks on Crypto ATM");
+                fragment = CryptoAtmPaymentFragment.newInstance(SmartPesaTransactionType.SALE, mDefFromAccount, mDefToAccount);
                 break;
             default:
                 Timber.e("Invalid menu item with identifier: %d", identifier);

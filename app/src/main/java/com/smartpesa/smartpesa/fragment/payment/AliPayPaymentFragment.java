@@ -69,6 +69,7 @@ public class AliPayPaymentFragment extends AbstractPaymentFragment {
                 paymentBundle.putInt("transactionType", SmartPesaTransactionType.SALE.getEnumId());
                 paymentBundle.putInt("fromAccount", mFromAccount);
                 paymentBundle.putInt("toAccount", mToAccount);
+                paymentBundle.putBoolean("crypto", false);
 
                 onBuildPaymentDescription(paymentBundle);
 
