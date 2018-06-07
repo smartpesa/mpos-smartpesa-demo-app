@@ -1,17 +1,10 @@
 package com.smartpesa.smartpesa.fragment.payment;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.activity.AliPayQRScanActivity;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
-import com.smartpesa.smartpesa.util.SmallCalculator;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -20,24 +13,25 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.activity.crypto.CryptoInfoActivity;
+import com.smartpesa.smartpesa.fragment.dialog.CurrencyDialogFragment;
+import com.smartpesa.smartpesa.helpers.UIHelper;
+import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
+import com.smartpesa.smartpesa.persistence.MerchantModule;
+import com.smartpesa.smartpesa.util.SmallCalculator;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 
 import butterknife.Bind;
-import smartpesa.sdk.core.error.SpException;
-import smartpesa.sdk.models.ExtraDataContainer;
-import smartpesa.sdk.models.provider.GetProviderExtraDataCallback;
+import smartpesa.sdk.models.currency.Currency;
 
 public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
 
-    public static final String ACTION = "action";
-    public static final String RATE = "rate";
-    public static final String RATE1 = "rate";
-    public static final String BTCUSD = "btcusd";
-    public static final String BIT_STAMP = "BitStamp";
+    private static final String CURRENCY_DIALOG_TAG = "currencyDialog";
+    private static final String BUNDLE_KEY_CRYPTO_TYPE = "cryptoType";
+
     boolean cashBackSelected = false;
     @Bind(R.id.cashBackRL) RelativeLayout cashBackRL;
     @Bind(R.id.cashBackLabelTV) TextView cashBackLabelTV;
@@ -53,13 +47,15 @@ public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
 
     private String mCashBackStringAmount;
     private SmallCalculator mCashBackCalculator;
+    int cryptoType;
 
-    public static CryptoAtmPaymentFragment newInstance(SmartPesaTransactionType transactionType, int fromAccount, int toAccount) {
+    public static CryptoAtmPaymentFragment newInstance(SmartPesaTransactionType transactionType, int crytoType, int fromAccount, int toAccount) {
         CryptoAtmPaymentFragment fragment = new CryptoAtmPaymentFragment();
         Bundle paymentBundle = new Bundle();
         paymentBundle.putInt(BUNDLE_KEY_TRANSACTION_TYPE, transactionType.getEnumId());
         paymentBundle.putInt(BUNDLE_KEY_FROM_ACCOUNT, fromAccount);
         paymentBundle.putInt(BUNDLE_KEY_TO_ACCOUNT, toAccount);
+        paymentBundle.putInt(BUNDLE_KEY_CRYPTO_TYPE, crytoType);
         fragment.setArguments(paymentBundle);
         return fragment;
     }
@@ -68,6 +64,7 @@ public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        cryptoType = getArguments().getInt(BUNDLE_KEY_CRYPTO_TYPE);
         mCashBackCalculator = new SmallCalculator();
         mCashBackStringAmount = "";
     }
@@ -94,6 +91,41 @@ public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
         eightPercentBtn.setOnClickListener(this);
         cashBackLabelTV.setText(R.string.margin);
         continueBTN.setText(R.string.next);
+
+        Drawable drawable = getResources().getDrawable(R.drawable.button_green);
+        Drawable drawable2 = getResources().getDrawable(R.drawable.button_green);
+        currencyLabelTV.setBackground(drawable);
+        cashBackCurrencyLabelTV.setBackground(drawable2);
+
+        currencyLabelTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getAvailableCurrencies();
+            }
+        });
+
+        cashBackCurrencyLabelTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getAvailableCurrencies();
+            }
+        });
+
+    }
+
+    private void getAvailableCurrencies() {
+        CurrencyDialogFragment currencyDialogFragment = new CurrencyDialogFragment();
+        currencyDialogFragment.show(getActivity().getSupportFragmentManager(), CURRENCY_DIALOG_TAG);
+
+        currencyDialogFragment.setSelectedListener(new CurrencyDialogFragment.CurrencySelectedListener<Currency>() {
+            @Override
+            public void onSelected(Currency currency) {
+                transactionCurrency = currency;
+                currencyLabelTV.setText(currency.getCurrencySymbol());
+                cashBackCurrencyLabelTV.setText(currency.getCurrencySymbol());
+                clearCalculation();
+            }
+        });
     }
 
     @Override
@@ -167,46 +199,32 @@ public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
         }
     }
 
+    @Override
     public void processPayment() {
 
         String value = amountPaymentET.getText().toString();
 
-        final double cashBackAmount = getCashbackAmount();
-        final double amount = mMoneyUtils.parseBigDecimal(value).doubleValue();
+        double cashBackAmount = getCashbackAmount();
+        double amount = mMoneyUtils.parseBigDecimal(value).doubleValue();
         //check if amount is 0.00
         if (amount != 0.00) {
             //check for internet connectivity
             if (UIHelper.isOnline(mContext)) {
 
-                final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-                progressDialog.setMessage("Processing transaction...");
-                progressDialog.setCancelable(false);
-                progressDialog.show();
+                Bundle paymentBundle = new Bundle();
+                paymentBundle.putDouble(SPConstants.AMOUNT, amount);
+                paymentBundle.putDouble(SPConstants.TIPS, cashBackAmount);
+                paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, transactionType.getEnumId());
+                paymentBundle.putInt(SPConstants.FROM_ACCOUNT, mFromAccount);
+                paymentBundle.putInt(SPConstants.TO_ACCOUNT, mToAccount);
+                paymentBundle.putBoolean(SPConstants.IS_CRYPTO, true);
+                paymentBundle.putSerializable(SPConstants.TRANSACTION_CURRENCY, transactionCurrency);
+                paymentBundle.putInt(SPConstants.CRYPTO_ATM_CRYPTO_TYPE, cryptoType);
 
-                HashMap<String, Object> hashMap = new HashMap<>();
+                Intent intent = new Intent(getActivity(), CryptoInfoActivity.class);
+                intent.putExtra(SPConstants.BUNDLE, paymentBundle);
 
-                hashMap.put(ACTION, RATE);
-                hashMap.put(RATE1, BTCUSD);
-
-                serviceManager.get().getProviderExtraData(BIT_STAMP, hashMap, new GetProviderExtraDataCallback() {
-                    @Override
-                    public void onSuccess(ExtraDataContainer extraDataContainer) {
-                        if (null == getActivity()) return;
-
-                        progressDialog.dismiss();
-                        UIHelper.log(extraDataContainer.raw);
-
-                        processBTCData(extraDataContainer, amount, cashBackAmount);
-                    }
-
-                    @Override
-                    public void onError(SpException e) {
-                        if (null == getActivity()) return;
-
-                        progressDialog.dismiss();
-                        UIHelper.showMessageDialog(getActivity(), e.getMessage());
-                    }
-                });
+                startActivity(intent);
 
             } else {
                 UIHelper.showErrorDialog(mContext, getResources().getString(R.string.app_name), getResources().getString(R.string.internet_not_connected));
@@ -214,93 +232,6 @@ public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
         } else {
             UIHelper.showToast(mContext, mContext.getResources().getString(R.string.please_enter_amount));
         }
-    }
-
-    private void processBTCData(ExtraDataContainer extraDataContainer, final double amount, final double cashBackAmount) {
-        if (extraDataContainer != null) {
-
-            String rawData = extraDataContainer.raw;
-
-            if (!TextUtils.isEmpty(rawData)) {
-
-                try {
-                    JSONObject jsonObject = new JSONObject(rawData);
-
-                    if (jsonObject != null) {
-
-                        if (jsonObject.has("ask")) {
-
-                            String ask = jsonObject.getString("ask");
-
-                            if (!TextUtils.isEmpty(ask)) {
-
-                                BigDecimal askAmount = mMoneyUtils.parseBigDecimal(ask);
-
-                                double totalAmount = amount + cashBackAmount;
-
-                                double btc =  totalAmount / askAmount.doubleValue();
-
-                                UIHelper.showMessageDialogWithTitleTwoButtonCallback(getActivity(),
-                                        getString(R.string.app_name),
-                                        "Bitcoin price $" + ask +
-                                                "\n" + "You will buy " + String.format("%.8f", btc) + " BTC",
-                                        "Continue",
-                                        "Cancel", new MaterialDialog.ButtonCallback() {
-                                            @Override
-                                            public void onPositive(MaterialDialog dialog) {
-                                                super.onPositive(dialog);
-                                                startScanActivity(cashBackAmount, amount);
-                                            }
-
-                                            @Override
-                                            public void onNegative(MaterialDialog dialog) {
-                                                super.onNegative(dialog);
-                                            }
-                                        });
-                            } else {
-                                showBTCFailed();
-                            }
-
-                        } else {
-                            showBTCFailed();
-                        }
-
-                    } else {
-                        showBTCFailed();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    showBTCFailed();
-                }
-
-            } else {
-                showBTCFailed();
-            }
-
-        } else {
-            showBTCFailed();
-        }
-    }
-
-    private void showBTCFailed() {
-        UIHelper.showErrorDialog(getActivity(),
-                getString(R.string.app_name),
-                "Unable to get Crypto price, please try again later or contact support");
-    }
-
-    private void startScanActivity(double cashBackAmount, double amount) {
-        Bundle paymentBundle = new Bundle();
-        paymentBundle.putDouble("amount", amount);
-        paymentBundle.putDouble("cashBackAmount", cashBackAmount);
-        paymentBundle.putInt("transactionType", transactionType.getEnumId());
-        paymentBundle.putInt("fromAccount", mFromAccount);
-        paymentBundle.putInt("toAccount", mToAccount);
-        paymentBundle.putBoolean("crypto", true);
-
-        Intent intent = new Intent(getActivity(), AliPayQRScanActivity.class);
-        intent.putExtra("bundle", paymentBundle);
-        startActivity(intent);
     }
 
     @Override
@@ -361,6 +292,20 @@ public class CryptoAtmPaymentFragment extends AbstractPaymentFragment {
             showFormattedAmount(formatCurrent(mCashBackStringAmount));
         } else {
             super.displayCurrentStringAmount();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        android.support.v7.app.ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            if (cryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN) {
+                actionBar.setTitle(R.string.buy_bitcoin);
+            } else if (cryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN){
+                actionBar.setTitle(R.string.buy_litecoin);
+            }
+
         }
     }
 }

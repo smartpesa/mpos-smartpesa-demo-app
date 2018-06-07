@@ -47,7 +47,8 @@ public class MerchantModule {
     public static final int MENU_ID_WECHAT = 20;
     public static final int MENU_ID_CRYPTO = 21;
     public static final int MENU_ID_CRYPTO_ATM = 22;
-    public static final int MENU_ID_CRYPTO_ATM_PAYMENT = 23;
+    public static final int MENU_ID_CRYPTO_ATM_BITCOIN = 23;
+    public static final int MENU_ID_CRYPTO_ATM_LITECOIN = 24;
 
     public MerchantModule() {
     }
@@ -75,7 +76,7 @@ public class MerchantModule {
         MenuItem weChat = new MenuItem(MENU_ID_WECHAT, R.drawable.ic_wechat, R.string.title_wechat);
         MenuItem cryptoPayment = new MenuItem(MENU_ID_CRYPTO, R.drawable.ic_crypto_menu, R.string.title_crypto);
         MenuItem cryptoATM = new MenuItem(MENU_ID_CRYPTO_ATM, R.drawable.ic_crypto_atm, R.string.title_crypto_atm);
-        MenuItem credible = new MenuItem(MENU_ID_DUMMY_MERCHANT_INFO, R.drawable.ic_credible, R.string.title_credible);
+        MenuItem credible = new MenuItem(MENU_ID_DUMMY_MERCHANT_INFO, R.drawable.menu_credible, R.string.title_credible);
 
         int[] permissions = currentMerchant.getMenuControl();
 

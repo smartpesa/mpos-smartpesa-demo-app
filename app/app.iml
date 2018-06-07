@@ -165,7 +165,6 @@
     <orderEntry type="library" exported="" name="Gradle: uk.co.chrisjenx:calligraphy-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: me.dm7.barcodescanner:core-1.9.8" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.pax:mposapi:1.00.05@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.bbpos:bbdevice:3.4.1@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.annotation:javax.annotation-api:1.2@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.crashlytics.sdk.android:crashlytics-2.9.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.reactivestreams:reactive-streams:1.0.0@jar" level="project" />
@@ -198,6 +197,7 @@
     <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-gcm-11.0.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: hanks.xyz:htextview-library-0.1.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.google.dagger:dagger-android-2.12" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.bbpos:bbdevice:3.4.2@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:rules-0.4.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:runner-0.4.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-maps-11.0.4" level="project" />
@@ -213,6 +213,7 @@
     <orderEntry type="library" exported="" name="Gradle: me.dm7.barcodescanner:zxing-1.9.8" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.amulyakhare:com.amulyakhare.textdrawable-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: se.emilsjolander:stickylistheaders-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.bbpos:ota:1.5.1@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.smartpesa:scanner-3.7.0-SNAPSHOT-3" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.android.support:support-media-compat-26.0.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.github.franmontiel:PersistentCookieJar-v1.0.0" level="project" />

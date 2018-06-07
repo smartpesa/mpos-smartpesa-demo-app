@@ -129,9 +129,13 @@ public class MenuHandler {
                 Timber.i("User clicks on Crypto ATM");
                 fragment = new CryptoAtmFragment();
                 break;
-            case MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT:
+            case MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN:
                 Timber.i("User clicks on Crypto ATM");
-                fragment = CryptoAtmPaymentFragment.newInstance(SmartPesaTransactionType.SALE, mDefFromAccount, mDefToAccount);
+                fragment = CryptoAtmPaymentFragment.newInstance(SmartPesaTransactionType.SALE, MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN, mDefFromAccount, mDefToAccount);
+                break;
+            case MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN:
+                Timber.i("User clicks on Crypto ATM");
+                fragment = CryptoAtmPaymentFragment.newInstance(SmartPesaTransactionType.SALE, MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN, mDefFromAccount, mDefToAccount);
                 break;
             default:
                 Timber.e("Invalid menu item with identifier: %d", identifier);

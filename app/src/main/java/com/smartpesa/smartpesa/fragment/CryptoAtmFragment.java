@@ -68,10 +68,8 @@ public class CryptoAtmFragment extends BaseFragment {
     private void setUpCrypto() {
         final ArrayList<MenuItem> menuItems = new ArrayList<>();
 
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT, R.drawable.ic_crypto_menu, R.string.menu_bitcoin));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT, R.drawable.ic_litecoin, R.string.menu_litecoin));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT, R.drawable.ic_crypto_atm, R.string.menu_ethereum));
-        menuItems.add(new MenuItem(MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT, R.drawable.ic_dash, R.string.menu_dash));
+        menuItems.add(new MenuItem(MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN, R.drawable.ic_crypto_menu, R.string.menu_bitcoin));
+        menuItems.add(new MenuItem(MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN, R.drawable.ic_litecoin, R.string.menu_litecoin));
 
         MenuAdapter adapter = new MenuAdapter(getActivity(), menuItems);
         gridView.setAdapter(adapter);
@@ -79,7 +77,7 @@ public class CryptoAtmFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                mListener.processMenu(MerchantModule.MENU_ID_CRYPTO_ATM_PAYMENT);
+                mListener.processMenu(menuItems.get(position).id);
             }
         });
     }
