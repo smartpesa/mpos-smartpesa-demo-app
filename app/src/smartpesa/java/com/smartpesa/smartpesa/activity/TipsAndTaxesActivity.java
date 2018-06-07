@@ -6,6 +6,7 @@ import com.smartpesa.smartpesa.activity.base.BaseActivity;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import smartpesa.sdk.models.currency.Currency;
 
 public class TipsAndTaxesActivity extends BaseActivity {
 
@@ -48,6 +50,7 @@ public class TipsAndTaxesActivity extends BaseActivity {
     boolean isTaxEntered;
     String taxId;
     String currencySymbol;
+    Currency transactionCurrency;
 
     @Nullable public MoneyUtils mMoneyUtils;
 
@@ -59,14 +62,21 @@ public class TipsAndTaxesActivity extends BaseActivity {
 
         mMoneyUtils = SmartPesaApplication.merchantComponent(this).provideMoneyUtils();
 
-        amount = this.getIntent().getDoubleExtra("amount", 0.00);
-        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra("transactionType", -1));
-        tips = this.getIntent().getDoubleExtra("cashBackAmount", 0.00);
-        fromAccount = this.getIntent().getIntExtra("fromAccount", 0);
-        toAccount = this.getIntent().getIntExtra("toAccount", 0);
-        description = this.getIntent().getStringExtra("description");
+        amount = this.getIntent().getDoubleExtra(SPConstants.AMOUNT, 0.00);
+        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra(SPConstants.TRANSACTION_TYPE, -1));
+        tips = this.getIntent().getDoubleExtra(SPConstants.CASH_BACK_AMOUNT, 0.00);
+        fromAccount = this.getIntent().getIntExtra(SPConstants.FROM_ACCOUNT, 0);
+        toAccount = this.getIntent().getIntExtra(SPConstants.TO_ACCOUNT, 0);
+        description = this.getIntent().getStringExtra(SPConstants.DESCRIPTION);
+        transactionCurrency = (Currency) this.getIntent().getSerializableExtra(SPConstants.TRANSACTION_CURRENCY);
 
-        currencySymbol = getMerchantComponent().provideMerchant().getCurrency().getCurrencySymbol();
+        //set the amount
+        if (transactionCurrency != null) {
+            currencySymbol = transactionCurrency.getCurrencySymbol();
+        } else {
+            currencySymbol = getMerchantComponent().provideMerchant().getCurrency().getCurrencySymbol();
+        }
+
         amountTv.setText(mMoneyUtils.format(amount) + " " + currencySymbol);
         tipsAmountTv.setText(mMoneyUtils.format(tips) + " " + currencySymbol);
 
@@ -91,19 +101,20 @@ public class TipsAndTaxesActivity extends BaseActivity {
     private void processPayment() {
         Intent paymentIntent = new Intent(TipsAndTaxesActivity.this, SmartPesaPaymentProgressActivity.class);
         double amount = mMoneyUtils.parseBigDecimal(grandTotal).doubleValue();
-        paymentIntent.putExtra("amount", amount);
-        paymentIntent.putExtra("cashBackAmount", 0.00);
-        paymentIntent.putExtra("transactionType", transactionType.getEnumId());
-        paymentIntent.putExtra("fromAccount", fromAccount);
-        paymentIntent.putExtra("toAccount", toAccount);
-        paymentIntent.putExtra("tip", tipsResult);
-        paymentIntent.putExtra("tax_id", taxId);
-        paymentIntent.putExtra("tax", taxResult);
+        paymentIntent.putExtra(SPConstants.AMOUNT, amount);
+        paymentIntent.putExtra(SPConstants.CASH_BACK_AMOUNT, 0.00);
+        paymentIntent.putExtra(SPConstants.TRANSACTION_TYPE, transactionType.getEnumId());
+        paymentIntent.putExtra(SPConstants.FROM_ACCOUNT, fromAccount);
+        paymentIntent.putExtra(SPConstants.TO_ACCOUNT, toAccount);
+        paymentIntent.putExtra(SPConstants.TIPS, tipsResult);
+        paymentIntent.putExtra(SPConstants.TAX_ID, taxId);
+        paymentIntent.putExtra(SPConstants.TAX, taxResult);
+        paymentIntent.putExtra(SPConstants.TRANSACTION_CURRENCY, transactionCurrency);
 
         if (loyaltySwitch.isChecked()) {
-            paymentIntent.putExtra("withLoyalty", true);
+            paymentIntent.putExtra(SPConstants.IS_WITH_LOYALTY, true);
         } else {
-            paymentIntent.putExtra("withLoyalty", false);
+            paymentIntent.putExtra(SPConstants.IS_WITH_LOYALTY, false);
         }
 
         startActivity(paymentIntent);

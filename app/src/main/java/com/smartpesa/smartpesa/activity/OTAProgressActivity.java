@@ -27,12 +27,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Collection;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import smartpesa.sdk.devices.SpTerminal;
-import smartpesa.sdk.ota.OtaInjectionListener;
 import smartpesa.sdk.ota.OtaManager;
+import smartpesa.sdk.ota.OtaUpdateListener;
+import smartpesa.sdk.ota.OtaUpdateType;
 import smartpesa.sdk.ota.error.SpOtaException;
 import smartpesa.sdk.scanner.TerminalScanningCallback;
 
@@ -223,19 +225,25 @@ public class OTAProgressActivity extends BaseActivity {
     //initialise the transaction with the SDK
     public void processPayment(SpTerminal terminal) {
 
-        otaManager.inject(terminal, new OtaInjectionListener() {
+        otaManager.startOtaUpdate(terminal, new OtaUpdateListener() {
             @Override
             public void onOtaDeviceConnected(SpTerminal spTerminal) {
+                if (isActivityDestroyed()) return;
+
                 progressTV.setText("Connected to " + spTerminal.getName());
             }
 
             @Override
-            public void onStartKeyInjection(String s) {
+            public void onStartOtaUpdate(String s) {
+                if (isActivityDestroyed()) return;
+
                 progressTV.setText("Starting key injection");
             }
 
             @Override
-            public void onInjectionCompleted() {
+            public void onOtaUpdateCompleted() {
+                if (isActivityDestroyed()) return;
+
                 UIHelper.showMessageDialogWithCallback(OTAProgressActivity.this,
                         "Key injection completed successfully",
                         "Ok",
@@ -251,12 +259,14 @@ public class OTAProgressActivity extends BaseActivity {
             }
 
             @Override
-            public void onDisconnected() {
+            public void onOtaDeviceDisconnected() {
 
             }
 
             @Override
             public void onError(SpOtaException e) {
+                if (isActivityDestroyed()) return;
+
                 UIHelper.showMessageDialogWithCallback(OTAProgressActivity.this, e.getLocalizedMessage(),
                         "Ok",
                         new MaterialDialog.ButtonCallback() {
@@ -267,6 +277,43 @@ public class OTAProgressActivity extends BaseActivity {
                             }
                         });
                 lockBackBTN = false;
+            }
+
+            @Override
+            public void onPromptSelectOtaUpdateType(List<OtaUpdateType> list) {
+                if (isActivityDestroyed()) return;
+
+                String[] mStrings = new String[list.size()];
+
+                for (int i = 0; i < list.size(); i++) {
+                    OtaUpdateType ota = list.get(i);
+                    mStrings[i] = ota.name();
+                }
+
+
+                new MaterialDialog.Builder(OTAProgressActivity.this)
+                        .title(R.string.select_type)
+                        .items(mStrings)
+                        .itemsCallback(new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                if (which == 0) {
+                                    otaManager.selectOtaUpdateType(OtaUpdateType.KEY);
+                                } else if (which == 1) {
+                                    otaManager.selectOtaUpdateType(OtaUpdateType.FIRMWARE);
+                                } else if (which == 2) {
+                                    otaManager.selectOtaUpdateType(OtaUpdateType.CONFIG);
+                                }
+                            }
+                        })
+                        .show();
+
+            }
+
+            @Override
+            public void onOtaUpdateProgress(int i) {
+                if (isActivityDestroyed()) return;
+                progressTV.setText("Updating "+ i);
             }
         });
     }

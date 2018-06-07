@@ -26,7 +26,9 @@ import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.models.UIRedeemable;
+import com.smartpesa.smartpesa.persistence.MerchantModule;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import android.app.Activity;
@@ -87,6 +89,7 @@ import timber.log.Timber;
 public abstract class AbstractPaymentProgressActivity extends BaseActivity implements AbstractResultFragment.ResultFragmentListener, DialogInterface.OnDismissListener {
 
     private static final String LOYALTY_DIALOG = "loyalty";
+    public static final String CRYPTO_ATM_BIT_COIN_TRADER = "CryptoATMBitCoinTrader";
     @Bind(R.id.progress_TV) protected TextView progressTV;
     @Bind(R.id.amount_Process_TV) protected TextView amountProcessTV;
     @Bind(R.id.transationTypeTV) protected TextView transactionTypeTV;
@@ -142,8 +145,10 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
     boolean isActivityDestroyed, chipOnly, isTimerRunning;
     private AVLoadingIndicatorView[] IMGS = { iv1, iv3, iv3, iv4, iv5, iv6 };
     Thread t;
-    public String qrScanned;
-    public boolean isScan;
+    Currency transactionCurrency;
+    String cryptoAtmQRScannedText;
+    double crytoAtmCryptoValue;
+    int cryptoATMcryptoType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,14 +166,16 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
         mMoneyUtils = getMerchantComponent().provideMoneyUtils();
 
         //get the amount from the intent
-        amount = new BigDecimal(this.getIntent().getDoubleExtra("amount", 0.00));
-        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra("transactionType", -1));
-        cashBackAmount = this.getIntent().getDoubleExtra("cashBackAmount", 0.00);
-        fromAccount = this.getIntent().getIntExtra("fromAccount", 0);
-        toAccount = this.getIntent().getIntExtra("toAccount", 0);
-        description = this.getIntent().getStringExtra("description");
-        qrScanned = this.getIntent().getStringExtra("qrScan");
-        isScan = this.getIntent().getBooleanExtra("isScan", false);
+        amount = new BigDecimal(this.getIntent().getDoubleExtra(SPConstants.AMOUNT, 0.00));
+        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra(SPConstants.TRANSACTION_TYPE, -1));
+        cashBackAmount = this.getIntent().getDoubleExtra(SPConstants.CASH_BACK_AMOUNT, 0.00);
+        fromAccount = this.getIntent().getIntExtra(SPConstants.FROM_ACCOUNT, 0);
+        toAccount = this.getIntent().getIntExtra(SPConstants.TO_ACCOUNT, 0);
+        description = this.getIntent().getStringExtra(SPConstants.DESCRIPTION);
+        transactionCurrency = (Currency) this.getIntent().getSerializableExtra(SPConstants.TRANSACTION_CURRENCY);
+        cryptoAtmQRScannedText = this.getIntent().getStringExtra(SPConstants.CRYPTO_ATM_QR_TEXT);
+        crytoAtmCryptoValue = this.getIntent().getDoubleExtra(SPConstants.CRYPTO_ATM_CRYPTO_VALUE, 0.00);
+        cryptoATMcryptoType = this.getIntent().getIntExtra(SPConstants.CRYPTO_ATM_CRYPTO_TYPE, -1);
 
         String f = this.getIntent().getStringExtra(AbstractPaymentFragment.KEY_CONVENIENCE_FEE);
         if (mMoneyUtils != null && f != null) {
@@ -227,7 +234,12 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
         chipOnly = false;
 
         //set the amount
-        amountProcessTV.setText(getMerchantComponent().provideMerchant().getCurrency().getCurrencySymbol() + " " + mMoneyUtils.format(amount));
+        if (transactionCurrency != null) {
+            amountProcessTV.setText(transactionCurrency.getCurrencySymbol() + " " + mMoneyUtils.format(amount));
+        } else {
+            amountProcessTV.setText(getMerchantComponent().provideMerchant().getCurrency().getCurrencySymbol() + " " + mMoneyUtils.format(amount));
+        }
+
         transactionTypeTV.setText(UIHelper.getTitleFromTransactionType(mContext, transactionType));
 
         final boolean[] processCalled = {false};
@@ -315,7 +327,6 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
         SmartPesa.AccountType toAccountType = UIHelper.getAccountTypeFromInt(toAccount);
         final HashMap<String, Object> config = new HashMap<>();
         buildConfig(config);
-        UIHelper.log(config.toString());
 
         SmartPesa.TerminalTransactionParam.Builder builder = SmartPesa.TransactionParam.newBuilder(terminal)
                 .transactionType(transactionType.getEnumId())
@@ -327,11 +338,32 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
                 .extraParams(config)
                 .cashBack(mMoneyUtils.parseBigDecimal(cashBackAmount));
 
+        if (transactionCurrency != null) {
+            builder.currency(transactionCurrency);
+        }
+
         if (transactionType.equals(SmartPesaTransactionType.SALE)) {
-            boolean withLoyalty = this.getIntent().getBooleanExtra("withLoyalty", false);
+            boolean withLoyalty = this.getIntent().getBooleanExtra(SPConstants.IS_WITH_LOYALTY, false);
             if (withLoyalty) {
                 builder.withLoyalty();
             }
+        }
+
+        if (cryptoATMcryptoType != -1 && !TextUtils.isEmpty(cryptoAtmQRScannedText)) {
+
+            HashMap<String, Object> postHash = new HashMap<>();
+
+            postHash.put("qrcode", R.string.test_qr);
+            postHash.put("amount", crytoAtmCryptoValue);
+            if (cryptoATMcryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN) {
+                postHash.put("crypto_currency_symbol", "BTC");
+
+            } else if (cryptoATMcryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN) {
+                postHash.put("crypto_currency_symbol", "LTC");
+            }
+
+            builder.withPostProcessing(CRYPTO_ATM_BIT_COIN_TRADER, postHash);
+
         }
 
         SmartPesa.TransactionParam param = builder.build();

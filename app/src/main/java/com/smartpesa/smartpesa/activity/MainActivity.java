@@ -32,6 +32,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -102,7 +103,6 @@ public class MainActivity extends BaseActivity implements MenuFragment.PaymentTy
             // on first time display view for first nav item
             displayView(MerchantModule.MENU_ID_HOME);
         }
-
     }
 
     //to display the fragments and change title of actionbar

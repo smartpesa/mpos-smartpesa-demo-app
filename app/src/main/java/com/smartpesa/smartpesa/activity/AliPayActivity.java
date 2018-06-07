@@ -6,6 +6,7 @@ import com.smartpesa.smartpesa.SmartPesaApplication;
 import com.smartpesa.smartpesa.activity.base.BaseActivity;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import net.glxn.qrgen.android.QRCode;
 
@@ -52,8 +53,8 @@ public class AliPayActivity extends BaseActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Bundle bundle = getIntent().getBundleExtra("bundle");
-        amount = new BigDecimal(bundle.getDouble("amount", 0.00));
+        Bundle bundle = getIntent().getBundleExtra(SPConstants.BUNDLE);
+        amount = new BigDecimal(bundle.getDouble(SPConstants.AMOUNT, 0.00));
         serviceManager = SmartPesaApplication.component(AliPayActivity.this).serviceManager();
         mMoneyUtils = getMerchantComponent().provideMoneyUtils();
 

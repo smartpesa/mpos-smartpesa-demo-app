@@ -4,6 +4,7 @@ import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.activity.payment.GoCoinPaymentProgressActivity;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -154,21 +155,21 @@ public class GoCoinPaymentFragment extends AbstractPaymentFragment {
             if (UIHelper.isOnline(mContext)) {
 
                 Bundle paymentBundle = new Bundle();
-                paymentBundle.putDouble("amount", amount);
-                paymentBundle.putDouble("cashBackAmount", cashBackAmount);
-                paymentBundle.putInt("transactionType", SmartPesaTransactionType.SALE.getEnumId());
-                paymentBundle.putInt("fromAccount", mFromAccount);
-                paymentBundle.putInt("toAccount", mToAccount);
+                paymentBundle.putDouble(SPConstants.AMOUNT, amount);
+                paymentBundle.putDouble(SPConstants.CASH_BACK_AMOUNT, cashBackAmount);
+                paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, SmartPesaTransactionType.SALE.getEnumId());
+                paymentBundle.putInt(SPConstants.FROM_ACCOUNT, mFromAccount);
+                paymentBundle.putInt(SPConstants.TO_ACCOUNT, mToAccount);
 
                 if (currencyToPass != null) {
-                    paymentBundle.putSerializable("currency", currencyToPass);
+                    paymentBundle.putSerializable(SPConstants.TRANSACTION_CURRENCY, currencyToPass);
                 }
 
                 onBuildPaymentDescription(paymentBundle);
 
                 if (alipayType == GOCOIN_DISPLAY) {
 
-                    paymentBundle.putBoolean("isScan", false);
+                    paymentBundle.putBoolean(SPConstants.IS_GO_COIN_SCAN, false);
                     Intent paymentIntent = new Intent(getActivity(), GoCoinPaymentProgressActivity.class);
                     paymentIntent.putExtras(paymentBundle);
                     startActivity(paymentIntent);

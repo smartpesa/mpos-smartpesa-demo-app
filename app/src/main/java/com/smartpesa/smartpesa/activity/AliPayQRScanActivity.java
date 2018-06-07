@@ -5,9 +5,11 @@ import com.google.zxing.Result;
 import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.SmartPesaApplication;
 import com.smartpesa.smartpesa.activity.base.BaseActivity;
+import com.smartpesa.smartpesa.activity.crypto.CryptoConfirmActivity;
 import com.smartpesa.smartpesa.activity.payment.AliPayPaymentProgressActivity;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.content.Context;
 import android.content.Intent;
@@ -48,6 +50,7 @@ public class AliPayQRScanActivity extends BaseActivity implements ZXingScannerVi
     @Bind(R.id.textDisplay)
     TextView instructionText;
     boolean crypto;
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +71,14 @@ public class AliPayQRScanActivity extends BaseActivity implements ZXingScannerVi
 
         contentFrame.addView(mScannerView);
 
-        Bundle bundle = getIntent().getBundleExtra("bundle");
-        amount = new BigDecimal(bundle.getDouble("amount", 0.00));
-        crypto = bundle.getBoolean("crypto");
+        bundle = getIntent().getBundleExtra(SPConstants.BUNDLE);
+        amount = new BigDecimal(bundle.getDouble(SPConstants.AMOUNT, 0.00));
+        crypto = bundle.getBoolean(SPConstants.IS_CRYPTO);
         serviceManager = SmartPesaApplication.component(AliPayQRScanActivity.this).serviceManager();
         mMoneyUtils = getMerchantComponent().provideMoneyUtils();
 
         if (crypto) {
-            aliPayLogoIv.setImageResource(R.mipmap.ic_launcher);
+            aliPayLogoIv.setImageResource(R.drawable.crypto_atm_logo);
             instructionText.setText(R.string.crypto_scan_instruction);
             setTitle(R.string.title_crypto_atm);
         } else {
@@ -88,18 +91,23 @@ public class AliPayQRScanActivity extends BaseActivity implements ZXingScannerVi
 
         if (!crypto) {
             Bundle paymentBundle = new Bundle();
-            paymentBundle.putDouble("amount", amount.doubleValue());
-            paymentBundle.putInt("transactionType", SmartPesaTransactionType.SALE.getEnumId());
-            paymentBundle.putInt("fromAccount", SmartPesa.AccountType.DEFAULT.getEnumId());
-            paymentBundle.putInt("toAccount", SmartPesa.AccountType.DEFAULT.getEnumId());
-            paymentBundle.putString("qrScan", rawResult.getText());
-            paymentBundle.putBoolean("isScan", true);
+            paymentBundle.putDouble(SPConstants.AMOUNT, amount.doubleValue());
+            paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, SmartPesaTransactionType.SALE.getEnumId());
+            paymentBundle.putInt(SPConstants.FROM_ACCOUNT, SmartPesa.AccountType.DEFAULT.getEnumId());
+            paymentBundle.putInt(SPConstants.TO_ACCOUNT, SmartPesa.AccountType.DEFAULT.getEnumId());
+            paymentBundle.putString(SPConstants.QR_ALI_PAY_SCAN_TEXT, rawResult.getText());
+            paymentBundle.putBoolean(SPConstants.IS_ALI_PAY_SCAN, true);
 
             Intent paymentIntent = new Intent(this, AliPayPaymentProgressActivity.class);
             paymentIntent.putExtras(paymentBundle);
             startActivity(paymentIntent);
 
             finish();
+        } else {
+            Intent confirmIntent = new Intent(this, CryptoConfirmActivity.class);
+            bundle.putString(SPConstants.CRYPTO_ATM_QR_TEXT, rawResult.getText());
+            confirmIntent.putExtra(SPConstants.BUNDLE, bundle);
+            startActivity(confirmIntent);
         }
     }
 

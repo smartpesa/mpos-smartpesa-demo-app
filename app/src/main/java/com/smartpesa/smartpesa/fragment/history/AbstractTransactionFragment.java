@@ -14,6 +14,7 @@ import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.DateUtils;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -758,14 +759,14 @@ public abstract class AbstractTransactionFragment extends BaseFragment implement
 
     private void performTransaction(final SmartPesaTransactionType transactionType) {
         Bundle paymentBundle = new Bundle();
-        paymentBundle.putDouble("amount", amount.doubleValue());
-        paymentBundle.putDouble("cashBackAmount", BigDecimal.ZERO.doubleValue());
-        paymentBundle.putInt("transactionType", transactionType.getEnumId());
-        paymentBundle.putInt("fromAccount", transactionTLVResponse.getCardPayment().getFromAccount().getEnumId());
-        paymentBundle.putInt("toAccount", transactionTLVResponse.getCardPayment().getToAccount().getEnumId());
+        paymentBundle.putDouble(SPConstants.AMOUNT, amount.doubleValue());
+        paymentBundle.putDouble(SPConstants.CASH_BACK_AMOUNT, BigDecimal.ZERO.doubleValue());
+        paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, transactionType.getEnumId());
+        paymentBundle.putInt(SPConstants.FROM_ACCOUNT, transactionTLVResponse.getCardPayment().getFromAccount().getEnumId());
+        paymentBundle.putInt(SPConstants.TO_ACCOUNT, transactionTLVResponse.getCardPayment().getToAccount().getEnumId());
 
         if (transactionType.equals(SmartPesaTransactionType.VOID)) {
-            paymentBundle.putString("transactionId", transactionTLVResponse.getTransactionId().toString());
+            paymentBundle.putString(SPConstants.TRANSACTION_ID, transactionTLVResponse.getTransactionId().toString());
         }
 
         if (mPaymentHandler != null) {

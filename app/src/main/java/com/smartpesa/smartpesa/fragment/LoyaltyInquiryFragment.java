@@ -6,6 +6,7 @@ import com.smartpesa.smartpesa.activity.payment.AllPaymentsProgressActivity;
 import com.smartpesa.smartpesa.fragment.payment.AbstractPaymentFragment;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import android.app.DialogFragment;
@@ -80,10 +81,10 @@ public class LoyaltyInquiryFragment extends BaseFragment implements View.OnClick
 
     private void performLoyaltyInquiry() {
         Intent paymentIntent = new Intent(getActivity(), AllPaymentsProgressActivity.class);
-        paymentIntent.putExtra("amount", 0.00);
-        paymentIntent.putExtra("cashBackAmount", 0.00);
-        paymentIntent.putExtra("transactionType", SmartPesaTransactionType.LOYALTY.getEnumId());
-        paymentIntent.putExtra("fromAccount", fromAccount);
+        paymentIntent.putExtra(SPConstants.AMOUNT, 0.00);
+        paymentIntent.putExtra(SPConstants.CASH_BACK_AMOUNT, 0.00);
+        paymentIntent.putExtra(SPConstants.TRANSACTION_TYPE, SmartPesaTransactionType.LOYALTY.getEnumId());
+        paymentIntent.putExtra(SPConstants.FROM_ACCOUNT, fromAccount);
         getActivity().startActivityForResult(paymentIntent, AbstractPaymentFragment.REQUEST_CODE);
     }
 

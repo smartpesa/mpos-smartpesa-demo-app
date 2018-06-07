@@ -8,6 +8,7 @@ import com.smartpesa.smartpesa.fragment.result.UnknownResultFragment;
 import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import net.glxn.qrgen.android.QRCode;
@@ -79,14 +80,13 @@ public class GoCoinPaymentProgressActivity extends BaseActivity {
 
         aliPayLogo.setImageResource(R.drawable.ic_crypto_menu);
 
-        amount = new BigDecimal(this.getIntent().getDoubleExtra("amount", 0.00));
-        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra("transactionType", -1));
-        fromAccount = this.getIntent().getIntExtra("fromAccount", 0);
-        toAccount = this.getIntent().getIntExtra("toAccount", 0);
-        qrScannedData = this.getIntent().getStringExtra("qrScan");
-        isScan = this.getIntent().getBooleanExtra("isScan", false);
-
-        crytoCurrency = (Currency) this.getIntent().getSerializableExtra("currency");
+        amount = new BigDecimal(this.getIntent().getDoubleExtra(SPConstants.AMOUNT, 0.00));
+        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra(SPConstants.TRANSACTION_TYPE, -1));
+        fromAccount = this.getIntent().getIntExtra(SPConstants.FROM_ACCOUNT, 0);
+        toAccount = this.getIntent().getIntExtra(SPConstants.TO_ACCOUNT, 0);
+        qrScannedData = this.getIntent().getStringExtra(SPConstants.GO_COIN_SCANNED_QR);
+        isScan = this.getIntent().getBooleanExtra(SPConstants.IS_GO_COIN_SCAN, false);
+        crytoCurrency = (Currency) this.getIntent().getSerializableExtra(SPConstants.TRANSACTION_CURRENCY);
 
         String currency = "";
         if (getMerchantComponent().provideMerchant() != null) {

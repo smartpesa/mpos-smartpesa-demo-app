@@ -9,6 +9,7 @@ import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.MoneyUtils;
 import com.smartpesa.smartpesa.util.SmallCalculator;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,6 +36,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
+import smartpesa.sdk.models.currency.Currency;
 import smartpesa.sdk.models.merchant.VerifiedMerchantInfo;
 
 public abstract class AbstractPaymentFragment extends BaseFragment implements View.OnClickListener {
@@ -92,6 +94,8 @@ public abstract class AbstractPaymentFragment extends BaseFragment implements Vi
     @Nullable public PaymentHandler mPaymentHandler;
     @Nullable public MoneyUtils mMoneyUtils;
 
+    Currency transactionCurrency;
+
     public AbstractPaymentFragment() {
         // Required empty public constructor
     }
@@ -134,7 +138,8 @@ public abstract class AbstractPaymentFragment extends BaseFragment implements Vi
         initializeComponents(view);
 
         //get the currency from SDK
-        currencySymbol = mVerifyMerchantInfo.getCurrency().getCurrencySymbol();
+        transactionCurrency = mVerifyMerchantInfo.getCurrency();
+        currencySymbol = transactionCurrency.getCurrencySymbol();
         currencyLabelTV.setText(currencySymbol);
         cashBackCurrencyLabelTV.setText(currencySymbol);
         return view;
@@ -158,11 +163,12 @@ public abstract class AbstractPaymentFragment extends BaseFragment implements Vi
             if (UIHelper.isOnline(mContext)) {
 
                 Bundle paymentBundle = new Bundle();
-                paymentBundle.putDouble("amount", amount);
-                paymentBundle.putDouble("cashBackAmount", cashBackAmount);
-                paymentBundle.putInt("transactionType", transactionType.getEnumId());
-                paymentBundle.putInt("fromAccount", mFromAccount);
-                paymentBundle.putInt("toAccount", mToAccount);
+                paymentBundle.putDouble(SPConstants.AMOUNT, amount);
+                paymentBundle.putDouble(SPConstants.CASH_BACK_AMOUNT, cashBackAmount);
+                paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, transactionType.getEnumId());
+                paymentBundle.putInt(SPConstants.FROM_ACCOUNT, mFromAccount);
+                paymentBundle.putInt(SPConstants.TO_ACCOUNT, mToAccount);
+                paymentBundle.putSerializable(SPConstants.TRANSACTION_CURRENCY, transactionCurrency);
                 onBuildPaymentDescription(paymentBundle);
 
                 if(mPaymentHandler != null){
@@ -179,9 +185,9 @@ public abstract class AbstractPaymentFragment extends BaseFragment implements Vi
 
     protected void onBuildPaymentDescription(Bundle paymentBundle) {
         if (description != null) {
-            paymentBundle.putString("description", description);
+            paymentBundle.putString(SPConstants.DESCRIPTION, description);
         } else {
-            paymentBundle.putString("description", "");
+            paymentBundle.putString(SPConstants.DESCRIPTION, "");
         }
     }
 

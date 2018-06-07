@@ -5,6 +5,7 @@ import com.smartpesa.smartpesa.activity.AliPayQRScanActivity;
 import com.smartpesa.smartpesa.activity.payment.AliPayPaymentProgressActivity;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -64,24 +65,24 @@ public class AliPayPaymentFragment extends AbstractPaymentFragment {
             if (UIHelper.isOnline(mContext)) {
 
                 Bundle paymentBundle = new Bundle();
-                paymentBundle.putDouble("amount", amount);
-                paymentBundle.putDouble("cashBackAmount", cashBackAmount);
-                paymentBundle.putInt("transactionType", SmartPesaTransactionType.SALE.getEnumId());
-                paymentBundle.putInt("fromAccount", mFromAccount);
-                paymentBundle.putInt("toAccount", mToAccount);
-                paymentBundle.putBoolean("crypto", false);
+                paymentBundle.putDouble(SPConstants.AMOUNT, amount);
+                paymentBundle.putDouble(SPConstants.CASH_BACK_AMOUNT, cashBackAmount);
+                paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, SmartPesaTransactionType.SALE.getEnumId());
+                paymentBundle.putInt(SPConstants.FROM_ACCOUNT, mFromAccount);
+                paymentBundle.putInt(SPConstants.TO_ACCOUNT, mToAccount);
+                paymentBundle.putBoolean(SPConstants.IS_CRYPTO, false);
 
                 onBuildPaymentDescription(paymentBundle);
 
                 if (alipayType == ALIPAY_SCAN) {
 
                     Intent intent = new Intent(getActivity(), AliPayQRScanActivity.class);
-                    intent.putExtra("bundle", paymentBundle);
+                    intent.putExtra(SPConstants.BUNDLE, paymentBundle);
                     startActivity(intent);
 
                 } else if (alipayType == ALIPAY_DISPLAY) {
 
-                    paymentBundle.putBoolean("isScan", false);
+                    paymentBundle.putBoolean("isAliPayScan", false);
                     Intent paymentIntent = new Intent(getActivity(), AliPayPaymentProgressActivity.class);
                     paymentIntent.putExtras(paymentBundle);
                     startActivity(paymentIntent);

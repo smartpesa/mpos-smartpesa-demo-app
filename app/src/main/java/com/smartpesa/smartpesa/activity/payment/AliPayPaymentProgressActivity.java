@@ -8,6 +8,7 @@ import com.smartpesa.smartpesa.fragment.result.UnknownResultFragment;
 import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import net.glxn.qrgen.android.QRCode;
@@ -74,12 +75,12 @@ public class AliPayPaymentProgressActivity extends BaseActivity {
         mMoneyUtils = getMerchantComponent().provideMoneyUtils();
         fragmentManager = getSupportFragmentManager();
 
-        amount = new BigDecimal(this.getIntent().getDoubleExtra("amount", 0.00));
-        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra("transactionType", -1));
-        fromAccount = this.getIntent().getIntExtra("fromAccount", 0);
-        toAccount = this.getIntent().getIntExtra("toAccount", 0);
-        qrScannedData = this.getIntent().getStringExtra("qrScan");
-        isScan = this.getIntent().getBooleanExtra("isScan", false);
+        amount = new BigDecimal(this.getIntent().getDoubleExtra(SPConstants.AMOUNT, 0.00));
+        transactionType = SmartPesaTransactionType.fromEnumId(this.getIntent().getIntExtra(SPConstants.TRANSACTION_TYPE, -1));
+        fromAccount = this.getIntent().getIntExtra(SPConstants.FROM_ACCOUNT, 0);
+        toAccount = this.getIntent().getIntExtra(SPConstants.TO_ACCOUNT, 0);
+        qrScannedData = this.getIntent().getStringExtra(SPConstants.QR_ALI_PAY_SCAN_TEXT);
+        isScan = this.getIntent().getBooleanExtra(SPConstants.IS_ALI_PAY_SCAN, false);
 
         String currency = "";
         if (getMerchantComponent().provideMerchant() != null) {
@@ -97,9 +98,9 @@ public class AliPayPaymentProgressActivity extends BaseActivity {
         }
 
         if (isScan) {
-            transactionTypeTv.setText("AliPay Scan");
+            transactionTypeTv.setText(R.string.alipay_scan_title);
         } else {
-            transactionTypeTv.setText("AliPay Payment");
+            transactionTypeTv.setText(R.string.alipay_pay_title);
         }
 
         processPayment();

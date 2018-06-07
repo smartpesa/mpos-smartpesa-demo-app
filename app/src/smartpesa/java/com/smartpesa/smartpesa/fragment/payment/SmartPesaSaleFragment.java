@@ -4,6 +4,7 @@ import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import com.smartpesa.smartpesa.util.SmallCalculator;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -162,11 +163,11 @@ public class SmartPesaSaleFragment extends AbstractPaymentFragment {
             if (UIHelper.isOnline(mContext)) {
 
                 Bundle paymentBundle = new Bundle();
-                paymentBundle.putDouble("amount", amount);
-                paymentBundle.putDouble("cashBackAmount", cashBackAmount);
-                paymentBundle.putInt("transactionType", transactionType.getEnumId());
-                paymentBundle.putInt("fromAccount", mFromAccount);
-                paymentBundle.putInt("toAccount", mToAccount);
+                paymentBundle.putDouble(SPConstants.AMOUNT, amount);
+                paymentBundle.putDouble(SPConstants.CASH_BACK_AMOUNT, cashBackAmount);
+                paymentBundle.putInt(SPConstants.TRANSACTION_TYPE, transactionType.getEnumId());
+                paymentBundle.putInt(SPConstants.FROM_ACCOUNT, mFromAccount);
+                paymentBundle.putInt(SPConstants.TO_ACCOUNT, mToAccount);
                 onBuildPaymentDescription(paymentBundle);
 
                 if (mPaymentHandler != null) {
