@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/toolbar"
+        android:src="@drawable/crypto_atm_logo"
+        android:id="@+id/imageView" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_above="@+id/continueLl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cryptoNameTv"
+                android:text="You are buying"
+                android:layout_gravity="center"
+                style="@style/SmartPesa.Caption"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cryptoValueTv"
+                tools:text="0.1878393030 BTC"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/SmartPesa.Display1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="for amount"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                style="@style/SmartPesa.Caption"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/amountTv"
+                tools:text="USD 2000"
+                android:gravity="center"
+                android:layout_gravity="center"
+                style="@style/SmartPesa.Display1"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/youWillBuyLabelTv"
+                android:text="To address"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                style="@style/SmartPesa.Caption"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/walletAddressTv"
+                tools:text="1BoatSLRHtKNngkdXEeobR76b53LETtpyT"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                style="@style/SmartPesa.Display1"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:id="@+id/continueLl">
+
+        <Button
+            android:id="@+id/cashBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_green"
+            android:text="@string/cash"
+            android:textColor="@drawable/text_general" />
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/cardBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_green"
+            android:text="@string/card"
+            android:textColor="@drawable/text_general" />
+
+    </LinearLayout>
+
+</RelativeLayout>
