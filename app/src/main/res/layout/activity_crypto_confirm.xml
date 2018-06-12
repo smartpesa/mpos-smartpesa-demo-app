@@ -43,6 +43,7 @@
                 tools:text="0.1878393030 BTC"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textColor="@color/md_black_1000"
                 style="@style/SmartPesa.Display1"/>
 
             <TextView
@@ -59,6 +60,7 @@
                 android:id="@+id/amountTv"
                 tools:text="USD 2000"
                 android:gravity="center"
+                android:textColor="@color/md_black_1000"
                 android:layout_gravity="center"
                 style="@style/SmartPesa.Display1"/>
 
@@ -80,6 +82,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="16dp"
                 android:layout_marginLeft="16dp"
+                android:textColor="@color/md_black_1000"
                 android:gravity="center"
                 style="@style/SmartPesa.Display1"/>
 

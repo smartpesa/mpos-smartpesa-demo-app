@@ -42,6 +42,7 @@
             android:id="@+id/cryptoPriceTv"
             tools:text="USD 7,700.00"
             android:layout_gravity="center"
+            android:textColor="@color/md_black_1000"
             style="@style/SmartPesa.Display1"/>
 
         <LinearLayout
@@ -200,6 +201,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/cryptoValueTv"
             tools:text="USD 7,700.00"
+            android:textColor="@color/md_black_1000"
             android:layout_gravity="center"
             style="@style/SmartPesa.Display1"/>
 

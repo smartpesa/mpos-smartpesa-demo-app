@@ -353,7 +353,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
 
             HashMap<String, Object> postHash = new HashMap<>();
 
-            postHash.put("qrcode", R.string.test_qr);
+            postHash.put("qrcode", cryptoAtmQRScannedText);
             postHash.put("amount", crytoAtmCryptoValue);
             if (cryptoATMcryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN) {
                 postHash.put("crypto_currency_symbol", "BTC");
