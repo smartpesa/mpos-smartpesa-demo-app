@@ -70,15 +70,15 @@ public class CryptoConfirmActivity extends BaseActivity {
         if (bundle != null) {
 
             double amount = bundle.getDouble(SPConstants.AMOUNT, 0.00);
-            double btc =  bundle.getDouble(SPConstants.CRYPTO_ATM_CRYPTO_VALUE, 0.00);
+            String btc =  bundle.getString(SPConstants.CRYPTO_ATM_CRYPTO_VALUE);
             Currency currency = (Currency) bundle.getSerializable(SPConstants.TRANSACTION_CURRENCY);
 
             amountTv.setText(currency.getCurrencySymbol() + " " + mMoneyUtils.format(amount));
 
             if (cryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN) {
-                cryptoValueTv.setText(String.format("%.8f", btc) + " LTC");
+                cryptoValueTv.setText(btc + " LTC");
             } else if (cryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN) {
-                cryptoValueTv.setText(String.format("%.8f", btc) + " BTC");
+                cryptoValueTv.setText(btc + " BTC");
             }
 
             cashBtn.setOnClickListener(new View.OnClickListener() {

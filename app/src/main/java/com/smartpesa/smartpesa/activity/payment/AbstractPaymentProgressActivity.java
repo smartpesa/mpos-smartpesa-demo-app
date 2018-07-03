@@ -147,7 +147,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
     Thread t;
     Currency transactionCurrency;
     String cryptoAtmQRScannedText;
-    double crytoAtmCryptoValue;
+    String crytoAtmCryptoValue;
     int cryptoATMcryptoType;
 
     @Override
@@ -174,7 +174,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
         description = this.getIntent().getStringExtra(SPConstants.DESCRIPTION);
         transactionCurrency = (Currency) this.getIntent().getSerializableExtra(SPConstants.TRANSACTION_CURRENCY);
         cryptoAtmQRScannedText = this.getIntent().getStringExtra(SPConstants.CRYPTO_ATM_QR_TEXT);
-        crytoAtmCryptoValue = this.getIntent().getDoubleExtra(SPConstants.CRYPTO_ATM_CRYPTO_VALUE, 0.00);
+        crytoAtmCryptoValue = this.getIntent().getStringExtra(SPConstants.CRYPTO_ATM_CRYPTO_VALUE);
         cryptoATMcryptoType = this.getIntent().getIntExtra(SPConstants.CRYPTO_ATM_CRYPTO_TYPE, -1);
 
         String f = this.getIntent().getStringExtra(AbstractPaymentFragment.KEY_CONVENIENCE_FEE);
@@ -354,7 +354,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             HashMap<String, Object> postHash = new HashMap<>();
 
             postHash.put("qrcode", cryptoAtmQRScannedText);
-            postHash.put("amount", crytoAtmCryptoValue);
+            postHash.put("amount", new BigDecimal(crytoAtmCryptoValue));
             if (cryptoATMcryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN) {
                 postHash.put("crypto_currency_symbol", "BTC");
 

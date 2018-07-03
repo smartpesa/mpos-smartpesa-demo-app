@@ -84,6 +84,7 @@
                 android:layout_marginLeft="16dp"
                 android:textColor="@color/md_black_1000"
                 android:gravity="center"
+                android:textSize="28dp"
                 style="@style/SmartPesa.Display1"/>
 
         </LinearLayout>

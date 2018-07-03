@@ -24,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 import butterknife.Bind;
@@ -59,7 +60,7 @@ public class CryptoInfoActivity extends BaseActivity {
     public MoneyUtils mMoneyUtils;
     Lazy<ServiceManager> serviceManager;
     Bundle bundle;
-    double btc;
+    String btc;
     Currency currency;
     int cryptoType;
 
@@ -198,7 +199,11 @@ public class CryptoInfoActivity extends BaseActivity {
 
             double totalAmount = amount - margin;
 
-            btc =  totalAmount / askAmount.doubleValue();
+            double divide =  totalAmount / askAmount.doubleValue();
+
+            //// TODO: 3/7/18 improve this
+            DecimalFormat df = new DecimalFormat("0.00000000");
+            btc = df.format(divide);
 
             cryptoPriceTv.setText(currency.getCurrencySymbol() + " " + mMoneyUtils.format(askAmount));
             amountTv.setText(currency.getCurrencySymbol() + " " + mMoneyUtils.format(amount));
@@ -206,9 +211,9 @@ public class CryptoInfoActivity extends BaseActivity {
             totalTv.setText(currency.getCurrencySymbol() + " " + mMoneyUtils.format(totalAmount));
 
             if (cryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_BITCOIN) {
-                cryptoValueTv.setText(String.format("%.8f", btc) + " BTC");
+                cryptoValueTv.setText(btc + " BTC");
             } else if (cryptoType == MerchantModule.MENU_ID_CRYPTO_ATM_LITECOIN) {
-                cryptoValueTv.setText(String.format("%.8f", btc) + " LTC");
+                cryptoValueTv.setText(btc + " LTC");
             }
 
             continueBtn.setEnabled(true);
@@ -217,7 +222,7 @@ public class CryptoInfoActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(CryptoInfoActivity.this, AliPayQRScanActivity.class);
-                    bundle.putDouble(SPConstants.CRYPTO_ATM_CRYPTO_VALUE, btc);
+                    bundle.putString(SPConstants.CRYPTO_ATM_CRYPTO_VALUE, btc);
                     intent.putExtra(SPConstants.BUNDLE, bundle);
                     startActivity(intent);
                 }
