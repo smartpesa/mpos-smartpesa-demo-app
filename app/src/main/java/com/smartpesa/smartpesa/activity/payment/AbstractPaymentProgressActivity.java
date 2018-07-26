@@ -317,7 +317,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             public void onBluetoothPermissionDenied(String[] strings) {
 
             }
-        });
+        }, AbstractPaymentProgressActivity.this);
     }
 
     //initialise the transaction with the SDK
@@ -455,7 +455,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
                     rippleBackground.setVisibility(View.INVISIBLE);
                     bluetoothConnection.setVisibility(View.INVISIBLE);
                     progressIV.setVisibility(View.INVISIBLE);
-                    progressTV.setText(R.string.sp__please_swipe_or_insert);
+                    progressTV.setText(s);
                     swipeOrInsertFl.setVisibility(View.VISIBLE);
                     animateCardL2R(false);
                 }

@@ -442,7 +442,7 @@ public class IntentPaymentProgressActivity extends BaseActivity {
                         permissions,
                         REQUEST_PERMISSION_BT_TRANSACTION);
             }
-        });
+        }, IntentPaymentProgressActivity.this);
     }
 
     @Override
@@ -604,7 +604,7 @@ public class IntentPaymentProgressActivity extends BaseActivity {
                     rippleBackground.setVisibility(View.INVISIBLE);
                     bluetoothConnection.setVisibility(View.INVISIBLE);
                     progressIV.setVisibility(View.INVISIBLE);
-                    progressTV.setText(R.string.sp__please_swipe_or_insert);
+                    progressTV.setText(s);
                     swipeOrInsertFl.setVisibility(View.VISIBLE);
                     animateCardL2R(false);
                 }
