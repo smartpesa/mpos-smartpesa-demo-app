@@ -1,6 +1,28 @@
 
 package com.smartpesa.smartpesa.activity.payment;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -30,28 +52,6 @@ import com.smartpesa.smartpesa.persistence.MerchantModule;
 import com.smartpesa.smartpesa.util.MoneyUtils;
 import com.smartpesa.smartpesa.util.constants.SPConstants;
 import com.wang.avi.AVLoadingIndicatorView;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -593,77 +593,78 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
 
             @Override
             public void onTransactionApproved(TransactionData transactionData) {
+                if (isActivityDestroyed) return;
                 transactionFl.setVisibility(View.INVISIBLE);
                 if (bluetoothDisconnected[0] == false && bluetoothTimedOut[0] == false) {
-                    transactionFinished[0] = true;
-                    failBtnLl.setVisibility(View.INVISIBLE);
-                    if (transactionData != null && transactionData.getTransaction() != null && transactionData.getTransaction().getTransactionResult() != null) {
+                        transactionFinished[0] = true;
+                        failBtnLl.setVisibility(View.INVISIBLE);
+                        if (transactionData != null && transactionData.getTransaction() != null && transactionData.getTransaction().getTransactionResult() != null) {
 
-                        CardPayment cardPayment = (CardPayment) transactionData.getTransaction().getTransactionResult().getPayment();
-                        TransactionResult transactionResponse = transactionData.getTransaction().getTransactionResult();
+                            CardPayment cardPayment = (CardPayment) transactionData.getTransaction().getTransactionResult().getPayment();
+                            TransactionResult transactionResponse = transactionData.getTransaction().getTransactionResult();
 
-                        Fragment fragment = null;
+                            Fragment fragment = null;
 
-                        fragment = ApprovedFragment.newInstance(transactionResponse != null ? new ParcelableTransactionResponse(transactionResponse) : null, cardPayment.getVerification());
+                            fragment = ApprovedFragment.newInstance(transactionResponse != null ? new ParcelableTransactionResponse(transactionResponse) : null, cardPayment.getVerification());
 
-                        fragmentManager.beginTransaction().replace(R.id.container_body, fragment).commitAllowingStateLoss();
-                        fragmentContainer.setVisibility(View.VISIBLE);
-                        lockBackBTN = false;
-
-                    }
+                            fragmentManager.beginTransaction().replace(R.id.container_body, fragment).commitAllowingStateLoss();
+                            fragmentContainer.setVisibility(View.VISIBLE);
+                            lockBackBTN = false;
+                        }
                 }
 
             }
 
             @Override
             public void onTransactionDeclined(SpTransactionException e, TransactionData transactionData) {
+                if (isActivityDestroyed) return;
                 transactionFl.setVisibility(View.INVISIBLE);
                 if (bluetoothDisconnected[0] == false && bluetoothTimedOut[0] == false) {
-                    transactionFinished[0] = true;
-                    failBtnLl.setVisibility(View.INVISIBLE);
-                    Fragment fragment = null;
-                    if (transactionData != null && transactionData.getTransaction() != null && transactionData.getTransaction().getTransactionResult() != null) {
+                        transactionFinished[0] = true;
+                        failBtnLl.setVisibility(View.INVISIBLE);
+                        Fragment fragment = null;
+                        if (transactionData != null && transactionData.getTransaction() != null && transactionData.getTransaction().getTransactionResult() != null) {
 
-                        TransactionResult transactionResponse = transactionData.getTransaction().getTransactionResult();
+                            TransactionResult transactionResponse = transactionData.getTransaction().getTransactionResult();
 
-                        fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, transactionResponse != null ? new ParcelableTransactionResponse(transactionResponse) : null);
-                    } else {
-                        failureReason = e.getMessage();
-                        fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, null);
-                    }
+                            fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, transactionResponse != null ? new ParcelableTransactionResponse(transactionResponse) : null);
+                        } else {
+                            failureReason = e.getMessage();
+                            fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, null);
+                        }
 
-                    fragmentManager.beginTransaction().replace(R.id.container_body, fragment).commitAllowingStateLoss();
-                    fragmentContainer.setVisibility(View.VISIBLE);
-                    lockBackBTN = false;
+                        fragmentManager.beginTransaction().replace(R.id.container_body, fragment).commitAllowingStateLoss();
+                        fragmentContainer.setVisibility(View.VISIBLE);
+                        lockBackBTN = false;
                 }
             }
 
             @Override
             public void onError(SpException exception) {
+                if (isActivityDestroyed) return;
                 Fragment fragment = null;
                 if (bluetoothDisconnected[0] == false && bluetoothTimedOut[0] == false) {
+                        transactionFinished[0] = true;
+                        failBtnLl.setVisibility(View.INVISIBLE);
+                        transactionFl.setVisibility(View.INVISIBLE);
+                        //send result to fragment
+                        transactionIsSuccessful = false;
 
-                    transactionFinished[0] = true;
-                    failBtnLl.setVisibility(View.INVISIBLE);
-                    transactionFl.setVisibility(View.INVISIBLE);
-                    //send result to fragment
-                    transactionIsSuccessful = false;
+                        if (exception != null) {
+                            failureReason = exception.getMessage();
+                        }
 
-                    if (exception != null) {
-                        failureReason = exception.getMessage();
-                    }
-
-                    if (exception instanceof SpTransactionException) {
-                        fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, null);
-                    } else if (exception instanceof SpSessionException || exception instanceof SpNetworkException) {
-                        fragment = UnknownResultFragment.newInstance(exception, transactionType, amount, null);
-                    } else {
-                        fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, null);
-                    }
-                    if (isActivityDestroyed) return;
-                    fragmentManager.beginTransaction().replace(R.id.container_body, fragment).commitAllowingStateLoss();
-                    fragmentContainer.setVisibility(View.VISIBLE);
-                    lockBackBTN = false;
+                        if (exception instanceof SpTransactionException) {
+                            fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, null);
+                        } else if (exception instanceof SpSessionException || exception instanceof SpNetworkException) {
+                            fragment = UnknownResultFragment.newInstance(exception, transactionType, amount, null);
+                        } else {
+                            fragment = FailedResultFragment.newInstance(failureReason, transactionType, amount, null);
+                        }
+                        if (isActivityDestroyed) return;
+                        fragmentManager.beginTransaction().replace(R.id.container_body, fragment).commitAllowingStateLoss();
+                        fragmentContainer.setVisibility(View.VISIBLE);
+                        lockBackBTN = false;
                 }
 
             }
@@ -966,6 +967,11 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             if (serviceManager != null) {
                 serviceManager.get().stopScan();
             }
+        }
+
+        @Override
+        public void onCancelled() {
+
         }
     }
 
