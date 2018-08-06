@@ -1,15 +1,18 @@
 package com.smartpesa.smartpesa.activity;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
+
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.amulyakhare.textdrawable.TextDrawable;
-import com.mikepenz.materialdrawer.AccountHeader;
-import com.mikepenz.materialdrawer.AccountHeaderBuilder;
-import com.mikepenz.materialdrawer.Drawer;
-import com.mikepenz.materialdrawer.Drawer.OnDrawerItemClickListener;
-import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.SmartPesaApplication;
 import com.smartpesa.smartpesa.activity.base.BaseActivity;
@@ -19,24 +22,6 @@ import com.smartpesa.smartpesa.fragment.payment.AbstractPaymentFragment;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.persistence.MerchantComponent;
 import com.smartpesa.smartpesa.persistence.MerchantModule;
-import com.smartpesa.smartpesa.util.ColorUtils;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.Toast;
-
-import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

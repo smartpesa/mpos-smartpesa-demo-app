@@ -367,6 +367,11 @@ public class AliPayReceiptActivity extends BaseActivity {
         public void onSelected(SpPrinterDevice device) {
             performPrint(device);
         }
+
+        @Override
+        public void onCancelled() {
+
+        }
     }
 
     private void performPrint(SpPrinterDevice device) {

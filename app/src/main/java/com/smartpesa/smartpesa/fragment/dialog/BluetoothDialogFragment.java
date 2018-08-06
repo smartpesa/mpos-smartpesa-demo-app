@@ -94,6 +94,7 @@ public class BluetoothDialogFragment<T extends SpDevice> extends BaseDialogFragm
             public void onClick(View v) {
                 getDialog().cancel();
                 ServiceManager.get(getActivity()).stopScan();
+                mListener.onCancelled();
                 getActivity().finish();
             }
         });
@@ -123,6 +124,7 @@ public class BluetoothDialogFragment<T extends SpDevice> extends BaseDialogFragm
 
     public interface TerminalSelectedListener<T> {
         void onSelected(T device);
+        void onCancelled();
     }
 
     protected static class BluetoothAdapter<T extends SpDevice> extends ArrayAdapter<T> {

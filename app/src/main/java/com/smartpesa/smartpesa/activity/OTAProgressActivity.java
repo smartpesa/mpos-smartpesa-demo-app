@@ -341,6 +341,11 @@ public class OTAProgressActivity extends BaseActivity {
         public void onSelected(SpTerminal device) {
             processPayment(device);
         }
+
+        @Override
+        public void onCancelled() {
+
+        }
     }
 
     protected void throwUserOutside(String helpText) {

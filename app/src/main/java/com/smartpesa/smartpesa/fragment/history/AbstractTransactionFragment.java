@@ -792,6 +792,11 @@ public abstract class AbstractTransactionFragment extends BaseFragment implement
         public void onSelected(SpPrinterDevice device) {
             performPrint(device);
         }
+
+        @Override
+        public void onCancelled() {
+
+        }
     }
 
     private void performPrint(SpPrinterDevice device) {

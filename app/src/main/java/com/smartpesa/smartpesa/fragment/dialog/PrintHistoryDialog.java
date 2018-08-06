@@ -150,5 +150,10 @@ public class PrintHistoryDialog extends AbstractHistoryDialog {
         public void onSelected(SpPrinterDevice device) {
             performPrint(device);
         }
+
+        @Override
+        public void onCancelled() {
+
+        }
     }
 }

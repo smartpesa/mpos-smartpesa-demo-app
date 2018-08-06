@@ -81,8 +81,6 @@ android {
 
     repositories {
         maven { url "https://jitpack.io" }
-        maven { url "https://bitbucket.org/smartpesa/smartpesa-maven/raw/master" }
-        maven { url "https://bitbucket.org/smartpesa/maven/raw/master" }
         maven { url "https://maven.google.com" }
         maven { url 'https://maven.fabric.io/public' }
     }
@@ -149,7 +147,6 @@ dependencies {
     compile "com.android.support:design:${SUPPORT_V7_VERSION}"
     compile "com.android.support:cardview-v7:${SUPPORT_V7_VERSION}"
 
-
     compile('com.mikepenz:materialdrawer:4.3.7@aar') {
         transitive = true
     }
@@ -159,12 +156,12 @@ dependencies {
         changing = true
     }
 
-    compile('com.smartpesa:ota:3.7.0-SNAPSHOT-6') {
+    compile('com.smartpesa:ota:3.8.0') {
         transitive = true
         changing = true
     }
 
-    compile('com.smartpesa:spconnect:2.1.1') {
+    compile('com.smartpesa:spconnect:2.2.0') {
         changing = true;
     }
 
