@@ -10,6 +10,7 @@ import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
 import android.support.annotation.Nullable;
 
 import smartpesa.sdk.core.error.SpException;
+import smartpesa.sdk.models.transaction.CardPayment;
 
 public class Converter {
     public static TransactionResult from(smartpesa.sdk.models.transaction.TransactionResult result) {
@@ -19,15 +20,15 @@ public class Converter {
                 .decimals(result.getCurrencyDecimals())
                 .build();
 
+        CardPayment cardPayment = (CardPayment) result.getPayment();
+
         Card cd = Card.builder()
-                //// TODO: 12/3/18  
-//                .pan(result.getCardNumber())
-//                .expiry(result.getCardExpiry())
-//                .holderName(result.getCardHolderName())
-//                .type(result.getCardType())
+                .pan(cardPayment.getCardNumber())
+                .expiry(cardPayment.getCardExpiry())
+                .holderName(cardPayment.getCardHolderName())
+                .type(cardPayment.getCardType())
                 .build();
 
-        //// TODO: 12/3/18
         return TransactionResult.builder()
                 .id(result.getTransactionId())
                 .reference(result.getTransactionReference())
@@ -37,11 +38,11 @@ public class Converter {
                 .card(cd)
                 .responseCode(result.getResponseCode())
                 .responseDescription(result.getResponseDescription())
-//                .cvmDescription(result.getCvmDescription())
+                .cvmDescription(cardPayment.getCvmDescription())
                 .description(result.getTransactionDescription())
                 .authorisationResponse(result.getAuthorisationResponse())
                 .authorisationResponseCode(result.getAuthorisationResponseCode())
-//                .authorisationId(result.getAuthorisationId())
+                .authorisationId(cardPayment.getAuthorisationId())
                 .isReversed(result.isReversed())
                 .type(from(SmartPesaTransactionType.fromEnumId(result.getTransactionTypeEnumId())))
                 .build();
