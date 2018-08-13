@@ -469,7 +469,7 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                         strings,
                         REQUEST_PERMISSION_BT_TRANSACTION);
             }
-        }, IntentPaymentProgressActivity.this);
+        });
     }
 
     //transaction with the SDK

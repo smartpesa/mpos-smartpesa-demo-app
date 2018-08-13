@@ -317,7 +317,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             public void onBluetoothPermissionDenied(String[] strings) {
 
             }
-        }, AbstractPaymentProgressActivity.this);
+        });
     }
 
     //initialise the transaction with the SDK
