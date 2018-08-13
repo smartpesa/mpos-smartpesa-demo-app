@@ -23,10 +23,10 @@ public class Converter {
         CardPayment cardPayment = (CardPayment) result.getPayment();
 
         Card cd = Card.builder()
-                .pan(cardPayment.getCardNumber())
-                .expiry(cardPayment.getCardExpiry())
-                .holderName(cardPayment.getCardHolderName())
-                .type(cardPayment.getCardType())
+                .pan(cardPayment.getCardNumber() == null ? "" : cardPayment.getCardNumber())
+                .expiry(cardPayment.getCardExpiry() == null ? "" : cardPayment.getCardExpiry())
+                .holderName(cardPayment.getCardHolderName() == null ? "" : cardPayment.getCardHolderName())
+                .type(cardPayment.getCardType() == null ? "" : cardPayment.getCardType())
                 .build();
 
         return TransactionResult.builder()
@@ -37,12 +37,11 @@ public class Converter {
                 .currency(c)
                 .card(cd)
                 .responseCode(result.getResponseCode())
-                .responseDescription(result.getResponseDescription())
+                .responseDescription(result.getResponseDescription() == null ? "" : result.getResponseDescription())
                 .cvmDescription(cardPayment.getCvmDescription())
-                .description(result.getTransactionDescription())
+                .description(result.getTransactionDescription() == null ? "" : result.getTransactionDescription())
                 .authorisationResponse(result.getAuthorisationResponse())
                 .authorisationResponseCode(result.getAuthorisationResponseCode())
-                .authorisationId(cardPayment.getAuthorisationId())
                 .isReversed(result.isReversed())
                 .type(from(SmartPesaTransactionType.fromEnumId(result.getTransactionTypeEnumId())))
                 .build();
