@@ -1,17 +1,5 @@
 package com.smartpesa.smartpesa.activity;
 
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.SmartPesaApplication;
-import com.smartpesa.smartpesa.activity.base.BaseActivity;
-import com.smartpesa.smartpesa.fragment.dialog.BluetoothDialogFragment;
-import com.smartpesa.smartpesa.fragment.dialog.PrinterDialogFragment;
-import com.smartpesa.smartpesa.fragment.history.PastHistoryFragment;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-import com.smartpesa.smartpesa.models.ParcelableGoCoinPayment;
-import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
-import com.smartpesa.smartpesa.util.DateUtils;
-import com.smartpesa.smartpesa.util.MoneyUtils;
-
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,6 +20,18 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.SmartPesaApplication;
+import com.smartpesa.smartpesa.activity.base.BaseActivity;
+import com.smartpesa.smartpesa.fragment.dialog.BluetoothDialogFragment;
+import com.smartpesa.smartpesa.fragment.dialog.PrinterDialogFragment;
+import com.smartpesa.smartpesa.fragment.history.PastHistoryFragment;
+import com.smartpesa.smartpesa.helpers.UIHelper;
+import com.smartpesa.smartpesa.models.ParcelableGoCoinPayment;
+import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
+import com.smartpesa.smartpesa.util.DateUtils;
+import com.smartpesa.smartpesa.util.MoneyUtils;
 
 import java.math.BigDecimal;
 import java.util.Collection;

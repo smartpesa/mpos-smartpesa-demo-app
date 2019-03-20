@@ -1,16 +1,5 @@
 package com.smartpesa.smartpesa.activity;
 
-import com.google.zxing.Result;
-
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.SmartPesaApplication;
-import com.smartpesa.smartpesa.activity.base.BaseActivity;
-import com.smartpesa.smartpesa.activity.crypto.CryptoConfirmActivity;
-import com.smartpesa.smartpesa.activity.payment.AliPayPaymentProgressActivity;
-import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
-import com.smartpesa.smartpesa.util.MoneyUtils;
-import com.smartpesa.smartpesa.util.constants.SPConstants;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -25,6 +14,16 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.zxing.Result;
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.SmartPesaApplication;
+import com.smartpesa.smartpesa.activity.base.BaseActivity;
+import com.smartpesa.smartpesa.activity.crypto.CryptoConfirmActivity;
+import com.smartpesa.smartpesa.activity.payment.AliPayPaymentProgressActivity;
+import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
+import com.smartpesa.smartpesa.util.MoneyUtils;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import java.math.BigDecimal;
 

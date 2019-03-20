@@ -1,5 +1,12 @@
 package com.smartpesa.smartpesa.activity;
 
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.widget.ImageView;
+
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.SmartPesaApplication;
@@ -9,13 +16,6 @@ import com.smartpesa.smartpesa.util.MoneyUtils;
 import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import net.glxn.qrgen.android.QRCode;
-
-import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.widget.ImageView;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

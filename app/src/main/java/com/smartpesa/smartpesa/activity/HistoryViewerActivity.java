@@ -1,14 +1,14 @@
 package com.smartpesa.smartpesa.activity;
 
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.activity.base.BaseActivity;
-import com.smartpesa.smartpesa.adapters.HistoryFragmentPagerAdapter;
-import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
-
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.activity.base.BaseActivity;
+import com.smartpesa.smartpesa.adapters.HistoryFragmentPagerAdapter;
+import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
 
 import java.util.ArrayList;
 

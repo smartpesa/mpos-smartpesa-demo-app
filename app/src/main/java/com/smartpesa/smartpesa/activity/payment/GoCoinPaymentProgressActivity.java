@@ -239,7 +239,7 @@ public class GoCoinPaymentProgressActivity extends BaseActivity {
             public void onTransactionFinished(TransactionType transactionType, boolean b, @Nullable Transaction transaction, @Nullable SmartPesa.Verification verification, @Nullable SpCardTransactionException e) {
 
             }
-        });
+        }, this);
     }
 
     public void showFragment(Fragment fragment) {

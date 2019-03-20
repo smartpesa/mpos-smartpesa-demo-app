@@ -75,8 +75,8 @@ import smartpesa.sdk.interfaces.TransactionCallback;
 import smartpesa.sdk.interfaces.TransactionData;
 import smartpesa.sdk.models.currency.Currency;
 import smartpesa.sdk.models.loyalty.Loyalty;
+import smartpesa.sdk.models.loyalty.LoyaltyRedeemable;
 import smartpesa.sdk.models.loyalty.LoyaltyTransaction;
-import smartpesa.sdk.models.loyalty.Redeemable;
 import smartpesa.sdk.models.merchant.TransactionType;
 import smartpesa.sdk.models.transaction.Balance;
 import smartpesa.sdk.models.transaction.Card;
@@ -141,7 +141,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
     final boolean[] bluetoothTimedOut = {false};
     PreferredTerminalUtils mPreferredTerminalUtils;
     public boolean isRetry;
-    List<Redeemable> mRedeemableList;
+    List<LoyaltyRedeemable> mRedeemableList;
     boolean isActivityDestroyed, chipOnly, isTimerRunning;
     private AVLoadingIndicatorView[] IMGS = { iv1, iv3, iv3, iv4, iv5, iv6 };
     Thread t;
@@ -317,7 +317,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             public void onBluetoothPermissionDenied(String[] strings) {
 
             }
-        });
+        }, this);
     }
 
     //initialise the transaction with the SDK
@@ -449,6 +449,11 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             }
 
             @Override
+            public void onShowSelectTIDPrompt(List<String> list) {
+
+            }
+
+            @Override
             public void onWaitingForCard(String s, SmartPesa.CardMode cardMode) {
                 if (isActivityDestroyed) return;
                 if(!chipOnly) {
@@ -488,7 +493,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             }
 
             @Override
-            public void onShowPinAlertPrompt() {
+            public void onShowPinAlertPrompt(int i) {
                 if (isActivityDestroyed) return;
 
                 progressTV.setText(R.string.sp__enter_pin);
@@ -503,7 +508,7 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             }
 
             @Override
-            public void onPinEntered() {
+            public void onPinEntered(int i) {
                 if (isActivityDestroyed) return;
                 //change the UI
                 rippleBackground.setVisibility(View.INVISIBLE);
@@ -724,7 +729,12 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
                             }
                         });
             }
-        });
+
+            @Override
+            public void onShowPinPass(String s) {
+
+            }
+        }, this);
     }
 
     private void showTransactionProgress() {
@@ -864,11 +874,11 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
     }
 
     public void processRedeemableList(ArrayList<Integer> positions) {
-        List<Redeemable> redeemableList = new ArrayList<>();
+        List<LoyaltyRedeemable> redeemableList = new ArrayList<>();
         if (positions.size() != 0) {
             for (int i = 0; i < positions.size(); i++) {
                 int position = positions.get(i);
-                Redeemable redeemable = mRedeemableList.get(position);
+                LoyaltyRedeemable redeemable = mRedeemableList.get(position);
                 redeemable.redeem(redeemable.getAmount());
                 redeemableList.add(redeemable);
             }
@@ -878,11 +888,11 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
 
     private void showLoyaltySelectionDialog(LoyaltyTransaction loyaltyTransaction) {
         ArrayList<UIRedeemable> redeemableArrayList = new ArrayList<UIRedeemable>();
-        List<Redeemable> redeemableList = loyaltyTransaction.getRedeemableList();
+        List<LoyaltyRedeemable> redeemableList = loyaltyTransaction.getRedeemableList();
         mRedeemableList = loyaltyTransaction.getRedeemableList();
         if (redeemableList != null && redeemableList.size() > 0) {
             for (int i = 0; i < redeemableList.size(); i++) {
-                Redeemable redeemable = redeemableList.get(i);
+                LoyaltyRedeemable redeemable = redeemableList.get(i);
                 UIRedeemable uiRedeemable = new UIRedeemable(redeemable.getId(), redeemable.getName(), redeemable.getRedeemableType().getEnumId(), redeemable.getAmount(), redeemable.getUnit(), redeemable.getBalance(), false);
                 redeemableArrayList.add(uiRedeemable);
             }
@@ -901,11 +911,11 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
 
         if (loyalty != null) {
             ArrayList<UIRedeemable> redeemableArrayList = new ArrayList<UIRedeemable>();
-            List<Redeemable> redeemableList = loyalty.getRedeemableList();
+            List<LoyaltyRedeemable> redeemableList = loyalty.getRedeemableList();
             mRedeemableList = loyalty.getRedeemableList();
             if (redeemableList != null && redeemableList.size() > 0) {
                 for (int i = 0; i < redeemableList.size(); i++) {
-                    Redeemable redeemable = redeemableList.get(i);
+                    LoyaltyRedeemable redeemable = redeemableList.get(i);
                     UIRedeemable uiRedeemable = new UIRedeemable(redeemable.getId(), redeemable.getName(), redeemable.getRedeemableType().getEnumId(), redeemable.getAmount(), redeemable.getUnit(), redeemable.getBalance(), false);
                     redeemableArrayList.add(uiRedeemable);
                 }

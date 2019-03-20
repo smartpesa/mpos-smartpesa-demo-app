@@ -1,13 +1,5 @@
 package com.smartpesa.smartpesa.activity;
 
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.SmartPesaApplication;
-import com.smartpesa.smartpesa.activity.base.BaseActivity;
-import com.smartpesa.smartpesa.helpers.PreferenceHelper;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-import com.smartpesa.smartpesa.util.DateUtils;
-import com.smartpesa.smartpesa.util.constants.PreferenceConstants;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +15,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.SmartPesaApplication;
+import com.smartpesa.smartpesa.activity.base.BaseActivity;
+import com.smartpesa.smartpesa.helpers.PreferenceHelper;
+import com.smartpesa.smartpesa.helpers.UIHelper;
+import com.smartpesa.smartpesa.util.DateUtils;
+import com.smartpesa.smartpesa.util.constants.PreferenceConstants;
 
 import java.util.Date;
 

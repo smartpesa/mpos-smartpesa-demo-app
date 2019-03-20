@@ -469,7 +469,7 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                         strings,
                         REQUEST_PERMISSION_BT_TRANSACTION);
             }
-        });
+        }, this);
     }
 
     //transaction with the SDK
@@ -552,6 +552,11 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                 }
 
                 @Override
+                public void onShowSelectTIDPrompt(List<String> list) {
+
+                }
+
+                @Override
                 public void onWaitingForCard(String s, SmartPesa.CardMode cardMode) {
                     if (isActivityDestroyed()) return;
 
@@ -595,7 +600,7 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                 }
 
                 @Override
-                public void onShowPinAlertPrompt() {
+                public void onShowPinAlertPrompt(int i) {
                     if (isActivityDestroyed()) return;
 
                     progressTV.setText(R.string.sp__enter_pin);
@@ -610,7 +615,7 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                 }
 
                 @Override
-                public void onPinEntered() {
+                public void onPinEntered(int i) {
                     if (isActivityDestroyed()) return;
 
                     //change the UI
@@ -858,7 +863,12 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                 public void onShowBalance(Balance balance) {
 
                 }
-            });
+
+                @Override
+                public void onShowPinPass(String s) {
+
+                }
+            }, this);
 
         } else {
             showTransactionError(amount, null, "Transaction type cannot be null");

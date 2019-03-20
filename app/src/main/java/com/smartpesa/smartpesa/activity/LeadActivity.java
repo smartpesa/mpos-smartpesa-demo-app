@@ -1,5 +1,13 @@
 package com.smartpesa.smartpesa.activity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.badoualy.stepperindicator.StepperIndicator;
 import com.smartpesa.smartpesa.R;
@@ -10,14 +18,6 @@ import com.smartpesa.smartpesa.fragment.lead.ContactFragment;
 import com.smartpesa.smartpesa.fragment.lead.NameFragment;
 import com.smartpesa.smartpesa.fragment.lead.RegisteredAddressFragment;
 import com.smartpesa.smartpesa.helpers.UIHelper;
-
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 
 import java.util.Date;
 import java.util.HashMap;
