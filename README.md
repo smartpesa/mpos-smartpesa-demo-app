@@ -1,54 +1,10 @@
-# SmartPesa for Android #
+# SmartPesa Demo App
+This application uses SmartPesa SDK to perform authentication, login, transaction, send notification, print receipts and other functions of the SDK.
 
-This README would normally document whatever steps are necessary to get your application up and running.
+To know more about SmartPesa SDK, its various parameters and functionality, you can visit our [confluence documentation](https://smartpesa.atlassian.net/wiki/spaces/SPD/pages/51090535/Getting+Started+With+Android).
 
-### What is this repository for? ###
+If you are new to SmartPesa SDK and want to get started, you can begin with our [starter application](https://github.com/smartpesa/mpos-android-starter-example).
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+You can clone this project and open in android studio to see a complete demo of the Android application. 
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* Deployment instructions
-
-### Running Unit Test ###
-
-1. Open Android SDK Manager (*Tools* Menu | Android) and make sure you have the latest *Android Support Repository* installed.
-2. Test source code are located in *src/androidTest/java*
-3. Create test configuration with a custom runner: `android.support.test.runner.AndroidJUnitRunner`
-    * Open *Run* menu | *Edit Configurations*
-    * Add a new *Android Tests* configuration
-    * Give it a *Name* (for example: *FullAndroidTests*)
-    * Choose module: app
-    * Click on *Test*: *Class:*, and select `AndroidTestSuite`.
-    * Add a *Specific instrumentation runner*: `android.support.test.runner.AndroidJUnitRunner`
-    * Click on *Target Device*: Show chooser dialog
-    * Click *OK*
-4. Repeat step 3, for test class `InstrumentTestSuite` and `UnitTestSuite`
-5. Connect a device or start an emulator
-6. Run the newly created configuration
-
-Note: `AndroidTestSuite` will run the whole unit test suite, while `InstrumentTestSuite` and `UnitTestSuite` will only run `Activity` and `Class` related tests respectively.
-
-### Contribution guidelines ###
-
-* Development is conducted in development branch, while master branch is only used for releases. Further information about branching can be found [here](http://nvie.com/posts/a-successful-git-branching-model/).
-* Follow SmartPesa's Android code style. Contact @malvinstn for the file.
-
-### Useful guidelines ###
-
-* [Developing for Android](https://medium.com/google-developers/developing-for-android-introduction-5345b451567c#.2jz4x8bmp)
-* [Android Design Guidelines](http://developer.android.com/design/index.html)
-* [Android Programming Best Practices](https://developer.android.com/guide/practices/index.html)
-* [Android Performance Best Practices](http://developer.android.com/training/best-performance.html)
-* [Android Code Style Guidelines](https://source.android.com/source/code-style.html)
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Please contact us for any queries, maven repository url for SmartPesa and credentials for logging in to our demo environment at support@smartpesa.com
