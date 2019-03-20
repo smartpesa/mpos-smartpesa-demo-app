@@ -573,24 +573,6 @@
                 style="@style/SmartPesa.Subhead" />
 
             <TextView
-                android:id="@+id/mapsLabelTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/SmartPesa.Caption"
-                android:text="Transaction Location"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapview"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <TextView
                 android:id="@+id/signatureLabelTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
