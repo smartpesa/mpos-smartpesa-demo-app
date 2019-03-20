@@ -1,8 +1,8 @@
 <resources>
 
-    <string name="app_name">SmartPesa</string>
+    <string name="app_name">SmartPesa SmartPOS</string>
 
-    <string name="app_url" translatable="false">dev.smartpesa.com</string>
+    <string name="app_url" translatable="false">demo.smartpesa.com</string>
     <string name="version_endpoint" translatable="false">http://%1$s/version.txt</string>
 
     <!--Menu titles-->
@@ -11,14 +11,14 @@
     <string name="title_payment">Sale</string>
     <string name="title_inquiry">Balance Inquiry</string>
     <string name="title_withdrawal">Cash-Out</string>
-    <string name="title_services">Bills Payment</string>
+    <string name="title_services">Bill Payment</string>
     <string name="title_settings">Devices</string>
-    <string name="title_about">About</string>
+    <string name="title_about">Support</string>
     <string name="title_logout">Logout</string>
     <string name="title_login">Login</string>
-    <string name="title_activity_about_us">About Us</string>
+    <string name="title_activity_about_us">Support</string>
     <string name="title_activity_forgot">Forgot IDs</string>
-    <string name="title_operators">Operators</string>
+    <string name="title_operators">Staff</string>
     <string name="title_refund">Refund</string>
     <string name="title_cashback">Cashback</string>
     <string name="title_transfer_funds">Transfer Funds</string>
@@ -29,12 +29,12 @@
     <string name="forgot_header_text">Can\'t Login? It\'s ok, it happens,</string>
     <string name="forgot_merchant_id_text">Please contact your account manager.</string>
     <string name="forgot_operator_text">Please contact your account manager.</string>
-    <string name="forgot_pin_request_text">Enter your operator ID to receive your new PIN on your registered mobile number</string>
-    <string name="enter_valid_id">Please enter valid Merchant Id and Operator code</string>
+    <string name="forgot_pin_request_text">Enter your staff ID to receive your new PIN on your registered mobile number</string>
+    <string name="enter_valid_id">Please enter valid Merchant Id and staff code</string>
     <string name="pin_success">PIN requested successfully</string>
     <string name="pin_request_inprogress">Please wait PIN request in progress</string>
     <string name="forgot_merchant">Forgot Merchant ID</string>
-    <string name="forgot_operator">Forgot Operator ID?</string>
+    <string name="forgot_operator">Forgot staff ID?</string>
     <string name="forgot_pin">Forgot Pin?</string>
 
     <!--payment strings-->
@@ -62,7 +62,7 @@
     <string name="up_to_date">SmartPesa is up to date</string>
     <string name="title_activity_history_viewer">History Viewer</string>
     <string name="update">UPDATE</string>
-    <string name="customer_support">For customer support please dial</string>
+    <string name="customer_support">Facing difficulties? Live chat with our support team now!</string>
     <string name="customer_support_number">555-1234</string>
     <string name="licensing_info"><u>Licensing info</u></string>
     <string name="privacy_policy">EULA/Privacy Policy</string>
@@ -78,16 +78,16 @@
     <string name="merchant_code">Merchant Code</string>
     <string name="login_title">Login</string>
     <string name="forgot_id">Forgot IDs ?</string>
-    <string name="operator_code">Operator Code</string>
-    <string name="operator_pin">Operator PIN</string>
+    <string name="operator_code">staff Code</string>
+    <string name="operator_pin">staff PIN</string>
     <string name="enter_merchant_id">Please enter the Merchant ID</string>
-    <string name="enter_operator_code">Please enter the Operator Code</string>
+    <string name="enter_operator_code">Please enter the staff Code</string>
     <string name="enter_login_pin">Please enter the Login PIN</string>
 
     <!--Operator edit-->
-    <string name="operator_name">Operator Name</string>
-    <string name="enter_operator_name">Enter operator name</string>
-    <string name="enter_op_code">Enter operator code</string>
+    <string name="operator_name">Staff Name</string>
+    <string name="enter_operator_name">Enter staff name</string>
+    <string name="enter_op_code">Enter staff code</string>
     <string name="title_notification">Notifications</string>
     <string name="notification_phone">Notification Phone</string>
     <string name="enter_phone_number">Enter phone number</string>
@@ -95,15 +95,15 @@
     <string name="enter_email">Enter email address</string>
     <string name="title_permissions">Permissions</string>
     <string name="view_all_history">View all history</string>
-    <string name="manage_operators">Manage Operators</string>
+    <string name="manage_operators">Manage staff</string>
     <string name="print_receipt">Print receipt</string>
     <string name="save">Save</string>
-    <string name="title_edit_operator">Edit Operator</string>
-    <string name="adding_operator">Adding operator</string>
+    <string name="title_edit_operator">Edit staff</string>
+    <string name="adding_operator">Adding staff</string>
     <string name="please_wait">Please wait...</string>
-    <string name="operator_added">Operator added successfully</string>
-    <string name="updating_operator">Updating operator</string>
-    <string name="operator_updated">Operator updated successfully</string>
+    <string name="operator_added">Staff added successfully</string>
+    <string name="updating_operator">Updating staff</string>
+    <string name="operator_updated">Staff updated successfully</string>
 
     <!--splash strings-->
     <string name="update_app">Please update the app to continue</string>
@@ -115,9 +115,9 @@
 
     <!--devices adapter strings-->
     <string name="device_name">Name : %1$s</string>
-    <string name="device_hardware">Hardware : %1$s</string>
-    <string name="device_firmware">Firmware : %1$s</string>
-    <string name="device_last_used">Last used : %1$s</string>
+    <string name="device_hardware">Hardware: %1$s</string>
+    <string name="device_firmware">Firmware: %1$s</string>
+    <string name="device_last_used">Last used: %1$s</string>
 
     <!--AbstractPaymentProgressActivity strings-->
     <string name="processing_payment">Processing Payment…</string>
@@ -146,7 +146,7 @@
     <string name="transaction_reference">TRANSACTION REF</string>
     <string name="details">DETAILS</string>
     <string name="transaction_details">TRANSACTION DETAILS</string>
-    <string name="operator_name_caps">OPERATOR NAME</string>
+    <string name="operator_name_caps">STAFF NAME</string>
     <string name="card_name">CARD NAME</string>
     <string name="aid">AID</string>
     <string name="retrieval_reference_number">RETRIEVAL REFERENCE NUMBER</string>
@@ -204,16 +204,16 @@
 
     <!--merchant info fragment-->
     <string name="currency">Currency: %1$s</string>
-    <string name="merchant_code_label">Merchant code: %1$s</string>
+    <string name="merchant_code_label">Code: %1$s</string>
     <string name="email_label">Email: %1$s</string>
     <string name="phone_label">Phone: %1$s</string>
     <string name="region_label">Region: %1$s</string>
     <string name="merchant_info">Merchant Info</string>
     <string name="address">Address:</string>
     <string name="permissions">Permissions</string>
-    <string name="operator_name_label">Operator Name: %1$s</string>
-    <string name="operator_code_label">Operator Code: %1$s</string>
-    <string name="operator_id_label">Operator Id: %1$s</string>
+    <string name="operator_name_label">Name: %1$s</string>
+    <string name="operator_code_label">Code: %1$s</string>
+    <string name="operator_id_label">Staff Id: %1$s</string>
 
     <!--services strings-->
     <string name="category">Category</string>
@@ -241,8 +241,7 @@
     <!--others-->
     <string name="internet_not_connected">No Internet Connection. Please check your connection settings and try again.</string>
     <string name="title_activity_advanced_settings">Advanced Settings</string>
-    <string name="title_activity_operator_edit">Operator Edit</string>
-    <string name="crittercism_key" translatable="false">5614cf178d4d8c0a00d07c95</string>
+    <string name="title_activity_operator_edit">Staff Edit</string>
     <string name="ui_version_check" translatable="false">http://demo.smartpesa.com/version.txt</string>
     <string name="logout_prompt">Do you want to logout?</string>
     <string name="logout_yes">Yes</string>
@@ -264,7 +263,7 @@
     <string name="all_fields_required">All fields are mandatory</string>
     <string name="parsed_terminal_params">Parsed Terminal Parameters</string>
     <string name="close">Close</string>
-    <string name="incorrect_terminal_settings">Incorrect settings. Did not succeed in downloading Terminal parameters. Please contact the operator</string>
+    <string name="incorrect_terminal_settings">Incorrect settings. Did not succeed in downloading Terminal parameters. Please contact the staff</string>
     <string name="request_new_pin">Request new PIN</string>
     <string name="title_activity_web_view">WebViewActivity</string>
     <string name="add_operator">Add Operator</string>
@@ -281,7 +280,7 @@
     <string name="print_journal">Print Journal</string>
     <string name="send_email">Send Email</string>
     <string name="my_history">My History</string>
-    <string name="operator_active">Operator Active</string>
+    <string name="operator_active">Staff Active</string>
     <string name="loading_receipt">Loading receipt...</string>
     <string name="select_bluetooth_device">Select Bluetooth Device</string>
     <string name="bancnet">BancNet</string>
@@ -307,7 +306,7 @@
     <string name="transaction_submitted_help">Please see the History to know the status of this transaction.</string>
     <string name="unknown_transaction_prompt">Outcome of last transaction is unknown on this phone because the internet connection was interrupted.\n\nOpen the History tab to see the status to confirm it was approved or declined.</string>
     <string name="select_filter_first">You must select a filter first</string>
-    <string name="include_all_transactions">Include transactions of all operators</string>
+    <string name="include_all_transactions">Include transactions of all staff</string>
     <string name="initializing_transaction">Starting transaction…</string>
     <string name="terminal_id">TERMINAL ID</string>
     <string name="next">Next</string>
@@ -324,7 +323,7 @@
     <string name="total">TOTAL</string>
     <string name="convenience_fee_label">Fee</string>
     <string name="title_cash_advance">Cash Advance</string>
-    <string name="operator_info">Operator Info</string>
+    <string name="operator_info">Staff Info</string>
     <string name="title_void">Void</string>
 
     <string name="default_device">Use %1$s as your Preferred terminal ?</string>
@@ -345,7 +344,7 @@
     <string name="sign_up_underlined"><u>Sign Up</u></string>
     <string name="submit">SUBMIT</string>
     <string name="title_reports">Reports</string>
-    <string name="operators"><u>Operators near me</u></string>
+    <string name="operators"><u>Staff near me</u></string>
     <string name="title_masterpass">Masterpass QR</string>
     <string name="title_qr_merchant_payment">QR Merchant Payment</string>
     <string name="approval_code">APPROVAL CODE</string>
@@ -375,8 +374,52 @@
     <string name="title_crypto">Crypto Payment</string>
     <string name="currency_type">Currency Type</string>
 
+    <string name="title_menu">Home</string>
+    <string name="title_transactions">TRANSACTIONS</string>
+    <string name="title_information">INFORMATION</string>
+    <string name="title_crypto_atm">Crypto ATM</string>
+    <string name="title_credible">Credible</string>
 
-    <string name="google_geo_api_key"></string>
-    <string name="fabric_api_key"></string>
+    <string name="menu_bitcoin">Bitcoin</string>
+    <string name="menu_litecoin">Litecoin</string>
+    <string name="menu_ethereum">Ethereum</string>
+    <string name="menu_dash">Dash</string>
+    <string name="select_crypto">Buy and sell crypto \ndirectly on point-of-sale</string>
+    <string name="margin">Margin</string>
+    <string name="crypto_scan_instruction">Please scan the crypto QR code</string>
+    <string name="cash">CASH</string>
+    <string name="card">CARD</string>
+    <string name="buy_bitcoin">Buy Bitcoin</string>
+    <string name="buy_litecoin">Buy Litecoin</string>
+    <string name="bitcoin_price">Bitcoin price</string>
+    <string name="litecoin_price">Litecoin price</string>
+    <string name="crypto_fail">Unable to get Crypto price, please try again later or contact support</string>
+    <string name="alipay_scan_title">Alipay Scan</string>
+    <string name="alipay_pay_title">AliPay Payment</string>
+    <string name="test_qr">msN1PW1ZwFHMVRamR55vB1aga1pq7dGicA</string>
+    <string name="select_type">Select injection type</string>
+    <string name="service_name">ECR Service</string>
+    <string name="transaction_null">Transaction type cannot be null</string>
+    <string name="transaction_not_support">Transaction Type not supported</string>
+    <string name="amount_null">Amount cannot be null</string>
+    <string name="redirecting">Redirecting in </string>
+    <string name="complete_label">Complete</string>
+    <string name="battery_low">mPOS device battery low, please charge</string>
+    <string name="title_register_finger">Register Fingerprint</string>
+    <string name="shopDevices">Shop Devices</string>
+    <string name="shopDevicesText">Get the latest mpos devices to make your payments better!</string>
+    <string name="your_devices">Your Devices</string>
+    <string name="version">Version</string>
+    <string name="live_chat">Live Chat</string>
+    <string name="support">Support</string>
+    <string name="app_version_title">Version</string>
+    <string name="manage_pin">Change your staff PIN below.</string>
+    <string name="showAllHistory">Show all history</string>
+    <string name="sendHistory">Send History</string>
+    <string name="title_activate_softpos">Activate Softpos</string>
+    <string name="registerSoftpos">Register your softpos now to accept payments using just a tap.</string>
+    <string name="registerSoftposTitle">Register Softpos</string>
+    <string name="logout">Logout</string>
+    <string name="product">Products</string>
 
 </resources>

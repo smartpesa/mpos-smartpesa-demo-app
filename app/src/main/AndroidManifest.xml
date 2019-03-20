@@ -79,9 +79,7 @@
             android:label="@string/sign_up"
             android:screenOrientation="portrait"
             android:theme="@style/SmartPesaLead" />
-        <activity
-            android:name=".activity.LocateOperators"
-            android:label="Operators near me" />
+
         <activity
             android:name=".activity.AliPayQRScanActivity"
             android:label="@string/title_alipay"
