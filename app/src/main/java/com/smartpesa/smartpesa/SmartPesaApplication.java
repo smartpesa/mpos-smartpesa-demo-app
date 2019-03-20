@@ -73,7 +73,6 @@ public class SmartPesaApplication extends MultiDexApplication {
         ServiceManagerConfig config;
 
         config = new ServiceManagerConfig.Builder(getApplicationContext())
-                .logLevel(SpLogLevel.DEBUG)
                 .networkSettings(new NetworkSettings.Builder()
                         .url(new HttpUrl.Builder()
                                 .host("demo.smartpesa.com")
@@ -82,7 +81,11 @@ public class SmartPesaApplication extends MultiDexApplication {
                         .build())
                 .build();
 
-        ServiceManager.init(config);
+        try {
+            ServiceManager.init(config);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         OtaManagerConfig otaConfig = new OtaManagerConfig.Builder(getApplicationContext())
                 .setLogLevel(SpLogLevel.DEBUG)
