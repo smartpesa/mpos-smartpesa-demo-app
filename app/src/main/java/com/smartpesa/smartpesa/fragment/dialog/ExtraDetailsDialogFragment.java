@@ -1,20 +1,6 @@
 
 package com.smartpesa.smartpesa.fragment.dialog;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.SmartPesaApplication;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
-import com.smartpesa.smartpesa.util.MoneyUtils;
-
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -31,6 +17,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.SmartPesaApplication;
+import com.smartpesa.smartpesa.helpers.UIHelper;
+import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
+import com.smartpesa.smartpesa.util.MoneyUtils;
+
 import java.util.UUID;
 
 import butterknife.Bind;
@@ -44,8 +36,6 @@ import smartpesa.sdk.models.transaction.GetTransactionDetailCallback;
 import smartpesa.sdk.models.transaction.TransactionDetail;
 
 public class ExtraDetailsDialogFragment extends BaseDialogFragment {
-
-    private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
 
     @Bind(R.id.cardLabelTv) TextView cardLabelTv;
     @Bind(R.id.cardTv) TextView cardTv;
@@ -83,8 +73,6 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
     @Bind(R.id.billerCodeTv) TextView billerCodeTv;
     @Bind(R.id.ipAddressLabelTv) TextView ipAddressLabelTv;
     @Bind(R.id.ipAddressTv) TextView ipAddressTv;
-    @Bind(R.id.mapview) MapView mMapView;
-    @Bind(R.id.mapsLabelTv) TextView mapLabelTv;
     @Bind(R.id.signatureLabelTv) TextView signatureLabelTv;
     @Bind(R.id.signatureIv) ImageView signatureIv;
     @Bind(R.id.signatureNotAvailableTv) TextView signatureNotAvailableTv;
@@ -95,7 +83,6 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
     @Nullable public MoneyUtils mMoneyUtils;
     protected Lazy<ServiceManager> serviceManager;
     ParcelableTransactionResponse transactionResponse;
-    Double lattitude, longitude;
     UUID transactionId;
 
     @NonNull
@@ -119,13 +106,6 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Bundle mapViewBundle = null;
-        if (savedInstanceState != null) {
-            mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
-        }
-
-        mMapView.onCreate(mapViewBundle);
-
         serviceManager = SmartPesaApplication.component(getActivity()).serviceManager();
         mMoneyUtils = SmartPesaApplication.merchantComponent(getActivity()).provideMoneyUtils();
         transactionId = UUID.fromString(getArguments().getString("transactionId"));
@@ -139,55 +119,6 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
                 dismiss();
             }
         });
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        Bundle mapViewBundle = outState.getBundle(MAPVIEW_BUNDLE_KEY);
-        if (mapViewBundle == null) {
-            mapViewBundle = new Bundle();
-            outState.putBundle(MAPVIEW_BUNDLE_KEY, mapViewBundle);
-        }
-        mMapView.onSaveInstanceState(mapViewBundle);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mMapView.onResume();
-
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mMapView.onStart();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        mMapView.onStop();
-    }
-
-    @Override
-    public void onPause() {
-        mMapView.onPause();
-        super.onPause();
-    }
-
-    @Override
-    public void onDestroy() {
-        mMapView.onDestroy();
-        super.onDestroy();
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mMapView.onLowMemory();
     }
 
     private void getTransactionExtraDetails(UUID transactionID) {
@@ -287,34 +218,6 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
                     destinationAccountNumberTv.setText(transactionExtraDetail.getToAccount());
                     destinationAccountNumberTv.setVisibility(View.VISIBLE);
                     destinationAccountNumberLabelTv.setVisibility(View.VISIBLE);
-                }
-
-                lattitude = transactionExtraDetail.getLatitude();
-                longitude = transactionExtraDetail.getLongitude();
-
-                if (lattitude != null && longitude != null) {
-                    if (lattitude.doubleValue() != 0.0 && longitude.doubleValue() != 0.0) {
-                        mMapView.getMapAsync(new OnMapReadyCallback() {
-                            @Override
-                            public void onMapReady(GoogleMap googleMap) {
-                                LatLng transactionLocation = new LatLng(lattitude, longitude);
-                                googleMap.addMarker(new MarkerOptions().position(transactionLocation)
-                                        .title("Transaction location"));
-                                CameraPosition cameraPosition = new CameraPosition.Builder()
-                                        .target(transactionLocation)
-                                        .zoom(17).build();
-                                googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                                mMapView.setVisibility(View.VISIBLE);
-                                mapLabelTv.setVisibility(View.VISIBLE);
-                            }
-                        });
-                    } else {
-                        mMapView.setVisibility(View.GONE);
-                        mapLabelTv.setVisibility(View.GONE);
-                    }
-                } else {
-                    mMapView.setVisibility(View.GONE);
-                    mapLabelTv.setVisibility(View.GONE);
                 }
             }
         }
