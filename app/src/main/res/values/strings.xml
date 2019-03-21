@@ -2,7 +2,7 @@
 
     <string name="app_name">SmartPesa SmartPOS</string>
 
-    <string name="app_url" translatable="false">demo.smartpesa.com</string>
+    <string name="app_url" translatable="false">dev.smartpesa.com</string>
     <string name="version_endpoint" translatable="false">http://%1$s/version.txt</string>
 
     <!--Menu titles-->
