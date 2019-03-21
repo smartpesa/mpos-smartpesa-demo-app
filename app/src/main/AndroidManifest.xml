@@ -49,6 +49,11 @@
         <activity
             android:name=".activity.ForgotIdActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.crypto.CryptoInfoActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".activity.AboutUsActivity"
             android:screenOrientation="portrait" />

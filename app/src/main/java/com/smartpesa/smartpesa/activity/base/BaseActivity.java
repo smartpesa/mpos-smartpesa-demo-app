@@ -1,30 +1,20 @@
 package com.smartpesa.smartpesa.activity.base;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+
 import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.SmartPesaApplication;
 import com.smartpesa.smartpesa.activity.SplashActivity;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.persistence.MerchantComponent;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-
 public class BaseActivity extends AppCompatActivity {
 
     private boolean mIsDestroyed;
     private boolean mIsPaused;
-
-    @CallSuper
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
 
     @Nullable
     public MerchantComponent getMerchantComponent() {

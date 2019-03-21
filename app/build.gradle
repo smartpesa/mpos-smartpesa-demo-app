@@ -193,7 +193,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.jpardogo.materialtabstrip:library:1.0.6'
     compile 'com.jakewharton.timber:timber:4.1.0'
-    compile 'uk.co.chrisjenx:calligraphy:2.1.0'
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.skyfishjy.ripplebackground:library:1.0.1'
     compile 'com.nineoldandroids:library:2.4.0'

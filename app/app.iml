@@ -163,7 +163,6 @@
     <orderEntry type="library" exported="" name="Gradle: com.squareup.okhttp3:okhttp:3.8.0@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.ogaclejapan.smarttablayout:library-1.6.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: io.fabric.sdk.android:fabric-1.4.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: uk.co.chrisjenx:calligraphy-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: me.dm7.barcodescanner:core-1.9.8" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.smartpesa:sdk-4.0.0-SNAPSHOT-32" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.annotation:javax.annotation-api:1.2@jar" level="project" />

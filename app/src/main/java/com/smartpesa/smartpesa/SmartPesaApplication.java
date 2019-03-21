@@ -1,5 +1,9 @@
 package com.smartpesa.smartpesa;
 
+import android.content.Context;
+import android.support.annotation.Nullable;
+import android.support.multidex.MultiDexApplication;
+
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.smartpesa.smartpesa.flavour.DaggerFlavourComponent;
@@ -8,10 +12,6 @@ import com.smartpesa.smartpesa.flavour.FlavourModule;
 import com.smartpesa.smartpesa.persistence.MerchantComponent;
 import com.smartpesa.smartpesa.persistence.MerchantModule;
 
-import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.multidex.MultiDexApplication;
-
 import io.fabric.sdk.android.Fabric;
 import okhttp3.HttpUrl;
 import smartpesa.sdk.ServiceManager;
@@ -19,10 +19,8 @@ import smartpesa.sdk.ServiceManagerConfig;
 import smartpesa.sdk.network.NetworkSettings;
 import smartpesa.sdk.ota.OtaManager;
 import smartpesa.sdk.ota.OtaManagerConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class SmartPesaApplication extends MultiDexApplication {
-    public static final String FONTS_SMART_PESA_REGULAR_TTF = "fonts/SmartPesa-Regular.ttf";
     private static FlavourComponent sFlavourComponent;
     private SmartPesaApplicationComponent mComponent;
     private MerchantComponent mMerchantComponent;
@@ -61,13 +59,6 @@ public class SmartPesaApplication extends MultiDexApplication {
                 .build();
 
         TimberUtils.initTimber();
-
-        // Init Calligraphy
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath(FONTS_SMART_PESA_REGULAR_TTF)
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
 
         ServiceManagerConfig config;
 
