@@ -69,7 +69,6 @@ public abstract class AbstractTransactionFragment extends BaseFragment implement
     EditText smsET, emailET;
     Button sendBTN, printBTN, extraDetailsBtn, voidBtn, refundBtn;
     Context mContext;
-    UIHelper font;
     Lazy<ServiceManager> serviceManager;
     UUID transactionID;
     ScrollView transactionScroll;
@@ -566,35 +565,6 @@ public abstract class AbstractTransactionFragment extends BaseFragment implement
         extraDetailsBtn.setOnClickListener(this);
         voidBtn.setOnClickListener(this);
         refundBtn.setOnClickListener(this);
-
-        //setting fonts here
-        font = new UIHelper(mContext);
-        amountLabelTV.setTypeface(font.regularFont);
-        amountTV.setTypeface(font.boldFont);
-        cardNumberTV.setTypeface(font.ocrFont);
-        cardHolderLabelTV.setTypeface(font.regularFont);
-        cardHolderTV.setTypeface(font.ocrFont);
-        expiryLabelTV.setTypeface(font.regularFont);
-        expiryTV.setTypeface(font.ocrFont);
-        statusLabelTV.setTypeface(font.regularFont);
-        statusTV.setTypeface(font.boldFont);
-        transactionLabelTV.setTypeface(font.regularFont);
-        transactionTV.setTypeface(font.boldFont);
-        verificationLabelTV.setTypeface(font.regularFont);
-        notificationLabelTV.setTypeface(font.regularFont);
-        smsET.setTypeface(font.boldFont);
-        emailET.setTypeface(font.boldFont);
-        sendBTN.setTypeface(font.boldFont);
-        printBTN.setTypeface(font.boldFont);
-        referenceNumberLabelTV.setTypeface(font.regularFont);
-        referenceNumberTV.setTypeface(font.boldFont);
-        failureReasonTV.setTypeface(font.boldFont);
-        retrievalNumberTV.setTypeface(font.boldFont);
-        retrievalNumberLabelTV.setTypeface(font.regularFont);
-        dateTV.setTypeface(font.boldFont);
-        timeTV.setTypeface(font.boldFont);
-        approvalCodeTv.setTypeface(font.boldFont);
-        verificationTv.setTypeface(font.boldFont);
 
         sendBTN.setEnabled(false);
 

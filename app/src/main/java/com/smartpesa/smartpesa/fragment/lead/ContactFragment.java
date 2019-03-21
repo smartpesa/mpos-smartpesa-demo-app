@@ -34,7 +34,6 @@ public class ContactFragment extends Fragment {
     @Bind(R.id.titleNameTv) TextView title;
     @Bind(R.id.nextBtn) Button nextBtn;
 
-    UIHelper font;
     HashMap<String, Object> leadHash;
 
     public static ContactFragment newInstance(HashMap<String, Object> leadHash) {
@@ -56,7 +55,6 @@ public class ContactFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lead_contact, container, false);
         ButterKnife.bind(this, view);
-        font = new UIHelper(getActivity());
         return view;
     }
 
@@ -69,11 +67,6 @@ public class ContactFragment extends Fragment {
             leadHash = (HashMap<String, Object>) b.getSerializable(HASHMAP);
         }
 
-        title.setTypeface(font.boldFont);
-        mobileNumberLabelTv.setTypeface(font.boldFont);
-        emailLabelTv.setTypeface(font.boldFont);
-        workPhoneLabelTv.setTypeface(font.boldFont);
-        websiteLabeltv.setTypeface(font.boldFont);
         mobilePhoneEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
         emailEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
         workPhoneEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));

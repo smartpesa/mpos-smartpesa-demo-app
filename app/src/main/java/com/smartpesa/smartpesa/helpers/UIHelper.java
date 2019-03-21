@@ -22,14 +22,8 @@ import static smartpesa.sdk.SmartPesa.AccountType.DEFAULT;
 
 public class UIHelper {
 
-    public Typeface regularFont, boldFont,boldItalicFont,italicFont,ocrFont;
-
     public UIHelper(Context context){
-        regularFont = Typeface.createFromAsset(context.getAssets(), "fonts/SmartPesa-Regular.ttf");
-        boldFont = Typeface.createFromAsset(context.getAssets(), "fonts/SmartPesa-Bold.ttf");
-        boldItalicFont = Typeface.createFromAsset(context.getAssets(), "fonts/SmartPesa-BoldItalic.ttf");
-        italicFont = Typeface.createFromAsset(context.getAssets(), "fonts/SmartPesa-Italic.ttf");
-        ocrFont = Typeface.createFromAsset(context.getAssets(), "fonts/ocr.ttf");
+
     }
 
     public static void showMessageDialogWithCallback(Context ctx, String message, String positiveText, String negativeText, MaterialDialog.ButtonCallback callback){

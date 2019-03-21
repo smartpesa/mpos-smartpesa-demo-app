@@ -358,10 +358,6 @@ public class OTAProgressActivity extends BaseActivity {
         otaManager = OtaManager.get();
         fragmentManager = getSupportFragmentManager();
 
-        //set fonts here
-        UIHelper fonts = new UIHelper(mContext);
-
-        progressTV.setTypeface(fonts.regularFont);
         tryAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

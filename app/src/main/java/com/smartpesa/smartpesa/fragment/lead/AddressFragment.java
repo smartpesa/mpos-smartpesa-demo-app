@@ -37,7 +37,6 @@ public class AddressFragment extends Fragment {
     @Bind(R.id.addressCb) CheckBox addressCb;
     @Bind(R.id.nextBtn) Button nextBtn;
 
-    UIHelper font;
     HashMap<String, Object> leadHash;
 
     public static AddressFragment newInstance(HashMap<String, Object> leadHash) {
@@ -59,7 +58,6 @@ public class AddressFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lead_address, container, false);
         ButterKnife.bind(this, view);
-        font = new UIHelper(getActivity());
         return view;
     }
 
@@ -72,11 +70,6 @@ public class AddressFragment extends Fragment {
             leadHash = (HashMap<String, Object>) b.getSerializable(HASHMAP);
         }
 
-        title.setTypeface(font.boldFont);
-        primaryCityLabelTv.setTypeface(font.boldFont);
-        primaryStreetLabelTv.setTypeface(font.boldFont);
-        primaryStateLabelTv.setTypeface(font.boldFont);
-        primaryPostalCodeLabelEt.setTypeface(font.boldFont);
         primaryCityEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
         primaryStreetEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
         primaryStateEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));

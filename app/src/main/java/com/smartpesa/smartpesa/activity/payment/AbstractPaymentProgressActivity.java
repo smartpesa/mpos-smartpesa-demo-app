@@ -999,11 +999,6 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             amountProcessTV.setVisibility(View.INVISIBLE);
         }
 
-        //set fonts here
-        UIHelper fonts = new UIHelper(mContext);
-
-        progressTV.setTypeface(fonts.regularFont);
-
         tryAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

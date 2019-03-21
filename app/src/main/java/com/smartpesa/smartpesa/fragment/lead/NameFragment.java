@@ -41,7 +41,6 @@ public class NameFragment extends Fragment {
     @Bind(R.id.nextBtn) Button nextBtn;
 
     private Date dateOfBirth;
-    UIHelper font;
 
     public static NameFragment newInstance() {
         NameFragment fragment = new NameFragment();
@@ -61,7 +60,6 @@ public class NameFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lead_name, container, false);
         ButterKnife.bind(this, view);
-        font = new UIHelper(getActivity());
         return view;
     }
 
@@ -69,9 +67,6 @@ public class NameFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        title.setTypeface(font.boldFont);
-        firstNameLabel.setTypeface(font.boldFont);
-        dobLabelTv.setTypeface(font.boldFont);
         firstNameEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
         lastNameEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
 
