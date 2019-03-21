@@ -27,7 +27,7 @@ android {
     defaultConfig {
         applicationId "com.smartpesa.smartpesa"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 26
 
         loadVersionSettings('version.properties')
         versionName getVName()
@@ -123,7 +123,7 @@ def buildDate() {
 
 ext {
     SUPPORT_V7_VERSION = "26.0.1"
-    DAGGER_VERSION = "2.12"
+    DAGGER_VERSION = "2.15"
 }
 
 configurations.all {
