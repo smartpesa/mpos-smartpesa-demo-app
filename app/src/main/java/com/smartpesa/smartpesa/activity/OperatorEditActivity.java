@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -37,17 +37,17 @@ public class OperatorEditActivity extends BaseActivity implements View.OnClickLi
     ProgressDialog mProgressDialog;
     Context mContext;
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.operatorSaveBTN) Button saveBTN;
-    @Bind(R.id.operatorInititalTV) TextView operatorInitialTV;
-    @Bind(R.id.operatorMailET) TextView emailET;
-    @Bind(R.id.operatorPhoneET) TextView phoneET;
-    @Bind(R.id.operatorNameET) TextView nameET;
-    @Bind(R.id.operatorCodeET) TextView codeET;
-    @Bind(R.id.operatorManageCB) CheckBox manageCB;
-    @Bind(R.id.operatorHistoryCB) CheckBox historyCB;
-    @Bind(R.id.operatorActiveCB) CheckBox operatorActiveCB;
-    @Bind(R.id.operatorPrintCB) CheckBox printCB;
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.operatorSaveBTN) Button saveBTN;
+    @BindView(R.id.operatorInititalTV) TextView operatorInitialTV;
+    @BindView(R.id.operatorMailET) TextView emailET;
+    @BindView(R.id.operatorPhoneET) TextView phoneET;
+    @BindView(R.id.operatorNameET) TextView nameET;
+    @BindView(R.id.operatorCodeET) TextView codeET;
+    @BindView(R.id.operatorManageCB) CheckBox manageCB;
+    @BindView(R.id.operatorHistoryCB) CheckBox historyCB;
+    @BindView(R.id.operatorActiveCB) CheckBox operatorActiveCB;
+    @BindView(R.id.operatorPrintCB) CheckBox printCB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

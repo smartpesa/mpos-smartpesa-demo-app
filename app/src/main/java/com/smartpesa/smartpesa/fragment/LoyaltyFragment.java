@@ -16,14 +16,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoyaltyFragment extends BaseFragment {
 
-    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    @Bind(R.id.loyaltyBtn) Button loyaltyBtn;
-    @Bind(R.id.loyaltyTitle) TextView loyaltyTitle;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.loyaltyBtn) Button loyaltyBtn;
+    @BindView(R.id.loyaltyTitle) TextView loyaltyTitle;
 
     private RecyclerView.Adapter mAdapter;
     private LinearLayoutManager mLayoutManager;

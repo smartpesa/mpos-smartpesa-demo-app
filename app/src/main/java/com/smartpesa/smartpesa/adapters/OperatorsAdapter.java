@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.models.operator.Operator;
 
@@ -121,10 +121,10 @@ public class OperatorsAdapter extends ArrayAdapter<Operator> implements Filterab
     }
 
     protected static class OperatorViewHolder {
-        @Bind(R.id.row_operator_nameTV) public TextView nameTv;
-        @Bind(R.id.row_operatorCode_TV) public TextView codeTv;
-        @Bind(R.id.row_operator_initial_TV) public TextView initialTv;
-        @Bind(R.id.edit_iv) public ImageView editIv;
+        @BindView(R.id.row_operator_nameTV) public TextView nameTv;
+        @BindView(R.id.row_operatorCode_TV) public TextView codeTv;
+        @BindView(R.id.row_operator_initial_TV) public TextView initialTv;
+        @BindView(R.id.edit_iv) public ImageView editIv;
 
         public OperatorViewHolder(View view) {
             ButterKnife.bind(this, view);

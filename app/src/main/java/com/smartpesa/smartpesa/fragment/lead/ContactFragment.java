@@ -17,22 +17,22 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ContactFragment extends Fragment {
 
     public static final String HASHMAP = "hashmap";
-    @Bind(R.id.emailEt) EditText emailEt;
-    @Bind(R.id.mobilePhoneEt) EditText mobilePhoneEt;
-    @Bind(R.id.workPhoneEt) EditText workPhoneEt;
-    @Bind(R.id.websiteEt) EditText websiteEt;
-    @Bind(R.id.emailLabelTv) TextView emailLabelTv;
-    @Bind(R.id.mobileNumberLabelTv) TextView mobileNumberLabelTv;
-    @Bind(R.id.workPhoneLabelTv) TextView workPhoneLabelTv;
-    @Bind(R.id.websiteLabeltv) TextView websiteLabeltv;
-    @Bind(R.id.titleNameTv) TextView title;
-    @Bind(R.id.nextBtn) Button nextBtn;
+    @BindView(R.id.emailEt) EditText emailEt;
+    @BindView(R.id.mobilePhoneEt) EditText mobilePhoneEt;
+    @BindView(R.id.workPhoneEt) EditText workPhoneEt;
+    @BindView(R.id.websiteEt) EditText websiteEt;
+    @BindView(R.id.emailLabelTv) TextView emailLabelTv;
+    @BindView(R.id.mobileNumberLabelTv) TextView mobileNumberLabelTv;
+    @BindView(R.id.workPhoneLabelTv) TextView workPhoneLabelTv;
+    @BindView(R.id.websiteLabeltv) TextView websiteLabeltv;
+    @BindView(R.id.titleNameTv) TextView title;
+    @BindView(R.id.nextBtn) Button nextBtn;
 
     UIHelper font;
     HashMap<String, Object> leadHash;

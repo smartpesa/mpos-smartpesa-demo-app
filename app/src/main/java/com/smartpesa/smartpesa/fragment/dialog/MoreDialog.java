@@ -19,16 +19,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
 
 public class MoreDialog extends BaseDialogFragment {
 
-    @Bind(R.id.done) Button doneBtn;
-    @Bind(R.id.reference_description) EditText referenceET;
-    @Bind(R.id.account_spinner) MaterialBetterSpinner mAccountSpin;
+    @BindView(R.id.done) Button doneBtn;
+    @BindView(R.id.reference_description) EditText referenceET;
+    @BindView(R.id.account_spinner) MaterialBetterSpinner mAccountSpin;
 
     Context mContext;
     Lazy<ServiceManager> serviceManager;

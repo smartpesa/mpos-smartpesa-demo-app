@@ -13,7 +13,7 @@ import android.widget.Button;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class FailedResultFragment extends AbstractResultFragment implements AbstractResultFragment.Retryable {
 
@@ -28,8 +28,8 @@ public class FailedResultFragment extends AbstractResultFragment implements Abst
         return f;
     }
 
-    @Bind(R.id.try_again_button) Button retryBtn;
-    @Bind(R.id.help_btn) Button helpBtn;
+    @BindView(R.id.try_again_button) Button retryBtn;
+    @BindView(R.id.help_btn) Button helpBtn;
 
     private String mFailureReason;
 

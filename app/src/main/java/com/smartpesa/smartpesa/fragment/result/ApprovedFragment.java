@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import smartpesa.sdk.SmartPesa;
 
 public class ApprovedFragment extends AbstractResultFragment {
 
     private static final String KEY_VERIFICATION = ApprovedFragment.class.getName() + ".verification";
 
-    @Bind(R.id.receipt_APPROVED_BTN) Button receiptBTN;
+    @BindView(R.id.receipt_APPROVED_BTN) Button receiptBTN;
 
     public static ApprovedFragment newInstance(ParcelableTransactionResponse transactionResponse, SmartPesa.Verification verification) {
         ApprovedFragment f = new ApprovedFragment();

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.models.device.Device;
 
@@ -52,10 +52,10 @@ public class DevicesAdapter extends ArrayAdapter<Device> {
     }
 
     public static class ViewHolder {
-        @Bind(R.id.deviceIDTV) TextView deviceIDTV;
-        @Bind(R.id.hardwareVersionTV) TextView hardwareVersionTV;
-        @Bind(R.id.firmwareVersionTV) TextView firmwareVersionTV;
-        @Bind(R.id.lastUsedDateTV) TextView lastUsedDateTV;
+        @BindView(R.id.deviceIDTV) TextView deviceIDTV;
+        @BindView(R.id.hardwareVersionTV) TextView hardwareVersionTV;
+        @BindView(R.id.firmwareVersionTV) TextView firmwareVersionTV;
+        @BindView(R.id.lastUsedDateTV) TextView lastUsedDateTV;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

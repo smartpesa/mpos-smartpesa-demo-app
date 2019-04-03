@@ -21,7 +21,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.models.currency.Currency;
 
@@ -30,15 +30,15 @@ public class TipsAndTaxesActivity extends BaseActivity {
     public static final String NONE = "None";
     public static final String IAC = "IAC";
     public static final String IVA = "IVA";
-    @Bind(R.id.amountTv) TextView amountTv;
-    @Bind(R.id.taxAmountTv) TextView taxAmountTv;
-    @Bind(R.id.tipsAmountTv) TextView tipsAmountTv;
-    @Bind(R.id.totalAmountTv) TextView totalAmountTv;
-    @Bind(R.id.noneRb) RadioButton noneRb;
-    @Bind(R.id.iacRb) RadioButton iacRb;
-    @Bind(R.id.ivaRb) RadioButton ivaRb;
-    @Bind(R.id.continueBtn) Button continueBtn;
-    @Bind(R.id.loyaltySwitch) Switch loyaltySwitch;
+    @BindView(R.id.amountTv) TextView amountTv;
+    @BindView(R.id.taxAmountTv) TextView taxAmountTv;
+    @BindView(R.id.tipsAmountTv) TextView tipsAmountTv;
+    @BindView(R.id.totalAmountTv) TextView totalAmountTv;
+    @BindView(R.id.noneRb) RadioButton noneRb;
+    @BindView(R.id.iacRb) RadioButton iacRb;
+    @BindView(R.id.ivaRb) RadioButton ivaRb;
+    @BindView(R.id.continueBtn) Button continueBtn;
+    @BindView(R.id.loyaltySwitch) Switch loyaltySwitch;
 
     public double amount;
     public SmartPesaTransactionType transactionType;

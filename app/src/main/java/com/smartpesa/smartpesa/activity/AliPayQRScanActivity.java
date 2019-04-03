@@ -27,7 +27,7 @@ import com.smartpesa.smartpesa.util.constants.SPConstants;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import me.dm7.barcodescanner.core.IViewFinder;
@@ -42,11 +42,11 @@ public class AliPayQRScanActivity extends BaseActivity implements ZXingScannerVi
     BigDecimal amount;
     Lazy<ServiceManager> serviceManager;
     public MoneyUtils mMoneyUtils;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.imageView)
+    @BindView(R.id.imageView)
     ImageView aliPayLogoIv;
-    @Bind(R.id.textDisplay)
+    @BindView(R.id.textDisplay)
     TextView instructionText;
     boolean crypto;
     Bundle bundle;

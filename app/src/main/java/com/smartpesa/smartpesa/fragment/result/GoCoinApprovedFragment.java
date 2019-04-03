@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class GoCoinApprovedFragment extends BaseFragment {
@@ -28,15 +28,15 @@ public class GoCoinApprovedFragment extends BaseFragment {
     public static final String PARCELABLE_RESPONSE = "parcelableResponse";
     public static final String ERROR_MESSAGE = "errorMessage";
 
-    @Bind(R.id.amount_APPROVED_TV) TextView amountTv;
-    @Bind(R.id.cryptoNameTv) TextView cryptoNameTv;
-    @Bind(R.id.cryptoPriceTv) TextView cryptoPriceTv;
-    @Bind(R.id.statusTv) TextView statusTv;
-    @Bind(R.id.completeBtn) Button completeBtn;
-    @Bind(R.id.payment_status_approved_tv) TextView titleMessage;
-    @Bind(R.id.approvedRL) RelativeLayout approvedRl;
-    @Bind(R.id.message_TV) TextView message_TV;
-    @Bind(R.id.status_APPROVED_IV) ImageView statusIv;
+    @BindView(R.id.amount_APPROVED_TV) TextView amountTv;
+    @BindView(R.id.cryptoNameTv) TextView cryptoNameTv;
+    @BindView(R.id.cryptoPriceTv) TextView cryptoPriceTv;
+    @BindView(R.id.statusTv) TextView statusTv;
+    @BindView(R.id.completeBtn) Button completeBtn;
+    @BindView(R.id.payment_status_approved_tv) TextView titleMessage;
+    @BindView(R.id.approvedRL) RelativeLayout approvedRl;
+    @BindView(R.id.message_TV) TextView message_TV;
+    @BindView(R.id.status_APPROVED_IV) ImageView statusIv;
 
     boolean isSuccess;
     ParcelableTransactionResponse parcelableTransactionResponse;

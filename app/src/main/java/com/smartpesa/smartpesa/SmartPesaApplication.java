@@ -16,7 +16,6 @@ import io.fabric.sdk.android.Fabric;
 import okhttp3.HttpUrl;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.ServiceManagerConfig;
-import smartpesa.sdk.log.SpLogLevel;
 import smartpesa.sdk.network.NetworkSettings;
 import smartpesa.sdk.ota.OtaManager;
 import smartpesa.sdk.ota.OtaManagerConfig;
@@ -88,7 +87,6 @@ public class SmartPesaApplication extends MultiDexApplication {
         }
 
         OtaManagerConfig otaConfig = new OtaManagerConfig.Builder(getApplicationContext())
-                .setLogLevel(SpLogLevel.DEBUG)
                 .setNetworkSettings(new NetworkSettings.Builder()
                         .url(new HttpUrl.Builder()
                                 .host("demo.smartpesa.com")

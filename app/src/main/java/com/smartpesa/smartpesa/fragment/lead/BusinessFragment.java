@@ -17,18 +17,18 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class BusinessFragment extends Fragment {
 
     public static final String HASHMAP = "hashmap";
-    @Bind(R.id.merchantNameEt) EditText merchantNameEt;
-    @Bind(R.id.descriptionEt) EditText descriptionEt;
-    @Bind(R.id.merchantNameLabelTv) TextView merchantNameLabelTv;
-    @Bind(R.id.descriptionLabelTv) TextView descriptionLabelTv;
-    @Bind(R.id.nextBtn) Button nextBtn;
-    @Bind(R.id.titleNameTv) TextView title;
+    @BindView(R.id.merchantNameEt) EditText merchantNameEt;
+    @BindView(R.id.descriptionEt) EditText descriptionEt;
+    @BindView(R.id.merchantNameLabelTv) TextView merchantNameLabelTv;
+    @BindView(R.id.descriptionLabelTv) TextView descriptionLabelTv;
+    @BindView(R.id.nextBtn) Button nextBtn;
+    @BindView(R.id.titleNameTv) TextView title;
 
     UIHelper font;
     HashMap<String, Object> leadHash;

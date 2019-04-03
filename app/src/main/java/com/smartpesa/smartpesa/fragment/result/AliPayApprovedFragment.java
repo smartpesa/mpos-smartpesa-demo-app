@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AliPayApprovedFragment extends BaseFragment {
@@ -28,21 +28,21 @@ public class AliPayApprovedFragment extends BaseFragment {
     public static final String PARCELABLE_RESPONSE = "parcelableResponse";
     public static final String ERROR_MESSAGE = "errorMessage";
 
-    @Bind(R.id.amount_APPROVED_TV) TextView amountTv;
-    @Bind(R.id.buyerIdTv) TextView buyerIdTv;
-    @Bind(R.id.sellerTv) TextView sellerTv;
-    @Bind(R.id.resultCodeTv) TextView resultCodeTv;
-    @Bind(R.id.amountInYuanTv) TextView amountInYuanTv;
-    @Bind(R.id.completeBtn) Button completeBtn;
-    @Bind(R.id.payment_status_approved_tv) TextView titleMessage;
-    @Bind(R.id.approvedRL) RelativeLayout approvedRl;
-    @Bind(R.id.message_TV) TextView message_TV;
-    @Bind(R.id.status_APPROVED_IV) ImageView statusIv;
-    @Bind(R.id.actionTv) TextView actionTv;
-    @Bind(R.id.tradeNoTv) TextView tradeNoTv;
-    @Bind(R.id.notifyIdTv) TextView notifyIdTv;
-    @Bind(R.id.forexRateTv) TextView forexRateTv;
-    @Bind(R.id.buyerIdentityCodeTv) TextView buyerIdentityCodeTv;
+    @BindView(R.id.amount_APPROVED_TV) TextView amountTv;
+    @BindView(R.id.buyerIdTv) TextView buyerIdTv;
+    @BindView(R.id.sellerTv) TextView sellerTv;
+    @BindView(R.id.resultCodeTv) TextView resultCodeTv;
+    @BindView(R.id.amountInYuanTv) TextView amountInYuanTv;
+    @BindView(R.id.completeBtn) Button completeBtn;
+    @BindView(R.id.payment_status_approved_tv) TextView titleMessage;
+    @BindView(R.id.approvedRL) RelativeLayout approvedRl;
+    @BindView(R.id.message_TV) TextView message_TV;
+    @BindView(R.id.status_APPROVED_IV) ImageView statusIv;
+    @BindView(R.id.actionTv) TextView actionTv;
+    @BindView(R.id.tradeNoTv) TextView tradeNoTv;
+    @BindView(R.id.notifyIdTv) TextView notifyIdTv;
+    @BindView(R.id.forexRateTv) TextView forexRateTv;
+    @BindView(R.id.buyerIdentityCodeTv) TextView buyerIdentityCodeTv;
 
     boolean isSuccess;
     ParcelableTransactionResponse parcelableTransactionResponse;

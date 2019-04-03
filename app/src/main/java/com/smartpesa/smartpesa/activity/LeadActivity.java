@@ -22,7 +22,7 @@ import com.smartpesa.smartpesa.helpers.UIHelper;
 import java.util.Date;
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -53,7 +53,7 @@ public class LeadActivity extends AppCompatActivity {
     public static final String altState = "altState";
     public static final String altPostal = "altPostal";
 
-    @Bind(R.id.indicator) StepperIndicator indicator;
+    @BindView(R.id.indicator) StepperIndicator indicator;
     public Lazy<ServiceManager> serviceManager;
 
     @Override

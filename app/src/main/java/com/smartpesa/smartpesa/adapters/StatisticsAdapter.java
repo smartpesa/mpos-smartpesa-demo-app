@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class StatisticsAdapter extends BaseAdapter {
@@ -71,9 +71,9 @@ public class StatisticsAdapter extends BaseAdapter {
     }
 
     public static class ViewHolder {
-        @Bind(R.id.transactionNameTV) TextView transactionNameTV;
-        @Bind(R.id.countTV) TextView countTV;
-        @Bind(R.id.amountStatisticsTV) TextView amountTV;
+        @BindView(R.id.transactionNameTV) TextView transactionNameTV;
+        @BindView(R.id.countTV) TextView countTV;
+        @BindView(R.id.amountStatisticsTV) TextView amountTV;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

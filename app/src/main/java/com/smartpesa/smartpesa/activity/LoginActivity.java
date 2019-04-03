@@ -26,7 +26,7 @@ import com.smartpesa.smartpesa.util.constants.PreferenceConstants;
 
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -38,17 +38,17 @@ import timber.log.Timber;
 
 public class LoginActivity extends BaseActivity implements OnClickListener {
 
-    @Bind(R.id.login_btn) Button loginBtn;
-    @Bind(R.id.forget_id_btn) Button forgotBtn;
-    @Bind(R.id.signUpBtn) TextView signUpBtn;
-    @Bind(R.id.merchant_id_tv) EditText merchantIdEt;
-    @Bind(R.id.operator_code_tv) EditText operatorCodeEt;
-    @Bind(R.id.login_pin_tv) EditText loginPinEt;
-    @Bind(R.id.welcomeLl) LinearLayout welcomeLl;
-    @Bind(R.id.editTextll) LinearLayout editTextLl;
-    @Bind(R.id.merchantNameTV) TextView merchantNameTv;
-    @Bind(R.id.operatorNameTv) TextView operatorNameTv;
-    @Bind(R.id.aboutIv) ImageView aboutIv;
+    @BindView(R.id.login_btn) Button loginBtn;
+    @BindView(R.id.forget_id_btn) Button forgotBtn;
+    @BindView(R.id.signUpBtn) TextView signUpBtn;
+    @BindView(R.id.merchant_id_tv) EditText merchantIdEt;
+    @BindView(R.id.operator_code_tv) EditText operatorCodeEt;
+    @BindView(R.id.login_pin_tv) EditText loginPinEt;
+    @BindView(R.id.welcomeLl) LinearLayout welcomeLl;
+    @BindView(R.id.editTextll) LinearLayout editTextLl;
+    @BindView(R.id.merchantNameTV) TextView merchantNameTv;
+    @BindView(R.id.operatorNameTv) TextView operatorNameTv;
+    @BindView(R.id.aboutIv) ImageView aboutIv;
 
     Context mContext;
     public Lazy<ServiceManager> serviceManager;

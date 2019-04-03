@@ -11,14 +11,14 @@ import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.activity.base.BaseActivity;
 import com.smartpesa.smartpesa.fragment.AboutFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AboutUsActivity extends BaseActivity {
 
     private static final String BUNDLE_KEY_UPDATE_MANDATORY = AboutUsActivity.class.getName() + ".updateMandatory";
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     Boolean mandatoryUpdate;
 

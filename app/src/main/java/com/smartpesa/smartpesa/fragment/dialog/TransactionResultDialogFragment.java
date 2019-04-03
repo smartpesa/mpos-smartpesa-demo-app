@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import smartpesa.sdk.ServiceManager;
@@ -32,15 +32,15 @@ public class TransactionResultDialogFragment extends AppCompatDialogFragment {
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_CAPTION = "caption";
     private static final String KEY_AMOUNT = "amount";
-    @Bind(R.id.transaction_result_amount)
+    @BindView(R.id.transaction_result_amount)
     TextView mAmount;
-    @Bind(R.id.transaction_result_message)
+    @BindView(R.id.transaction_result_message)
     TextView mMessage;
-    @Bind(R.id.transaction_result_caption)
+    @BindView(R.id.transaction_result_caption)
     TextView mCaption;
-    @Bind(R.id.transaction_status_icon)
+    @BindView(R.id.transaction_status_icon)
     CircleImageView mIcon;
-    @Bind(R.id.positive_button)
+    @BindView(R.id.positive_button)
     Button mPositiveButton;
     @Nullable private OnPositiveButtonListener mOnPositiveButtonListener;
 

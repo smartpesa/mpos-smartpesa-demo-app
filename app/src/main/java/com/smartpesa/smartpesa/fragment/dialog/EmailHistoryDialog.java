@@ -15,14 +15,14 @@ import android.widget.EditText;
 
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import smartpesa.sdk.core.error.SpException;
 import smartpesa.sdk.error.SpSessionException;
 import smartpesa.sdk.models.transaction.SendNotificationCallback;
 
 public class EmailHistoryDialog extends AbstractHistoryDialog {
 
-    @Bind(R.id.sendEmail_ET) EditText emailET;
+    @BindView(R.id.sendEmail_ET) EditText emailET;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

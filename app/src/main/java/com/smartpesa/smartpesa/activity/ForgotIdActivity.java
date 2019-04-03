@@ -19,7 +19,7 @@ import com.smartpesa.smartpesa.helpers.PreferenceHelper;
 import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.util.constants.PreferenceConstants;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -29,18 +29,18 @@ import timber.log.Timber;
 
 public class ForgotIdActivity extends BaseActivity implements OnClickListener {
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.forgot_merchant_id_btn) Button forgotMerchantBtn;
-    @Bind(R.id.forgot_operator_btn) Button forgotOperatorBtn;
-    @Bind(R.id.forgot_pin_btn) Button forgotPinBtn;
-    @Bind(R.id.merchant_id_tv) EditText merchantIdEt;
-    @Bind(R.id.operator_code_tv) EditText operatorCodeEt;
-    @Bind(R.id.request_new_pin_btn) Button requestPinBtn;
-    @Bind(R.id.forgot_merchant_id_tv) TextView forgotMerchantTv;
-    @Bind(R.id.forgot_operator_tv) TextView forgotOperatorTv;
-    @Bind(R.id.forgotProgressBar) ProgressBar mProgressBar;
-    @Bind(R.id.forgot_buttons_container) ViewGroup buttonsContainer;
-    @Bind(R.id.forgot_pin_container) ViewGroup forgotPinContainer;
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.forgot_merchant_id_btn) Button forgotMerchantBtn;
+    @BindView(R.id.forgot_operator_btn) Button forgotOperatorBtn;
+    @BindView(R.id.forgot_pin_btn) Button forgotPinBtn;
+    @BindView(R.id.merchant_id_tv) EditText merchantIdEt;
+    @BindView(R.id.operator_code_tv) EditText operatorCodeEt;
+    @BindView(R.id.request_new_pin_btn) Button requestPinBtn;
+    @BindView(R.id.forgot_merchant_id_tv) TextView forgotMerchantTv;
+    @BindView(R.id.forgot_operator_tv) TextView forgotOperatorTv;
+    @BindView(R.id.forgotProgressBar) ProgressBar mProgressBar;
+    @BindView(R.id.forgot_buttons_container) ViewGroup buttonsContainer;
+    @BindView(R.id.forgot_pin_container) ViewGroup forgotPinContainer;
     Context mContext;
     Lazy<ServiceManager> serviceManager;
     boolean lockUI = false;

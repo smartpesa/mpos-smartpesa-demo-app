@@ -36,7 +36,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -58,7 +58,7 @@ public class SplashActivity extends BaseActivity {
     @Inject
     Lazy<ServiceManager> serviceManager;
 
-    @Bind(R.id.splash_pb)
+    @BindView(R.id.splash_pb)
     ProgressBar splashPB;
 
     Context mContext;

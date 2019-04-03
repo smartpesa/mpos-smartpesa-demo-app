@@ -11,7 +11,7 @@ import android.widget.Button;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import smartpesa.sdk.core.error.SpException;
 import smartpesa.sdk.error.SpNetworkException;
 import smartpesa.sdk.error.SpSessionException;
@@ -19,7 +19,7 @@ import smartpesa.sdk.error.SpSessionException;
 public class UnknownResultFragment extends AbstractResultFragment {
     public static final String KEY_NETWORK_ERROR = UnknownResultFragment.class.getName() + ".networkError";
 
-    @Bind(R.id.go_to_history) Button goToHistoryBtn;
+    @BindView(R.id.go_to_history) Button goToHistoryBtn;
 
     public static UnknownResultFragment newInstance(@NonNull SpException mNetwork, SmartPesaTransactionType transactionType, BigDecimal amount, ParcelableTransactionResponse transactionResponse) {
         UnknownResultFragment f = new UnknownResultFragment();

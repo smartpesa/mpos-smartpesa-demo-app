@@ -17,12 +17,12 @@ import com.smartpesa.smartpesa.persistence.MerchantModule;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CryptoAtmFragment extends BaseFragment {
 
-    @Bind(R.id.grid)
+    @BindView(R.id.grid)
     GridView gridView;
 
     public CryptoAtmFragment() {

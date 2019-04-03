@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -48,14 +48,14 @@ public class CryptoInfoActivity extends BaseActivity {
     public static final String LTC = "ltc";
     public static final String ASK = "ask";
 
-    @Bind(R.id.toolbar) Toolbar mToolbar;
-    @Bind(R.id.cryptoNameTv) TextView cryptoNameTv;
-    @Bind(R.id.cryptoPriceTv) TextView cryptoPriceTv;
-    @Bind(R.id.amountTv) TextView amountTv;
-    @Bind(R.id.marginTv) TextView marginTv;
-    @Bind(R.id.totalTv) TextView totalTv;
-    @Bind(R.id.cryptoValueTv) TextView cryptoValueTv;
-    @Bind(R.id.continueBtn) Button continueBtn;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.cryptoNameTv) TextView cryptoNameTv;
+    @BindView(R.id.cryptoPriceTv) TextView cryptoPriceTv;
+    @BindView(R.id.amountTv) TextView amountTv;
+    @BindView(R.id.marginTv) TextView marginTv;
+    @BindView(R.id.totalTv) TextView totalTv;
+    @BindView(R.id.cryptoValueTv) TextView cryptoValueTv;
+    @BindView(R.id.continueBtn) Button continueBtn;
 
     public MoneyUtils mMoneyUtils;
     Lazy<ServiceManager> serviceManager;

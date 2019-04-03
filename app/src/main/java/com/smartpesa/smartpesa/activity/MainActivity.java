@@ -23,7 +23,7 @@ import com.smartpesa.smartpesa.helpers.UIHelper;
 import com.smartpesa.smartpesa.persistence.MerchantComponent;
 import com.smartpesa.smartpesa.persistence.MerchantModule;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity implements MenuFragment.PaymentTy
 
     public Lazy<ServiceManager> serviceManager;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     Context mContext;

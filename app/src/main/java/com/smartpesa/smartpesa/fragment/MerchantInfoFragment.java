@@ -25,7 +25,7 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -37,24 +37,24 @@ import smartpesa.sdk.models.merchant.VerifiedMerchantInfo;
 
 public class MerchantInfoFragment extends BaseFragment {
 
-    @Bind(R.id.merchantInitial_TV) TextView merchantInitialTV;
-    @Bind(R.id.merchantNameTV) TextView merchantNameTV;
-    @Bind(R.id.code_MERCHANT_TV) TextView merchantCodeTV;
-    @Bind(R.id.email_MERCHANT_TV) TextView emailTV;
-    @Bind(R.id.currency_MERCHANT_TV) TextView currencyTV;
-    @Bind(R.id.addressTV) TextView addressTV;
-    @Bind(R.id.merchantInfophoneTV) TextView phoneTV;
-    @Bind(R.id.regionTV) TextView regionTV;
-    @Bind(R.id.addressLabelTV) TextView addressLabelTV;
-    @Bind(R.id.checkbox_perm_all_history) CheckBox mHistoryCb;
-    @Bind(R.id.checkbox_perm_manage_operators) CheckBox mManageCb;
-    @Bind(R.id.checkbox_perm_print_receipt) CheckBox mPrintCb;
-    @Bind(R.id.operator_name_tv) TextView operatorNameTv;
-    @Bind(R.id.operator_code_tv) TextView operatorCodeTv;
-    @Bind(R.id.default_terminal_ll) LinearLayout defaultTerminalLl;
-    @Bind(R.id.default_terminal_name_tv) TextView defaultTerminalNameTv;
-    @Bind(R.id.remove_default_btn) Button removeDefaultBtn;
-    @Bind(R.id.changPinBtn) Button changePinBtn;
+    @BindView(R.id.merchantInitial_TV) TextView merchantInitialTV;
+    @BindView(R.id.merchantNameTV) TextView merchantNameTV;
+    @BindView(R.id.code_MERCHANT_TV) TextView merchantCodeTV;
+    @BindView(R.id.email_MERCHANT_TV) TextView emailTV;
+    @BindView(R.id.currency_MERCHANT_TV) TextView currencyTV;
+    @BindView(R.id.addressTV) TextView addressTV;
+    @BindView(R.id.merchantInfophoneTV) TextView phoneTV;
+    @BindView(R.id.regionTV) TextView regionTV;
+    @BindView(R.id.addressLabelTV) TextView addressLabelTV;
+    @BindView(R.id.checkbox_perm_all_history) CheckBox mHistoryCb;
+    @BindView(R.id.checkbox_perm_manage_operators) CheckBox mManageCb;
+    @BindView(R.id.checkbox_perm_print_receipt) CheckBox mPrintCb;
+    @BindView(R.id.operator_name_tv) TextView operatorNameTv;
+    @BindView(R.id.operator_code_tv) TextView operatorCodeTv;
+    @BindView(R.id.default_terminal_ll) LinearLayout defaultTerminalLl;
+    @BindView(R.id.default_terminal_name_tv) TextView defaultTerminalNameTv;
+    @BindView(R.id.remove_default_btn) Button removeDefaultBtn;
+    @BindView(R.id.changPinBtn) Button changePinBtn;
 
     Context mContext;
     Lazy<ServiceManager> serviceManager;

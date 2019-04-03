@@ -19,7 +19,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import smartpesa.sdk.core.error.SpException;
 import smartpesa.sdk.models.currency.Currency;
 import smartpesa.sdk.models.currency.GetAvailableCurrenciesCallback;
@@ -28,9 +28,9 @@ public class GoCoinPaymentFragment extends AbstractPaymentFragment {
 
     private static final int GOCOIN_DISPLAY = 1;
 
-    @Bind(R.id.currencyRl) RelativeLayout currencyRl;
-    @Bind(R.id.currencySpinner) Spinner currencySpinner;
-    @Bind(R.id.cashBackRL) RelativeLayout cashBackRl;
+    @BindView(R.id.currencyRl) RelativeLayout currencyRl;
+    @BindView(R.id.currencySpinner) Spinner currencySpinner;
+    @BindView(R.id.cashBackRL) RelativeLayout cashBackRl;
 
     List<Currency> currencyList;
     List<String> currencyName;

@@ -13,7 +13,7 @@ import com.smartpesa.smartpesa.helpers.MenuItem;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MenuAdapter extends BaseAdapter {
@@ -61,8 +61,8 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     public static class ViewHolder {
-        @Bind(R.id.grid_text) public TextView textView;
-        @Bind(R.id.grid_image) public ImageView imageView;
+        @BindView(R.id.grid_text) public TextView textView;
+        @BindView(R.id.grid_image) public ImageView imageView;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

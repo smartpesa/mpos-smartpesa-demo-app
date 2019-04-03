@@ -147,6 +147,11 @@ configurations.all {
     }
 }
 
+configurations {
+    cleanedAnnotations
+    compile.exclude group: 'org.jetbrains' , module:'annotations'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:${SUPPORT_V7_VERSION}"
@@ -175,7 +180,7 @@ dependencies {
         transitive = true;
     }
     implementation 'javax.annotation:javax.annotation-api:1.2'
-    implementation 'com.jakewharton:butterknife:10.1.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.jpardogo.materialtabstrip:library:1.0.6'
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
@@ -213,7 +218,7 @@ dependencies {
 
     annotationProcessor "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
     annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 
 project.afterEvaluate {

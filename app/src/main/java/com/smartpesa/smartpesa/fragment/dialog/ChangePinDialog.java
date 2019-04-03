@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -25,11 +25,11 @@ import smartpesa.sdk.models.operator.ChangePinCallback;
 
 public class ChangePinDialog extends BaseDialogFragment {
 
-    @Bind(R.id.oldPinEt) EditText oldPinEt;
-    @Bind(R.id.newPinEt) EditText newPinEt;
-    @Bind(R.id.confirmNewPinEt) EditText confirmPinEt;
-    @Bind(R.id.changePinBtn) Button changePinBtn;
-    @Bind(R.id.cancelBtn) Button cancelBtn;
+    @BindView(R.id.oldPinEt) EditText oldPinEt;
+    @BindView(R.id.newPinEt) EditText newPinEt;
+    @BindView(R.id.confirmNewPinEt) EditText confirmPinEt;
+    @BindView(R.id.changePinBtn) Button changePinBtn;
+    @BindView(R.id.cancelBtn) Button cancelBtn;
 
     protected Lazy<ServiceManager> serviceManager;
     private boolean isPINChanging;

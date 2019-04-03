@@ -20,7 +20,7 @@ import net.glxn.qrgen.android.QRCode;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -38,10 +38,10 @@ public class AliPayActivity extends BaseActivity {
     BigDecimal amount;
     Lazy<ServiceManager> serviceManager;
     public MoneyUtils mMoneyUtils;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
-    @Bind(R.id.qrImageView) ImageView qrImageView;
+    @BindView(R.id.qrImageView) ImageView qrImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

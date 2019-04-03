@@ -17,7 +17,7 @@ import android.widget.ProgressBar;
 import java.util.Calendar;
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -30,12 +30,12 @@ public abstract class AbstractHistoryDialog extends BaseDialogFragment implement
 
     private Date startDate, endDate;
 
-    @Bind(R.id.fromDateBTN) Button fromDateBTN;
-    @Bind(R.id.toDateBTN) Button toDateBTN;
-    @Bind(R.id.sendHistorySendBTN) Button sendBTN;
-    @Bind(R.id.sendHistoryCancelBTN) Button cancelBTN;
+    @BindView(R.id.fromDateBTN) Button fromDateBTN;
+    @BindView(R.id.toDateBTN) Button toDateBTN;
+    @BindView(R.id.sendHistorySendBTN) Button sendBTN;
+    @BindView(R.id.sendHistoryCancelBTN) Button cancelBTN;
 
-    @Bind(R.id.sendEmailProgress) ProgressBar mProgressBar;
+    @BindView(R.id.sendEmailProgress) ProgressBar mProgressBar;
 
     protected boolean lockCancel;
 

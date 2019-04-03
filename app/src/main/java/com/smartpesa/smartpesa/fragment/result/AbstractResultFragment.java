@@ -25,7 +25,7 @@ import android.widget.TextView;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.models.merchant.VerifiedMerchantInfo;
 
@@ -41,23 +41,23 @@ public abstract class AbstractResultFragment extends BaseFragment {
         bundle.putParcelable(KEY_DATA, transactionResponse);
     }
 
-    @Bind(R.id.approvedRL) RelativeLayout approvedRL;
-    @Bind(R.id.status_APPROVED_IV) ImageView approvedIV;
-    @Bind(R.id.payment_status_approved_tv) TextView paymentStatusTV;
-    @Bind(R.id.amount_APPROVED_TV) TextView amountTV;
-    @Bind(R.id.dateLabel_APPROVED_TV) TextView dateLabelTV;
-    @Bind(R.id.date_APPROVED_TV) TextView dateTV;
-    @Bind(R.id.timeLabel_APPROVED_TV) TextView timeLabelTV;
-    @Bind(R.id.time_APPROVED_TV) TextView timeTV;
-    @Bind(R.id.cardLabel_APPROVED_TV) TextView cardLabelTV;
-    @Bind(R.id.cardNumber_APPROVED_TV) TextView cardNumTV;
-    @Bind(R.id.expiryLabel_APPROVED_TV) TextView expiryLabelTV;
-    @Bind(R.id.expiry_APPROVED_TV) TextView expiryTV;
+    @BindView(R.id.approvedRL) RelativeLayout approvedRL;
+    @BindView(R.id.status_APPROVED_IV) ImageView approvedIV;
+    @BindView(R.id.payment_status_approved_tv) TextView paymentStatusTV;
+    @BindView(R.id.amount_APPROVED_TV) TextView amountTV;
+    @BindView(R.id.dateLabel_APPROVED_TV) TextView dateLabelTV;
+    @BindView(R.id.date_APPROVED_TV) TextView dateTV;
+    @BindView(R.id.timeLabel_APPROVED_TV) TextView timeLabelTV;
+    @BindView(R.id.time_APPROVED_TV) TextView timeTV;
+    @BindView(R.id.cardLabel_APPROVED_TV) TextView cardLabelTV;
+    @BindView(R.id.cardNumber_APPROVED_TV) TextView cardNumTV;
+    @BindView(R.id.expiryLabel_APPROVED_TV) TextView expiryLabelTV;
+    @BindView(R.id.expiry_APPROVED_TV) TextView expiryTV;
     public
-    @Bind(R.id.referenceLabel_APPROVED_TV) TextView referenceLabelTV;
+    @BindView(R.id.referenceLabel_APPROVED_TV) TextView referenceLabelTV;
     public
-    @Bind(R.id.reference_APPROVED_TV) TextView referenceTV;
-    @Bind(R.id.message_TV) TextView messageTV;
+    @BindView(R.id.reference_APPROVED_TV) TextView referenceTV;
+    @BindView(R.id.message_TV) TextView messageTV;
 
     Context mContext;
     @Nullable protected ParcelableTransactionResponse mTransactionResponse;

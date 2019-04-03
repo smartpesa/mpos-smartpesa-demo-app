@@ -24,21 +24,21 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class NameFragment extends Fragment {
 
     protected static final String DATE_FORMAT = DateUtils.DATE_FORMAT_DD_MM_YYYY;
 
-    @Bind(R.id.salutationSpinner) CustomMaterialSpinner salutationSpinner;
-    @Bind(R.id.dobBtn) Button dobBtn;
-    @Bind(R.id.firstNameEt) EditText firstNameEt;
-    @Bind(R.id.lastNameEt) EditText lastNameEt;
-    @Bind(R.id.titleNameTv) TextView title;
-    @Bind(R.id.firstNameLabelTv) TextView firstNameLabel;
-    @Bind(R.id.dobLabelTv) TextView dobLabelTv;
-    @Bind(R.id.nextBtn) Button nextBtn;
+    @BindView(R.id.salutationSpinner) CustomMaterialSpinner salutationSpinner;
+    @BindView(R.id.dobBtn) Button dobBtn;
+    @BindView(R.id.firstNameEt) EditText firstNameEt;
+    @BindView(R.id.lastNameEt) EditText lastNameEt;
+    @BindView(R.id.titleNameTv) TextView title;
+    @BindView(R.id.firstNameLabelTv) TextView firstNameLabel;
+    @BindView(R.id.dobLabelTv) TextView dobLabelTv;
+    @BindView(R.id.nextBtn) Button nextBtn;
 
     private Date dateOfBirth;
     UIHelper font;

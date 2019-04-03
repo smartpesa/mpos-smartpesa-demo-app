@@ -19,23 +19,23 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RegisteredAddressFragment extends Fragment {
 
     public static final String HASHMAP = "hashmap";
-    @Bind(R.id.primaryStreetEt) EditText primaryStreetEt;
-    @Bind(R.id.primaryCityEt) EditText primaryCityEt;
-    @Bind(R.id.primaryStateEt) EditText primaryStateEt;
-    @Bind(R.id.primaryPostalCodeEt) EditText primaryPostalCodeEt;
-    @Bind(R.id.primaryStreetLabelTv) TextView primaryStreetLabelTv;
-    @Bind(R.id.primaryCityLabelTv) TextView primaryCityLabelTv;
-    @Bind(R.id.primaryStateLabelTv) TextView primaryStateLabelTv;
-    @Bind(R.id.primaryPostalCodeLabelEt) TextView primaryPostalCodeLabelEt;
-    @Bind(R.id.titleNameTv) TextView title;
-    @Bind(R.id.nextBtn) Button nextBtn;
-    @Bind(R.id.addressCb) CheckBox addressCb;
+    @BindView(R.id.primaryStreetEt) EditText primaryStreetEt;
+    @BindView(R.id.primaryCityEt) EditText primaryCityEt;
+    @BindView(R.id.primaryStateEt) EditText primaryStateEt;
+    @BindView(R.id.primaryPostalCodeEt) EditText primaryPostalCodeEt;
+    @BindView(R.id.primaryStreetLabelTv) TextView primaryStreetLabelTv;
+    @BindView(R.id.primaryCityLabelTv) TextView primaryCityLabelTv;
+    @BindView(R.id.primaryStateLabelTv) TextView primaryStateLabelTv;
+    @BindView(R.id.primaryPostalCodeLabelEt) TextView primaryPostalCodeLabelEt;
+    @BindView(R.id.titleNameTv) TextView title;
+    @BindView(R.id.nextBtn) Button nextBtn;
+    @BindView(R.id.addressCb) CheckBox addressCb;
 
     UIHelper font;
     HashMap<String, Object> leadHash;

@@ -25,7 +25,7 @@ import android.widget.ProgressBar;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -39,8 +39,8 @@ public class OperatorsFragment extends BaseFragment {
     Lazy<ServiceManager> serviceManager;
     List<Operator> showAllList = new ArrayList<>();
     Context mContext;
-    @Bind(R.id.operatorsLV) ListView operatorsLV;
-    @Bind(R.id.operator_PB) ProgressBar progressBar;
+    @BindView(R.id.operatorsLV) ListView operatorsLV;
+    @BindView(R.id.operator_PB) ProgressBar progressBar;
     boolean isShowAll, enableEdit;
     public static Operator operatorInfo;
     private OperatorsAdapter mOperatorsAdapter;

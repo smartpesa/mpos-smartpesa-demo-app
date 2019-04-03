@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -43,12 +43,12 @@ import smartpesa.sdk.models.transaction.Transaction;
 
 public class AliPayPaymentProgressActivity extends BaseActivity {
 
-    @Bind(R.id.amount_Process_TV) protected TextView amountTv;
-    @Bind(R.id.progress_TV) protected TextView progressTv;
-    @Bind(R.id.transationTypeTV) protected TextView transactionTypeTv;
-    @Bind(R.id.transactionAnimation) protected AVLoadingIndicatorView transactionAnimation;
-    @Bind(R.id.qrImageView) protected ImageView qrImageView;
-    @Bind(R.id.container_body) protected FrameLayout fragmentContainer;
+    @BindView(R.id.amount_Process_TV) protected TextView amountTv;
+    @BindView(R.id.progress_TV) protected TextView progressTv;
+    @BindView(R.id.transationTypeTV) protected TextView transactionTypeTv;
+    @BindView(R.id.transactionAnimation) protected AVLoadingIndicatorView transactionAnimation;
+    @BindView(R.id.qrImageView) protected ImageView qrImageView;
+    @BindView(R.id.container_body) protected FrameLayout fragmentContainer;
 
     @Nullable public MoneyUtils mMoneyUtils;
     public BigDecimal amount;

@@ -22,19 +22,19 @@ import android.widget.TextView;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
 
 public class LoyaltyDialogFragment extends BaseDialogFragment {
 
-    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    @Bind(R.id.loyaltyBtn) Button loyaltyBtn;
-    @Bind(R.id.loyaltyTitle) TextView loyaltyTitle;
-    @Bind(R.id.discountedAmountTv) TextView discountedAmountTv;
-    @Bind(R.id.adjestedAmountTv) TextView adjustedAmountTv;
-    @Bind(R.id.originalAmountTv) TextView originalAmountTv;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.loyaltyBtn) Button loyaltyBtn;
+    @BindView(R.id.loyaltyTitle) TextView loyaltyTitle;
+    @BindView(R.id.discountedAmountTv) TextView discountedAmountTv;
+    @BindView(R.id.adjestedAmountTv) TextView adjustedAmountTv;
+    @BindView(R.id.originalAmountTv) TextView originalAmountTv;
 
     private RecyclerView.Adapter mAdapter;
     private LinearLayoutManager mLayoutManager;

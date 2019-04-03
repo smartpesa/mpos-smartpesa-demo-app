@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.core.error.SpException;
@@ -46,12 +46,12 @@ import smartpesa.sdk.models.statistics.Statistics;
 public class StatisticsFragment extends BaseFragment {
 
     public static final String DATE_FORMAT = "dd/MM/yyyy";
-    @Bind(R.id.statistics_grid) GridView gridView;
-    @Bind(R.id.filter_spinner) CustomMaterialSpinner filterSpin;
-    @Bind(R.id.loading_progress) ProgressBar mProgressBar;
-    @Bind(R.id.no_transaction_container) LinearLayout noTransactionLL;
-    @Bind(R.id.statistics_prompt) TextView mSelectFilterHintTv;
-    @Bind(R.id.date_range_tv) TextView dateRangeTv;
+    @BindView(R.id.statistics_grid) GridView gridView;
+    @BindView(R.id.filter_spinner) CustomMaterialSpinner filterSpin;
+    @BindView(R.id.loading_progress) ProgressBar mProgressBar;
+    @BindView(R.id.no_transaction_container) LinearLayout noTransactionLL;
+    @BindView(R.id.statistics_prompt) TextView mSelectFilterHintTv;
+    @BindView(R.id.date_range_tv) TextView dateRangeTv;
 
     Context mContext;
     ServiceManager mServiceManager;

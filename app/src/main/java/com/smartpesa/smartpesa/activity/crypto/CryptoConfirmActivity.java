@@ -17,7 +17,7 @@ import com.smartpesa.smartpesa.persistence.MerchantModule;
 import com.smartpesa.smartpesa.util.MoneyUtils;
 import com.smartpesa.smartpesa.util.constants.SPConstants;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -25,15 +25,15 @@ import smartpesa.sdk.models.currency.Currency;
 
 public class CryptoConfirmActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.cryptoNameTv)
+    @BindView(R.id.cryptoNameTv)
     TextView cryptoNameTv;
-    @Bind(R.id.cryptoValueTv) TextView cryptoValueTv;
-    @Bind(R.id.amountTv) TextView amountTv;
-    @Bind(R.id.walletAddressTv) TextView walletAddressTv;
-    @Bind(R.id.cashBtn) Button cashBtn;
-    @Bind(R.id.cardBtn) Button cardBtn;
+    @BindView(R.id.cryptoValueTv) TextView cryptoValueTv;
+    @BindView(R.id.amountTv) TextView amountTv;
+    @BindView(R.id.walletAddressTv) TextView walletAddressTv;
+    @BindView(R.id.cashBtn) Button cashBtn;
+    @BindView(R.id.cardBtn) Button cardBtn;
 
     public MoneyUtils mMoneyUtils;
     Lazy<ServiceManager> serviceManager;

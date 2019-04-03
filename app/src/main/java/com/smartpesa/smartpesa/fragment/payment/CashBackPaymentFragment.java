@@ -11,12 +11,12 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class CashBackPaymentFragment extends AbstractPaymentFragment {
 
     boolean cashBackSelected = false;
-    @Bind(R.id.cashBackRL) RelativeLayout cashBackRL;
+    @BindView(R.id.cashBackRL) RelativeLayout cashBackRL;
     private String mCashBackStringAmount;
     private SmallCalculator mCashBackCalculator;
 

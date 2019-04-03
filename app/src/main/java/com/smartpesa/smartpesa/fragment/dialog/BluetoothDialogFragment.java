@@ -26,7 +26,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.devices.SpDevice;
@@ -35,10 +35,10 @@ import smartpesa.sdk.models.merchant.VerifiedMerchantInfo;
 
 public class BluetoothDialogFragment<T extends SpDevice> extends BaseDialogFragment {
 
-    @Bind(R.id.cancel_btn) Button cancelBtn;
-    @Bind(R.id.list) ListView list;
-    @Bind(R.id.preferredTerminalCB) CheckBox preferredCB;
-    @Bind(R.id.bluetoothTitleTv) TextView bluetoothTitleTv;
+    @BindView(R.id.cancel_btn) Button cancelBtn;
+    @BindView(R.id.list) ListView list;
+    @BindView(R.id.preferredTerminalCB) CheckBox preferredCB;
+    @BindView(R.id.bluetoothTitleTv) TextView bluetoothTitleTv;
 
     protected TerminalSelectedListener<T> mListener;
     protected BluetoothAdapter<T> adapter;

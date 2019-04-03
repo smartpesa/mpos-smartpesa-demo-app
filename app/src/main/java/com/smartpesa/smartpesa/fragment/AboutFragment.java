@@ -31,7 +31,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -45,17 +45,17 @@ public class AboutFragment extends Fragment implements View.OnClickListener {
     private static final String BUNDLE_KEY_UPDATE_MANDATORY = AboutFragment.class.getName() + "updateMandatory";
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
 
-    @Bind(R.id.app_version_tv) TextView appVersionTv;
-    @Bind(R.id.sdk_version_tv) TextView sdkVersionTv;
-    @Bind(R.id.build_date) TextView buildDateTv;
-    @Bind(R.id.server_version_tv) TextView serverVersionTv;
-    @Bind(R.id.copyright_tv) TextView copyrightTv;
-    @Bind(R.id.privacy_tv) TextView privacyBtn;
-    @Bind(R.id.is_up_to_date_cb) CheckBox updateCb;
-    @Bind(R.id.update_btn) Button updateBtn;
-    @Bind(R.id.dial_btn) Button dialBtn;
-    @Bind(R.id.send_log_btn) Button sendLogBtn;
-    @Bind(R.id.powered_by_iv) ImageView poweredByIv;
+    @BindView(R.id.app_version_tv) TextView appVersionTv;
+    @BindView(R.id.sdk_version_tv) TextView sdkVersionTv;
+    @BindView(R.id.build_date) TextView buildDateTv;
+    @BindView(R.id.server_version_tv) TextView serverVersionTv;
+    @BindView(R.id.copyright_tv) TextView copyrightTv;
+    @BindView(R.id.privacy_tv) TextView privacyBtn;
+    @BindView(R.id.is_up_to_date_cb) CheckBox updateCb;
+    @BindView(R.id.update_btn) Button updateBtn;
+    @BindView(R.id.dial_btn) Button dialBtn;
+    @BindView(R.id.send_log_btn) Button sendLogBtn;
+    @BindView(R.id.powered_by_iv) ImageView poweredByIv;
 
     Context mContext;
     boolean updateMandatory;

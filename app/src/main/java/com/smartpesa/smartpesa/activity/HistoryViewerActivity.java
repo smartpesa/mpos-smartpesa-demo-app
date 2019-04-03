@@ -12,7 +12,7 @@ import com.smartpesa.smartpesa.models.ParcelableTransactionResponse;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HistoryViewerActivity extends BaseActivity {
@@ -20,9 +20,9 @@ public class HistoryViewerActivity extends BaseActivity {
     public static final String INDEX = HistoryViewerActivity.class.getName() + ".index";
     public static final String DATA = HistoryViewerActivity.class.getName() + ".data";
 
-    @Bind(R.id.toolbar) Toolbar mToolbar;
-    @Bind(R.id.pager) ViewPager mViewPager;
-    @Bind(R.id.toolbar_title) TextView toolbarTitle;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.pager) ViewPager mViewPager;
+    @BindView(R.id.toolbar_title) TextView toolbarTitle;
     private HistoryFragmentPagerAdapter mCustomPagerAdapter;
 
     @Override

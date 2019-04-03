@@ -18,22 +18,22 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class SmartPesaSaleFragment extends AbstractPaymentFragment {
 
     boolean cashBackSelected = false;
-    @Bind(R.id.cashBackRL) RelativeLayout cashBackRL;
-    @Bind(R.id.cashBackLabelTV) TextView cashBackLabelTV;
-    @Bind(R.id.amountLabel_PAYMENT_TV) TextView amountLabelTV;
+    @BindView(R.id.cashBackRL) RelativeLayout cashBackRL;
+    @BindView(R.id.cashBackLabelTV) TextView cashBackLabelTV;
+    @BindView(R.id.amountLabel_PAYMENT_TV) TextView amountLabelTV;
 
-    @Bind(R.id.two_percent_btn) Button twoPercentBtn;
-    @Bind(R.id.four_percent_btn) Button fourPercentBtn;
-    @Bind(R.id.six_percent_btn) Button sixPercentBtn;
-    @Bind(R.id.eight_percent_btn) Button eightPercentBtn;
+    @BindView(R.id.two_percent_btn) Button twoPercentBtn;
+    @BindView(R.id.four_percent_btn) Button fourPercentBtn;
+    @BindView(R.id.six_percent_btn) Button sixPercentBtn;
+    @BindView(R.id.eight_percent_btn) Button eightPercentBtn;
 
-    @Bind(R.id.calc_linear_layout) LinearLayout calculationLayout;
-    @Bind(R.id.percent_linear_layout) LinearLayout percentLayout;
+    @BindView(R.id.calc_linear_layout) LinearLayout calculationLayout;
+    @BindView(R.id.percent_linear_layout) LinearLayout percentLayout;
 
     private String mCashBackStringAmount;
     private SmallCalculator mCashBackCalculator;
