@@ -17,21 +17,20 @@
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/smartpesa/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/smartpesa/res;file://$MODULE_DIR$/build/generated/res/rs/smartpesa/debug;file://$MODULE_DIR$/build/generated/res/resValues/smartpesa/debug" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
-    <output url="file://$MODULE_DIR$/build/intermediates/classes/smartpesa/debug" />
-    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/smartpesa/debug" />
+    <output url="file://$MODULE_DIR$/build/intermediates/javac/smartpesaDebug/compileSmartpesaDebugJavaWithJavac/classes" />
+    <output-test url="file://$MODULE_DIR$/build/intermediates/javac/smartpesaDebugUnitTest/compileSmartpesaDebugUnitTestJavaWithJavac/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/smartpesa/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/smartpesa/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/smartpesa/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/smartpesaDebug/compileSmartpesaDebugAidl/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/smartpesa/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/smartpesa/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/smartpesaDebug/compileSmartpesaDebugRenderscript/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/smartpesa/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/smartpesa/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/smartpesaDebug/res" type="java-resource" />
@@ -42,12 +41,19 @@
       <sourceFolder url="file://$MODULE_DIR$/src/smartpesaDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/smartpesaDebug/shaders" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/smartpesa/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/smartpesa/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/smartpesa/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/smartpesaDebugAndroidTest/compileSmartpesaDebugAndroidTestAidl/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/smartpesa/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/smartpesa/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/smartpesaDebugAndroidTest/compileSmartpesaDebugAndroidTestRenderscript/out" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/smartpesa/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/smartpesa/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestSmartpesaDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/smartpesa/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testSmartpesaDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testSmartpesaDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testSmartpesaDebug/assets" type="java-test-resource" />
@@ -90,6 +96,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testDebug/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/assets" type="java-resource" />
@@ -111,10 +124,17 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/build/generated/not_namespaced_r_class_sources" />
+      <excludeFolder url="file://$MODULE_DIR$/build/generated/source/r" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/annotation_processor_list" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/apk_list" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/bundle_manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check_manifest_result" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/compatible_screen_manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
@@ -122,9 +142,17 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-resources" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant_app_manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant_run_merged_manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javac" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint_jar" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/metadata_feature_manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/multi-dex" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/processed_res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/restart-dex" />
@@ -136,113 +164,117 @@
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.badoualy:stepper-indicator-1.0.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:terminal-3.11.0-SNAPSHOT-3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.afollestad.material-dialogs:core-0.8.5.7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.kenglxn.QRGen:core:2.3.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:spconnect-2.2.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.crashlytics.sdk.android:crashlytics-core-2.6.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.mikepenz:materialize-0.2.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:transition-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:scanner-3.8.0-SNAPSHOT-3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.zxing:core:3.3.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: me.zhanghai.android.materialprogressbar:library-1.1.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:appcompat-v7-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-fragment-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-basement-16.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.code.gson:gson:2.8.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.weiwangcn.betterspinner:library-material-1.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.retrofit2:retrofit:2.3.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.PhilJay:MPAndroidChart:v2.1.3@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support:multidex-instrumentation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.crashlytics.sdk.android:beta-1.2.7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.reactivex.rxjava2:rxjava:2.1.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.okhttp3:okhttp:3.8.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.ogaclejapan.smarttablayout:library-1.6.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.fabric.sdk.android:fabric-1.4.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: uk.co.chrisjenx:calligraphy-2.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: me.dm7.barcodescanner:core-1.9.8" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: javax.annotation:javax.annotation-api:1.2@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.crashlytics.sdk.android:crashlytics-2.9.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.reactivestreams:reactive-streams:1.0.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-safetynet-16.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.kenglxn.QRGen:android:2.3.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.wang.avi:library-2.1.3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.ksoichiro:android-observablescrollview-1.5.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-gcm-16.0.0" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:ota-3.8.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-io:commons-io:2.4@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:core-3.8.0-SNAPSHOT-1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.retrofit2:adapter-rxjava2:2.3.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.dagger:dagger:2.12@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.yalantis:phoenix-1.2.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.castorflex.smoothprogressbar:library-1.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:design-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:recyclerview-v7-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:animated-vector-drawable-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-tasks-16.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.jakewharton:butterknife:7.0.1@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-core-2.2.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support:multidex-1.0.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:multidex-1.0.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.6@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.skyfishjy.ripplebackground:library-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.retrofit2:converter-gson:2.3.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-compat-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-base-16.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.code.findbugs:jsr305:3.0.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.pax:mposapi:1.00.08@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:sdk-4.0.0-SNAPSHOT-28" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: hanks.xyz:htextview-library-0.1.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.dagger:dagger-android-2.12" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:rules-0.4.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:runner-0.4.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:neptune-2.0.05" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:exposed-instrumentation-api-publish-0.4.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-iid-16.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-annotations:26.0.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.okio:okio:1.13.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.mikepenz:iconics-core-1.7.8" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: de.hdodenhof:circleimageview-2.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.mikepenz:materialdrawer-4.3.7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.daimajia.androidanimations:library-1.1.3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: me.dm7.barcodescanner:zxing-1.9.8" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.amulyakhare:com.amulyakhare.textdrawable-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: se.emilsjolander:stickylistheaders-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.bbpos:ota:1.5.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.android.gms:play-services-stats-16.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-media-compat-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.franmontiel:PersistentCookieJar-v1.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.bbpos:bbdevice:3.4.9@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-v4-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:logger-3.8.0-SNAPSHOT-1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.daimajia.easing:library-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.rengwuxian.materialedittext:library-2.0.3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.reactivex.rxjava2:rxandroid-2.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support.constraint:constraint-layout-1.0.2" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.smartpesa:network-3.8.0-SNAPSHOT-2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.florent37:androidparallax-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-core-ui-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-core-utils-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.jpardogo.materialtabstrip:library-1.0.6" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.dagger:dagger-android-support-2.12" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-vector-drawable-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:cardview-v7-26.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.birbit:android-priority-jobqueue-2.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.crashlytics.sdk.android:answers-1.4.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-idling-resource-2.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.4.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.jakewharton.timber:timber-4.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.http.legacy-android-26" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ksoichiro:android-observablescrollview:1.5.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.kenglxn.QRGen:core:2.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife:10.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jpardogo.materialtabstrip:library:1.0.6@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-idling-resource:2.2.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.zxing:core:3.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton.timber:timber:4.7.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.dagger:dagger:2.19@jar" level="project" />
+    <orderEntry type="library" name="Gradle: me.zhanghai.android.materialprogressbar:library:1.1.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-runtime:10.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:design:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.afollestad.material-dialogs:core:0.8.5.7@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:exposed-instrumentation-api-publish:0.4.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: me.dm7.barcodescanner:zxing:1.9.8@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.PhilJay:MPAndroidChart:v2.1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:cardview-v7:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.1.0@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:3.0.2@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.8.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:transition:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.birbit:android-priority-jobqueue:2.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: io.fabric.sdk.android:fabric:1.4.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.smartpesa:neptune:2.0.05@aar" level="project" />
+    <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.2@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.castorflex.smoothprogressbar:library:1.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.kenglxn.QRGen:android:2.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.skyfishjy.ripplebackground:library:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxandroid:2.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mikepenz:iconics-core:1.7.8@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-annotations:10.1.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout:1.1.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:16.0.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.smartpesa:spconnect:2.2.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-gcm:16.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.smartpesa:sdk:4.0.1.4@aar" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.4@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement:16.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.ogaclejapan.smarttablayout:library:1.6.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.daimajia.androidanimations:library:1.1.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:answers:1.4.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:adapter-rxjava2:2.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-fragment:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:beta:1.2.7@aar" level="project" />
+    <orderEntry type="library" name="Gradle: se.emilsjolander:stickylistheaders:2.7.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.wang.avi:library:2.1.3@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:rules:0.4.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-runtime:2.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-core:2.2.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.dagger:dagger-android-support:2.19@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.amulyakhare:com.amulyakhare.textdrawable:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-compat:26.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mikepenz:materialize:0.2.6@aar" level="project" />
+    <orderEntry type="library" name="Gradle: uk.co.chrisjenx:calligraphy:2.3.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.6@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.core:core:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-safetynet:16.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations-java5:15.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: de.hdodenhof:circleimageview:2.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mikepenz:materialdrawer:4.3.7@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.pax:mposapi:1.00.08@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.franmontiel:PersistentCookieJar:v1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: hanks.xyz:htextview-library:0.1.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-v4:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: me.dm7.barcodescanner:core:1.9.8@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.yalantis:phoenix:1.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-annotations:26.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.badoualy:stepper-indicator:1.0.6@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.weiwangcn.betterspinner:library-material:1.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:crashlytics:2.9.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.13.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.dagger:dagger-android:2.19@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.bbpos:ota:1.5.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-core-ui:26.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:runner:0.4.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-core-utils:26.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.rengwuxian.materialedittext:library:2.0.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-iid:16.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.daimajia.easing:library:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.versionedparcelable:versionedparcelable:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.bbpos:bbdevice:3.4.9@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-stats:16.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base:16.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.smartpesa:terminal:4.0.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:crashlytics-core:2.6.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.florent37:androidparallax:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:multidex:1.0.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.4.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.collection:collection:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:16.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.http.legacy-android-28" level="project" />
   </component>
 </module>
