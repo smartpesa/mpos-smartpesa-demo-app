@@ -41,8 +41,6 @@ public class HistoryFragment extends BaseFragment {
         // Bind the tabs to the ViewPager
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
         tabs.setViewPager(pager);
-        tabs.setTypeface(new UIHelper(getActivity()).boldFont, Typeface.BOLD);
-
         return view;
     }
 

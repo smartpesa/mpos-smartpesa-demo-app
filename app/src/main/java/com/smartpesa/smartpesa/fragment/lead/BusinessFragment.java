@@ -30,7 +30,6 @@ public class BusinessFragment extends Fragment {
     @BindView(R.id.nextBtn) Button nextBtn;
     @BindView(R.id.titleNameTv) TextView title;
 
-    UIHelper font;
     HashMap<String, Object> leadHash;
 
     public static BusinessFragment newInstance(HashMap<String, Object> leadHash) {
@@ -52,7 +51,6 @@ public class BusinessFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lead_business, container, false);
         ButterKnife.bind(this, view);
-        font = new UIHelper(getActivity());
         return view;
     }
 
@@ -65,9 +63,6 @@ public class BusinessFragment extends Fragment {
             leadHash = (HashMap<String, Object>) b.getSerializable(HASHMAP);
         }
 
-        title.setTypeface(font.boldFont);
-        merchantNameLabelTv.setTypeface(font.boldFont);
-        descriptionLabelTv.setTypeface(font.boldFont);
         merchantNameEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
         descriptionEt.setHintTextColor(getResources().getColor(R.color.md_grey_300));
 

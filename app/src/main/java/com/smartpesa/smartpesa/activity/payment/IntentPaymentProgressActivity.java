@@ -336,8 +336,6 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
     public void startTransaction() {
 
         mMoneyUtils = getMerchantComponent().provideMoneyUtils();
-        UIHelper fonts = new UIHelper(mContext);
-        progressTV.setTypeface(fonts.regularFont);
 
         tryAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
