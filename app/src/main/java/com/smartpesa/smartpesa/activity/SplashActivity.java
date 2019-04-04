@@ -375,7 +375,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void checkAndroidPermissions() {
-        String[] permissions = new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH, Manifest.permission.CAMERA};
+        String[] permissions = new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH, Manifest.permission.CAMERA, "android.permission.BBPOS"};
         ActivityCompat.requestPermissions(SplashActivity.this,
                 permissions,
                 REQUEST_PERMISSION);

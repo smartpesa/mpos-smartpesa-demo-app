@@ -2,48 +2,37 @@
 <resources>
     <!-- Primary Text Styles -->
     <style name="SmartPesa.Display4" parent="TextAppearance.AppCompat.Display4">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Display3" parent="TextAppearance.AppCompat.Display3">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Display2" parent="TextAppearance.AppCompat.Display2">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Display1" parent="TextAppearance.AppCompat.Display1">
-        <item name="fontPath">?attr/defaultFontPath</item>
         <item name="android:textColor">@color/text_color_primary_inverse</item>
     </style>
 
     <style name="SmartPesa.Headline" parent="TextAppearance.AppCompat.Headline">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Title" parent="TextAppearance.AppCompat.Title">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Subhead" parent="TextAppearance.AppCompat.Subhead">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Caption" parent="TextAppearance.AppCompat.Caption">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Body1" parent="TextAppearance.AppCompat.Body1">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Body2" parent="TextAppearance.AppCompat.Body2">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Menu" parent="TextAppearance.AppCompat.Menu">
-        <item name="fontPath">?attr/defaultFontPath</item>
     </style>
 
     <style name="SmartPesa.Button" parent="TextAppearance.AppCompat.Button">

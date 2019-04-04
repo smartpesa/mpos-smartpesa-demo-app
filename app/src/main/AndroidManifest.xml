@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BBPOS"/>
 
     <application
         android:name=".SmartPesaApplication"
@@ -50,6 +51,11 @@
         <activity
             android:name=".activity.ForgotIdActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.crypto.CryptoInfoActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".activity.AboutUsActivity"
             android:screenOrientation="portrait" />
