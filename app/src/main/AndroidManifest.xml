@@ -120,7 +120,7 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="@string/fabric_api_key" />
+            android:value="YOUR_KEY" />
 
         <activity android:name=".activity.payment.AliPayReceiptActivity" />
         <activity android:name=".activity.CryptoReceiptActivity"></activity>

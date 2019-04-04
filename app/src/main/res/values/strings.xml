@@ -431,6 +431,5 @@
     <string name="input_hint">OTP</string>
 
     <string name="google_geo_api_key">YOUR_KEYS</string>
-    <string name="fabric_api_key">YOUR_KEYS</string>
 
 </resources>
