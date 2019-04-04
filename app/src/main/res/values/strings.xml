@@ -421,5 +421,16 @@
     <string name="registerSoftposTitle">Register Softpos</string>
     <string name="logout">Logout</string>
     <string name="product">Products</string>
+    <string name="softpos_instruct">Register and activate your SoftPOS device below.</string>
+    <string name="register_device">Register Device</string>
+    <string name="activate_device">Activate Device</string>
+    <string name="devices_list">Devices linked to your account</string>
+    <string name="device_register_success">Device registered successfully. Please activate device once you receive the OTP.</string>
+    <string name="register_instruct">Proceed to register your mobile phone for Contactless card acceptance using NFC? You will receive an SMS with a pin code. Enter it to activate this service.</string>
+    <string name="activate_instruct">Input your OTP (4 - 12 digits)</string>
+    <string name="input_hint">OTP</string>
+
+    <string name="google_geo_api_key">YOUR_KEYS</string>
+    <string name="fabric_api_key">YOUR_KEYS</string>
 
 </resources>
