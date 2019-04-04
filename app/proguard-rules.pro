@@ -1,3 +1,4 @@
+-ignorewarnings
 -dontusemixedcaseclassnames
 -dontskipnonpubliclibraryclasses
 -dontpreverify
@@ -16,6 +17,8 @@
 -dontwarn rx.internal.**
 -dontwarn smartpesa.sdk.**
 -dontwarn com.bbpos.**
+-dontwarn com.squareup.okhttp.**
+-dontwarn driver.**
 
 # SmartPesa SDK
 -keepclassmembers class smartpesa.sdk.** { *; }
@@ -23,6 +26,7 @@
 -keepclassmembers class * implements smartpesa.sdk.interfaces.DataCallback
 -keep class com.bbpos.** { *; }
 -keep class com.RT_Printer.** { *; }
+-keep class driver.** { *; }
 
 ## ButterKnife
 -dontwarn butterknife.internal.**
@@ -42,6 +46,12 @@
 # Retrofit.
 -keep class retrofit.** { *; } # Keep the annotations
 -keep class ** { @retrofit.http.** *; } # Keep the annotated services
+
+-keep class com.squareup.okhttp.** { *; }
+
+-keepclassmembers class com.squareup.okhttp.** { *; }
+-keepclassmembers class driver.** { *; }
+
 
 ## Activity names
 -keepclassmembers class * extends android.app.Activity {
@@ -150,4 +160,12 @@
     private void readObject(java.io.ObjectInputStream);
     java.lang.Object writeReplace();
     java.lang.Object readResolve();
+}
+
+-keep class com.crashlytics.** { *; }
+-dontwarn com.crashlytics.**
+
+-dontwarn com.google.android.gms.**
+-keepclasseswithmembers class com.camerakit.preview.CameraSurfaceView {
+    native <methods>;
 }
