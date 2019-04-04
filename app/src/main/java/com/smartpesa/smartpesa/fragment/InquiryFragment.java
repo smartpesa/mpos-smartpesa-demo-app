@@ -1,28 +1,25 @@
 package com.smartpesa.smartpesa.fragment;
 
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.SmartPesaApplication;
-import com.smartpesa.smartpesa.activity.payment.AllPaymentsProgressActivity;
-import com.smartpesa.smartpesa.fragment.payment.AbstractPaymentFragment;
-import com.smartpesa.smartpesa.helpers.TypefaceSpan;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
-import com.smartpesa.smartpesa.util.constants.SPConstants;
-import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
-
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.SmartPesaApplication;
+import com.smartpesa.smartpesa.activity.payment.AllPaymentsProgressActivity;
+import com.smartpesa.smartpesa.fragment.payment.AbstractPaymentFragment;
+import com.smartpesa.smartpesa.helpers.UIHelper;
+import com.smartpesa.smartpesa.models.SmartPesaTransactionType;
+import com.smartpesa.smartpesa.util.constants.SPConstants;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import dagger.Lazy;
 import smartpesa.sdk.ServiceManager;
@@ -112,7 +109,6 @@ public class InquiryFragment extends BaseFragment implements View.OnClickListene
         balanceEnquiryBTN = (Button) view.findViewById(R.id.balanceInquiryBTN);
 
         accountTypeSpinner = (MaterialBetterSpinner) view.findViewById(R.id.inquiryAccountTypeSpin);
-
         String[] accountType = getActivity().getResources().getStringArray(R.array.account_array);
         ArrayAdapter<String> accountAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_dropdown_item_1line, accountType);
         accountTypeSpinner.setAdapter(accountAdapter);
@@ -125,13 +121,9 @@ public class InquiryFragment extends BaseFragment implements View.OnClickListene
     public void onResume() {
         super.onResume();
 
-        SpannableString s = new SpannableString(getString(R.string.title_inquiry));
-        s.setSpan(new TypefaceSpan(getActivity(), "SmartPesa-Bold.ttf"), 0, s.length(),
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
         // Update the action bar title with the TypefaceSpan instance
         android.support.v7.app.ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle(s);
+        actionBar.setTitle(R.string.title_inquiry);
 
     }
 

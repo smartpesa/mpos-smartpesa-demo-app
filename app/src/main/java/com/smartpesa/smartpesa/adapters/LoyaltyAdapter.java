@@ -1,12 +1,6 @@
 package com.smartpesa.smartpesa.adapters;
 
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.fragment.dialog.LoyaltyDialogFragment;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-import com.smartpesa.smartpesa.models.UIRedeemable;
-
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +9,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.fragment.dialog.LoyaltyDialogFragment;
+import com.smartpesa.smartpesa.helpers.UIHelper;
+import com.smartpesa.smartpesa.models.UIRedeemable;
 
 import java.util.ArrayList;
 
@@ -84,10 +83,6 @@ public class LoyaltyAdapter extends RecyclerView.Adapter<LoyaltyAdapter.ViewHold
         // - replace the contents of the view with that element
         final UIRedeemable object = parseObjectList.get(position);
 
-        Typeface robotoBoldCondensed = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-BoldCondensed.ttf");
-        Typeface robotoLight = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Medium.ttf");
-        holder.typeTv.setTypeface(robotoBoldCondensed);
-        holder.nameTv.setTypeface(robotoLight);
         holder.nameTv.setText(object.getName());
         holder.amountTv.setText(UIHelper.formatBigdecimal(object.getAmount()));
         holder.typeTv.setText(UIHelper.getLoyaltyTypeFromId(object.getType()));

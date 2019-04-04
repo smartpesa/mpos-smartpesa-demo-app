@@ -1,25 +1,20 @@
 package com.smartpesa.smartpesa.fragment;
 
-import com.astuetz.PagerSlidingTabStrip;
-import com.smartpesa.smartpesa.R;
-import com.smartpesa.smartpesa.fragment.history.LastTransactionFragment;
-import com.smartpesa.smartpesa.fragment.history.PastHistoryFragment;
-import com.smartpesa.smartpesa.fragment.history.StatisticsFragment;
-import com.smartpesa.smartpesa.helpers.TypefaceSpan;
-import com.smartpesa.smartpesa.helpers.UIHelper;
-
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.astuetz.PagerSlidingTabStrip;
+import com.smartpesa.smartpesa.R;
+import com.smartpesa.smartpesa.fragment.history.LastTransactionFragment;
+import com.smartpesa.smartpesa.fragment.history.PastHistoryFragment;
+import com.smartpesa.smartpesa.fragment.history.StatisticsFragment;
 
 public class HistoryFragment extends Fragment {
 
@@ -86,14 +81,9 @@ public class HistoryFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        SpannableString s = new SpannableString(getString(R.string.title_history));
-        s.setSpan(new TypefaceSpan(getActivity(), "SmartPesa-Bold.ttf"), 0, s.length(),
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
         // Update the action bar title with the TypefaceSpan instance
         android.support.v7.app.ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle(s);
-
+        actionBar.setTitle(R.string.title_history);
     }
 
 }
