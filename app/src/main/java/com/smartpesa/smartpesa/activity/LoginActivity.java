@@ -73,6 +73,9 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
         progressDialog.setTitle(getString(R.string.app_name));
         progressDialog.setMessage(getString(R.string.loggin_in));
         progressDialog.setCancelable(false);
+
+        //hide the sign up button
+        signUpBtn.setVisibility(View.GONE);
     }
 
     //initialize all the UI components
