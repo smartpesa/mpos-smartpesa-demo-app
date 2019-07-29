@@ -169,3 +169,45 @@
 -keepclasseswithmembers class com.camerakit.preview.CameraSurfaceView {
     native <methods>;
 }
+
+# Keep the following classes
+-keep class smartpesa.sdk.ServiceManager { public *; }
+-keep class smartpesa.sdk.SmartPesa { public *; }
+-keep class smartpesa.sdk.SmartPesa$* { public *; }
+-keep class smartpesa.sdk.ServiceManagerConfig { public *; }
+-keep class smartpesa.sdk.ServiceManagerConfig$* { public *; }
+-keep class smartpesa.sdk.BuildConfig { public *; }
+-keep class smartpesa.sdk.models.** { public *; }
+-keep class smartpesa.sdk.interfaces.** { *; }
+-keep class smartpesa.sdk.error.** { *; }
+-keep class com.bbpos.** { *; }
+
+# PAX
+-dontwarn com.pax.**
+-dontwarn android.os.ServiceManager
+-keep class com.pax.dal.** { *; }
+-keep class com.pax.** { *; }
+
+-keepnames class com.pax.** { *; }
+-keepnames class com.pax.neptunelite.** { *; }
+
+#bbpos
+-keep class com.bbpos.** { *; }
+-dontwarn com.bbpos.**
+-dontwarn org.jetbrains.**
+
+-keepclasseswithmembernames class * {
+native <methods>;
+}
+
+-keep class driver.** { *; }
+
+-keep class org.jetbrains.** { *; }
+
+#Masker kernal sdk
+-keep class com.mastercard.terminalsdk.** { *; }
+-dontwarn com.mastercard.terminalsdk.**
+-keep class com.a.** { *; }
+-keep class com.b.** { *; }
+-keepnames class com.a.** { *; }
+-keepnames class com.b.** { *; }
