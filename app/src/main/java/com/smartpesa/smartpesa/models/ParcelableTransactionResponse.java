@@ -31,8 +31,6 @@ public class ParcelableTransactionResponse implements Parcelable {
     private final String responseDescription;
     private final String systemTraceAuditNumber;
     private final String transactionDescription;
-    private final String settledStatus;
-    private final SmartPesa.SettlementCode settlementCode;
     private final String authorisationResponseCode;
     private final String authorisationResponse;
     private SmartPesaTransactionType transaction;
@@ -65,8 +63,6 @@ public class ParcelableTransactionResponse implements Parcelable {
         responseDescription = transactionResponse.getResponseDescription();
         systemTraceAuditNumber = transactionResponse.getSystemTraceAuditNumber();
         transactionDescription = transactionResponse.getTransactionDescription();
-        settledStatus = transactionResponse.getSettledStatus();
-        settlementCode = transactionResponse.getSettlementCode();
         authorisationResponseCode = transactionResponse.getAuthorisationResponseCode();
         authorisationResponse = transactionResponse.getAuthorisationResponse();
         reversed = transactionResponse.isReversed();
@@ -132,8 +128,6 @@ public class ParcelableTransactionResponse implements Parcelable {
         responseDescription = in.readString();
         systemTraceAuditNumber = in.readString();
         transactionDescription = in.readString();
-        settledStatus = in.readString();
-        settlementCode = SmartPesa.SettlementCode.fromEnumId(in.readInt());
         authorisationResponseCode = in.readString();
         authorisationResponse = in.readString();
         reversed = in.readByte() != 0;
@@ -166,8 +160,6 @@ public class ParcelableTransactionResponse implements Parcelable {
         dest.writeString(responseDescription);
         dest.writeString(systemTraceAuditNumber);
         dest.writeString(transactionDescription);
-        dest.writeString(settledStatus);
-        dest.writeInt(settlementCode.getEnumId());
         dest.writeString(authorisationResponseCode);
         dest.writeString(authorisationResponse);
         dest.writeByte((byte) (reversed ? 1 : 0));
@@ -243,14 +235,6 @@ public class ParcelableTransactionResponse implements Parcelable {
 
     public String getTransactionDescription() {
         return transactionDescription;
-    }
-
-    public String getSettledStatus() {
-        return settledStatus;
-    }
-
-    public SmartPesa.SettlementCode getSettlementCode() {
-        return settlementCode;
     }
 
     public String getAuthorisationResponseCode() {

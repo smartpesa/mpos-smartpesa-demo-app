@@ -49,6 +49,7 @@ public class MerchantModule {
     public static final int MENU_ID_CRYPTO_ATM = 22;
     public static final int MENU_ID_CRYPTO_ATM_BITCOIN = 23;
     public static final int MENU_ID_CRYPTO_ATM_LITECOIN = 24;
+    public static final int MENU_ID_ACTIVATE_SOFTPOS = 25;
 
     public MerchantModule() {
     }

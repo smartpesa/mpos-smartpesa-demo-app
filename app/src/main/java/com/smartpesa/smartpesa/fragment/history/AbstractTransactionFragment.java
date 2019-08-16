@@ -379,12 +379,12 @@ public abstract class AbstractTransactionFragment extends BaseFragment implement
             smsNumber = verifyMerchantInfo.getDefaultDialingCode();
         }
 
-        SmartPesa.SettlementCode settlementCode = transactionTLVResponse.getSettlementCode();
-        if (settlementCode.equals(SmartPesa.SettlementCode.SETTLEMENT_PENDING)) {
-            voidBtn.setEnabled(true);
-        } else {
-            voidBtn.setEnabled(false);
-        }
+//        SmartPesa.SettlementCode settlementCode = transactionTLVResponse.getSettlementCode();
+//        if (settlementCode.equals(SmartPesa.SettlementCode.SETTLEMENT_PENDING)) {
+//            voidBtn.setEnabled(true);
+//        } else {
+//            voidBtn.setEnabled(false);
+//        }
 
         //check and hide refund
         int[] permissions = getMerchantComponent(getActivity()).provideMerchant().getMenuControl();

@@ -33,6 +33,7 @@ import smartpesa.sdk.core.error.SpException;
 import smartpesa.sdk.error.SpSessionException;
 import smartpesa.sdk.models.transaction.GetSignatureCallback;
 import smartpesa.sdk.models.transaction.GetTransactionDetailCallback;
+import smartpesa.sdk.models.transaction.PaymentDetails;
 import smartpesa.sdk.models.transaction.TransactionDetail;
 
 public class ExtraDetailsDialogFragment extends BaseDialogFragment {
@@ -150,10 +151,60 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
 
             if (transactionExtraDetail.getTransactionId() != null) {
 
-                if (!TextUtils.isEmpty(transactionExtraDetail.getMerchantCode())) {
-                    merchantIdTv.setText(transactionExtraDetail.getMerchantCode());
-                    merchantIdTv.setVisibility(View.VISIBLE);
-                    merchantIdLabelTv.setVisibility(View.VISIBLE);
+                if (transactionExtraDetail.getPayment() != null) {
+
+                    PaymentDetails paymentDetails = transactionExtraDetail.getPayment();
+
+                    if (!TextUtils.isEmpty(paymentDetails.getMerchantCode())) {
+                        merchantIdTv.setText(paymentDetails.getMerchantCode());
+                        merchantIdTv.setVisibility(View.VISIBLE);
+                        merchantIdLabelTv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (paymentDetails.getTip() != null) {
+                        tipTv.setText(mMoneyUtils.format(paymentDetails.getTip()));
+                        tipTv.setVisibility(View.VISIBLE);
+                        tipLabelTv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (paymentDetails.getDeviceId() != null) {
+                        if (!TextUtils.isEmpty(paymentDetails.getSerialNumber())) {
+                            deviceSerialNumberTv.setText(paymentDetails.getSerialNumber());
+                            deviceSerialNumberLabelTv.setVisibility(View.VISIBLE);
+                            deviceSerialNumberTv.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+
+                    if (!TextUtils.isEmpty(paymentDetails.getTvr())) {
+                        tvrTv.setText(paymentDetails.getTvr());
+                        tvrTv.setVisibility(View.VISIBLE);
+                        tvrLabelTv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (!TextUtils.isEmpty(paymentDetails.getBillingOrganisationName())) {
+                        billerNameTv.setText(paymentDetails.getBillingOrganisationName());
+                        billerNameTv.setVisibility(View.VISIBLE);
+                        billerNameLabelTv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (!TextUtils.isEmpty(paymentDetails.getBillerCode())) {
+                        billerCodeTv.setText(paymentDetails.getBillerCode());
+                        billerCodeTv.setVisibility(View.VISIBLE);
+                        billerCodeLabelTv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (!TextUtils.isEmpty(paymentDetails.getAcquiringInstitutionName())) {
+                        destinationBankTv.setText(paymentDetails.getAcquiringInstitutionName());
+                        destinationBankTv.setVisibility(View.VISIBLE);
+                        destinationBankLabelTv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (!TextUtils.isEmpty(paymentDetails.getToAccount())) {
+                        destinationAccountNumberTv.setText(paymentDetails.getToAccount());
+                        destinationAccountNumberTv.setVisibility(View.VISIBLE);
+                        destinationAccountNumberLabelTv.setVisibility(View.VISIBLE);
+                    }
                 }
 
                 if (transactionExtraDetail.getSalesTax() != null) {
@@ -162,43 +213,10 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
                     taxLabelTv.setVisibility(View.VISIBLE);
                 }
 
-                if (transactionExtraDetail.getTip() != null) {
-                    tipTv.setText(mMoneyUtils.format(transactionExtraDetail.getTip()));
-                    tipTv.setVisibility(View.VISIBLE);
-                    tipLabelTv.setVisibility(View.VISIBLE);
-                }
-
                 if (!TextUtils.isEmpty(transactionExtraDetail.getOperatorName())) {
                     operatorNameTv.setText(transactionExtraDetail.getOperatorName());
                     operatorNameLabelTv.setVisibility(View.VISIBLE);
                     operatorNameTv.setVisibility(View.VISIBLE);
-                }
-
-                if (transactionExtraDetail.getDeviceId() != null) {
-                    if (!TextUtils.isEmpty(transactionExtraDetail.getSerialNumber())) {
-                        deviceSerialNumberTv.setText(transactionExtraDetail.getSerialNumber());
-                        deviceSerialNumberLabelTv.setVisibility(View.VISIBLE);
-                        deviceSerialNumberTv.setVisibility(View.VISIBLE);
-                    }
-                }
-
-                //// TODO: 12/3/18  
-//                if (!TextUtils.isEmpty(transactionExtraDetail.getTvr())) {
-//                    tvrTv.setText(transactionExtraDetail.getTvr());
-//                    tvrTv.setVisibility(View.VISIBLE);
-//                    tvrLabelTv.setVisibility(View.VISIBLE);
-//                }
-
-                if (!TextUtils.isEmpty(transactionExtraDetail.getBillingOrganisationName())) {
-                    billerNameTv.setText(transactionExtraDetail.getBillingOrganisationName());
-                    billerNameTv.setVisibility(View.VISIBLE);
-                    billerNameLabelTv.setVisibility(View.VISIBLE);
-                }
-
-                if (!TextUtils.isEmpty(transactionExtraDetail.getBillerCode())) {
-                    billerCodeTv.setText(transactionExtraDetail.getBillerCode());
-                    billerCodeTv.setVisibility(View.VISIBLE);
-                    billerCodeLabelTv.setVisibility(View.VISIBLE);
                 }
 
                 if (!TextUtils.isEmpty(transactionExtraDetail.getIpAddress())) {
@@ -207,17 +225,6 @@ public class ExtraDetailsDialogFragment extends BaseDialogFragment {
                     ipAddressLabelTv.setVisibility(View.VISIBLE);
                 }
 
-                if (!TextUtils.isEmpty(transactionExtraDetail.getAcquiringInstitutionName())) {
-                    destinationBankTv.setText(transactionExtraDetail.getAcquiringInstitutionName());
-                    destinationBankTv.setVisibility(View.VISIBLE);
-                    destinationBankLabelTv.setVisibility(View.VISIBLE);
-                }
-
-                if (!TextUtils.isEmpty(transactionExtraDetail.getToAccount())) {
-                    destinationAccountNumberTv.setText(transactionExtraDetail.getToAccount());
-                    destinationAccountNumberTv.setVisibility(View.VISIBLE);
-                    destinationAccountNumberLabelTv.setVisibility(View.VISIBLE);
-                }
             }
         }
 

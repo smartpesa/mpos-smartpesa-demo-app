@@ -45,8 +45,6 @@ public class SettingsFragment extends BaseFragment {
     ListView settingsLV;
     Context mContext;
     ProgressBar mProgressBar;
-    Button registerBtn, activateBtn;
-    TextView softPosInstruct;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -89,7 +87,6 @@ public class SettingsFragment extends BaseFragment {
                 } else {
                     UIHelper.showToast(mContext, mContext.getResources().getString(R.string.no_devices_found));
                 }
-
             }
 
             @Override
@@ -116,124 +113,6 @@ public class SettingsFragment extends BaseFragment {
     private void initializeComponents(View view) {
         settingsLV = (ListView) view.findViewById(R.id.settingsLV);
         mProgressBar = (ProgressBar) view.findViewById(R.id.settingsPB);
-        registerBtn = (Button) view.findViewById(R.id.registerBtn);
-        activateBtn = (Button) view.findViewById(R.id.activateBtn);
-        softPosInstruct = (TextView) view.findViewById(R.id.softposInstruct);
-
-        NfcManager manager = (NfcManager) getActivity().getSystemService(Context.NFC_SERVICE);
-        NfcAdapter adapter = manager.getDefaultAdapter();
-        if (adapter != null ) {
-            //Yes NFC available
-            registerBtn.setVisibility(View.VISIBLE);
-            activateBtn.setVisibility(View.VISIBLE);
-            softPosInstruct.setVisibility(View.VISIBLE);
-        } else{
-            //Your device doesn't support NFC
-            registerBtn.setVisibility(View.GONE);
-            activateBtn.setVisibility(View.GONE);
-            softPosInstruct.setVisibility(View.GONE);
-        }
-
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showRegisterDevice();
-            }
-        });
-
-        activateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showActivateDevice();
-            }
-
-        });
-    }
-
-    private void showActivateDevice() {
-        new MaterialDialog.Builder(getActivity())
-                .title(R.string.activate_device)
-                .content(R.string.activate_instruct)
-                .inputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)
-                .inputRangeRes(4, 12, R.color.md_red_500)
-                .input("OTP", null, new MaterialDialog.InputCallback() {
-                    @Override
-                    public void onInput(MaterialDialog dialog, CharSequence input) {
-                        // Do something
-                    }})
-                .positiveText("Proceed")
-                .negativeText("Cancel")
-                .callback(new MaterialDialog.ButtonCallback() {
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
-                        super.onPositive(dialog);
-                        if (dialog.getInputEditText() != null && dialog.getInputEditText().getText() != null) {
-                            String otp = dialog.getInputEditText().getText().toString();
-                            if (!TextUtils.isEmpty(otp)) {
-                                activateDevice(otp);
-                            } else {
-                                UIHelper.showToast(getActivity(), "OTP cannot be empty, please try again");
-                            }
-                        } else {
-                            UIHelper.showToast(getActivity(), "OTP cannot be empty, please try again");
-                        }
-                    }
-                    @Override
-                    public void onNegative(MaterialDialog dialog) {
-                        super.onNegative(dialog);
-                    }
-                })
-                .cancelable(false)
-                .show();
-    }
-
-    private void activateDevice(String otp) {
-        serviceManager.get().activateSoftPOS(otp, new ActivateSoftPOSCallback() {
-            @Override
-            public void onSuccess(String s) {
-                UIHelper.showMessageDialog(getActivity(), s);
-            }
-
-            @Override
-            public void onError(SpException e) {
-                UIHelper.showMessageDialog(getActivity(), e.getMessage());
-            }
-        });
-    }
-
-    private void showRegisterDevice() {
-        UIHelper.showMessageDialogWithTitleTwoButtonCallback(getActivity(),
-                getString(R.string.register_device),
-                getString(R.string.register_instruct),
-                getString(R.string.yes),
-                getString(R.string.no),
-                new MaterialDialog.ButtonCallback() {
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
-                        super.onPositive(dialog);
-                        registerDevice();
-
-                    }
-
-                    @Override
-                    public void onNegative(MaterialDialog dialog) {
-                        super.onNegative(dialog);
-                    }
-                });
-    }
-
-    private void registerDevice() {
-        serviceManager.get().registerSoftPOS(new RegisterSoftPOSCallback() {
-            @Override
-            public void onSuccess(RegisterSoftPOS registerSoftPOS) {
-                UIHelper.showMessageDialog(getActivity(), getString(R.string.device_register_success));
-            }
-
-            @Override
-            public void onError(SpException e) {
-                UIHelper.showMessageDialog(getActivity(), e.getMessage());
-            }
-        });
     }
 
     @Override
@@ -263,6 +142,4 @@ public class SettingsFragment extends BaseFragment {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 }

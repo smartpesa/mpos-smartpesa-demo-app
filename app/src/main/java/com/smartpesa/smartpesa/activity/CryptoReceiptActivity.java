@@ -576,14 +576,6 @@ public class CryptoReceiptActivity extends BaseActivity {
                     resultLabelTv.setVisibility(View.VISIBLE);
                 }
 
-                UUID goCoinId = parcelableGoCoinPayment.getGoCoinId();
-
-                if (goCoinId != null) {
-                    goCoinIdTv.setText(goCoinId.toString());
-                    goCoinIdTv.setVisibility(View.VISIBLE);
-                    goCoinIdLabelTv.setVisibility(View.VISIBLE);
-                }
-
                 BigDecimal btcSpotRate = parcelableGoCoinPayment.getBtcSpotRate();
 
                 if (btcSpotRate != null && mMoneyUtils != null) {
@@ -617,13 +609,6 @@ public class CryptoReceiptActivity extends BaseActivity {
                     statusLabelTv.setVisibility(View.VISIBLE);
                 }
 
-                UUID paymentGoCoinId = parcelableGoCoinPayment.getPaymentGoCoinId();
-
-                if (paymentGoCoinId != null) {
-                    paymentGoCoinIdTv.setText(paymentGoCoinId.toString());
-                    paymentGoCoinIdTv.setVisibility(View.VISIBLE);
-                    paymentGoCoinIdLabelTv.setVisibility(View.VISIBLE);
-                }
             }
 
         }

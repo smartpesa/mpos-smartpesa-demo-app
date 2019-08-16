@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.widget.GridView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.smartpesa.smartpesa.R;
 import com.smartpesa.smartpesa.SmartPesaApplication;
+import com.smartpesa.smartpesa.activity.ActivateSoftposActivity;
 import com.smartpesa.smartpesa.activity.SplashActivity;
 import com.smartpesa.smartpesa.adapters.MenuAdapter;
 import com.smartpesa.smartpesa.helpers.MenuItem;
@@ -153,6 +156,16 @@ public class MenuFragment extends BaseFragment {
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_LAST_TRANSACTION, R.drawable.ic_history_black_24dp, R.string.last_transaction));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_HISTORY, R.drawable.ic_history, R.string.history));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_STATISTICS, R.drawable.ic_statistics, R.string.statistics));
+
+        //check if NFC is available
+        NfcManager manager = (NfcManager) getActivity().getSystemService(Context.NFC_SERVICE);
+        if (manager != null) {
+            NfcAdapter nfcAdapter = manager.getDefaultAdapter();
+            if (nfcAdapter != null) {
+                menuItems.add(new MenuItem(MerchantModule.MENU_ID_ACTIVATE_SOFTPOS, R.drawable.ic_devices, R.string.activate_softpos));
+            }
+        }
+
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_DUMMY_MERCHANT_INFO, R.drawable.ic_merchant, R.string.merchant_info));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_OPERATORS, R.drawable.ic_person_black_24dp, R.string.title_operators));
         menuItems.add(new MenuItem(MerchantModule.MENU_ID_SETTINGS, R.drawable.ic_devices, R.string.title_settings));
@@ -165,7 +178,11 @@ public class MenuFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                mListener.processMenu(menuItems.get(position).id);
+                if (menuItems.get(position).id == MerchantModule.MENU_ID_ACTIVATE_SOFTPOS) {
+                    startActivity(new Intent(getActivity(), ActivateSoftposActivity.class));
+                } else {
+                    mListener.processMenu(menuItems.get(position).id);
+                }
             }
         });
     }

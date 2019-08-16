@@ -212,11 +212,6 @@ public class AliPayPaymentProgressActivity extends BaseActivity {
 
                 showFragment(fragment);
             }
-
-            @Override
-            public void onTransactionFinished(TransactionType transactionType, boolean b, @Nullable Transaction transaction, @Nullable SmartPesa.Verification verification, @Nullable SpCardTransactionException e) {
-
-            }
         }, this);
     }
 

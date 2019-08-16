@@ -701,24 +701,6 @@ public class IntentPaymentProgressActivity extends BaseActivity  {
                     progressIV.setVisibility(View.INVISIBLE);
                 }
 
-                @Override
-                public void onTransactionFinished(TransactionType transactionType, boolean b, @Nullable Transaction transaction, @Nullable SmartPesa.Verification verification, @Nullable SpCardTransactionException e) {
-                    if (isActivityDestroyed()) return;
-                    if (bluetoothDisconnected[0] == false) {
-                        progressTV.setVisibility(View.INVISIBLE);
-
-                        transactionFinished[0] = true;
-                        lockBackBTN = false;
-
-                        rippleBackground.setVisibility(View.INVISIBLE);
-                        bluetoothConnection.setVisibility(View.INVISIBLE);
-                        swipeOrInsertFl.setVisibility(View.INVISIBLE);
-                        transactionFl.setVisibility(View.INVISIBLE);
-                        confirmInputFl.setVisibility(View.INVISIBLE);
-                        pinInputFl.setVisibility(View.INVISIBLE);
-                        failBtnLl.setVisibility(View.INVISIBLE);
-                    }
-                }
 
                 @Override
                 public void onTransactionApproved(TransactionData transactionData) {

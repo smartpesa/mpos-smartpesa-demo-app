@@ -378,11 +378,6 @@ public abstract class AbstractPaymentProgressActivity extends BaseActivity imple
             }
 
             @Override
-            public void onTransactionFinished(TransactionType transactionType, boolean b, @Nullable Transaction transaction, @Nullable SmartPesa.Verification verification, @Nullable SpCardTransactionException e) {
-
-            }
-
-            @Override
             public void onDeviceConnected(SpTerminal spTerminal) {
                 if (isActivityDestroyed) return;
                 progressTV.setText("Connected to mPOS device\n ("+spTerminal.getName()+")");

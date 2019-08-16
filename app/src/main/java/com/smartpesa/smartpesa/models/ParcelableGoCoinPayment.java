@@ -12,7 +12,6 @@ import smartpesa.sdk.models.transaction.CryptoPayment;
 public class ParcelableGoCoinPayment implements Parcelable {
 
     private final String result;
-    private final UUID goCoinId;
     private final BigDecimal btcSpotRate;
     private final UUID crytoCurrencyId;
     private final String cryptoCurrencyName;
@@ -22,19 +21,12 @@ public class ParcelableGoCoinPayment implements Parcelable {
     private final String status;
     private final Date updatedAt;
     private final BigDecimal usdSpotRate;
-    private final UUID paymentGoCoinId;
 
     public ParcelableGoCoinPayment(CryptoPayment goCoinPayment) {
 
         UUID nullPointer = UUID.fromString("00000000-0000-0000-0000-000000000000");
 
         result = goCoinPayment.getResult();
-
-        if (goCoinPayment.getGoCoinId() != null) {
-            goCoinId = goCoinPayment.getGoCoinId();
-        } else {
-            goCoinId = nullPointer;
-        }
 
         btcSpotRate = goCoinPayment.getBtcSpotRate();
 
@@ -56,17 +48,10 @@ public class ParcelableGoCoinPayment implements Parcelable {
         status = goCoinPayment.getStatus();
         updatedAt = goCoinPayment.getUpdatedAt();
         usdSpotRate = goCoinPayment.getUsdSpotRate();
-
-        if (goCoinPayment.getPaymentGoCoinId() != null) {
-            paymentGoCoinId = goCoinPayment.getPaymentGoCoinId();
-        } else {
-            paymentGoCoinId = nullPointer;
-        }
     }
 
     public ParcelableGoCoinPayment(Parcel in) {
         result = in.readString();
-        goCoinId = UUID.fromString(in.readString());
         btcSpotRate = new BigDecimal(in.readDouble());
         crytoCurrencyId = UUID.fromString(in.readString());
         cryptoCurrencyName = in.readString();
@@ -76,7 +61,6 @@ public class ParcelableGoCoinPayment implements Parcelable {
         status = in.readString();
         updatedAt = new Date(in.readLong());
         usdSpotRate = new BigDecimal(in.readDouble());
-        paymentGoCoinId = UUID.fromString(in.readString());
     }
 
     @Override
@@ -88,9 +72,6 @@ public class ParcelableGoCoinPayment implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         if (result != null) {
             dest.writeString(result);
-        }
-        if (goCoinId != null) {
-            dest.writeString(goCoinId.toString());
         }
         if (btcSpotRate != null) {
             dest.writeDouble(btcSpotRate.doubleValue());
@@ -111,9 +92,6 @@ public class ParcelableGoCoinPayment implements Parcelable {
         if (usdSpotRate != null) {
             dest.writeDouble(usdSpotRate.doubleValue());
         }
-        if (paymentGoCoinId != null) {
-            dest.writeString(paymentGoCoinId.toString());
-        }
     }
 
     public static final Creator CREATOR = new Creator() {
@@ -128,10 +106,6 @@ public class ParcelableGoCoinPayment implements Parcelable {
 
     public String getResult() {
         return result;
-    }
-
-    public UUID getGoCoinId() {
-        return goCoinId;
     }
 
     public BigDecimal getBtcSpotRate() {
@@ -168,9 +142,5 @@ public class ParcelableGoCoinPayment implements Parcelable {
 
     public BigDecimal getUsdSpotRate() {
         return usdSpotRate;
-    }
-
-    public UUID getPaymentGoCoinId() {
-        return paymentGoCoinId;
     }
 }

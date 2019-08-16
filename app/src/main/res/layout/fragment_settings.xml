@@ -29,44 +29,6 @@ android:orientation="vertical">
     android:layout_below="@+id/settingsPB">
 
     <TextView
-        android:id="@+id/softposInstruct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:text="@string/softpos_instruct"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/registerBtn"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/primary_button"
-            android:text="@string/register_device"
-            android:textColor="@drawable/text_general" />
-
-        <Space
-            android:layout_width="4dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/activateBtn"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="4dp"
-            android:background="@drawable/primary_button"
-            android:text="@string/activate_device"
-            android:textColor="@drawable/text_general" />
-    </LinearLayout>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
