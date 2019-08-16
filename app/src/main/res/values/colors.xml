@@ -8,7 +8,6 @@
     <color name="color_primary_dark">#F57C00</color>
     <color name="lead_accent">#1f3b4d</color>
 
-
     <!-- Hack for library -->
     <color name="colorAccent">@color/color_accent</color>
     <color name="colorPrimary">@color/color_primary</color>
