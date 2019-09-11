@@ -429,6 +429,7 @@
     <string name="register_instruct">Proceed to register your mobile phone for Contactless card acceptance using NFC? You will receive an SMS with a pin code. Enter it to activate this service.</string>
     <string name="activate_instruct">Input your OTP (4 - 12 digits)</string>
     <string name="input_hint">OTP</string>
+    <string name="registering_device">Registering device, please wait...</string>
 
     <string name="google_geo_api_key">YOUR_KEYS</string>
 

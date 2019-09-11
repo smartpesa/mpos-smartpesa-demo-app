@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.smartpesa.smartpesa"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.smartpesa.smartpesa">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.BBPOS"/>
+    <uses-permission android:name="android.permission.BBPOS" />
 
     <application
         android:name=".SmartPesaApplication"
@@ -18,9 +18,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/SmartPesaTheme"
+        android:usesCleartextTraffic="true"
         tools:replace="android:name">
+        <activity android:name=".activity.ActivateSoftposActivity"></activity>
+
         <service android:name=".helpers.SignatureUploadService" />
 
         <meta-data
@@ -51,11 +53,9 @@
         <activity
             android:name=".activity.ForgotIdActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activity.crypto.CryptoInfoActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activity.AboutUsActivity"
             android:screenOrientation="portrait" />
@@ -86,7 +86,6 @@
             android:label="@string/sign_up"
             android:screenOrientation="portrait"
             android:theme="@style/SmartPesaLead" />
-
         <activity
             android:name=".activity.AliPayQRScanActivity"
             android:label="@string/title_alipay"
@@ -123,7 +122,7 @@
             android:value="YOUR_KEY" />
 
         <activity android:name=".activity.payment.AliPayReceiptActivity" />
-        <activity android:name=".activity.CryptoReceiptActivity"></activity>
+        <activity android:name=".activity.CryptoReceiptActivity" />
     </application>
 
 </manifest>
