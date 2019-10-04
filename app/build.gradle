@@ -162,7 +162,7 @@ dependencies {
     implementation('com.mikepenz:materialdrawer:4.3.7@aar') {
         transitive = true
     }
-    implementation('com.smartpesa:sdk:4.0.0.32-BETA') {
+    implementation('com.smartpesa:sdk:4.0.0.36-BETA') {
         transitive = true
         changing = true
     }
