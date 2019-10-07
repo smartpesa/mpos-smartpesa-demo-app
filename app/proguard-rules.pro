@@ -211,3 +211,7 @@ native <methods>;
 -keep class com.b.** { *; }
 -keepnames class com.a.** { *; }
 -keepnames class com.b.** { *; }
+
+#KNOX SDK
+-keep class com.samsung.android** { *; }
+-dontwarn com.samsung.android.**
