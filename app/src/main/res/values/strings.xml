@@ -432,5 +432,6 @@
     <string name="registering_device">Registering device, please wait...</string>
 
     <string name="google_geo_api_key">YOUR_KEYS</string>
+    <string name="already_have_otp">Already Have OTP?</string>
 
 </resources>

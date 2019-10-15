@@ -52,7 +52,8 @@ public class SmartPesaApplication extends MultiDexApplication {
         Crashlytics crashlyticsKit = new Crashlytics.Builder()
                 .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
                 .build();
-        Fabric.with(this, crashlyticsKit);
+        if(!BuildConfig.DEBUG)
+            Fabric.with(this, crashlyticsKit);
 
         mComponent = DaggerSmartPesaApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))

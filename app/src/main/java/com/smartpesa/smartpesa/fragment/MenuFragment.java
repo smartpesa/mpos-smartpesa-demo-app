@@ -162,7 +162,7 @@ public class MenuFragment extends BaseFragment {
         if (manager != null) {
             NfcAdapter nfcAdapter = manager.getDefaultAdapter();
             if (nfcAdapter != null) {
-                menuItems.add(new MenuItem(MerchantModule.MENU_ID_ACTIVATE_SOFTPOS, R.drawable.ic_devices, R.string.activate_softpos));
+                menuItems.add(new MenuItem(MerchantModule.MENU_ID_ACTIVATE_SOFTPOS, R.drawable.ic_devices, R.string.title_activate_softpos));
             }
         }
 
